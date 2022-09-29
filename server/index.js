@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const morgan = require("morgan");
 const Router = require("./routes/.");
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 
 // config
 const app = express();
@@ -19,6 +20,7 @@ mongoose
 
 // app use
 app.use(morgan("dev"));
+app.use(express.json());
 
 // route
 app.use("/api/v1", Router);
