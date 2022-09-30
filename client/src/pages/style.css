@@ -1,0 +1,33 @@
+.home {
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.5fr 9fr 1.5fr;
+}
+
+.home_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  grid-column: 2;
+}
+
+.home_main {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.home_main_desc {
+  font-size: 3.5vmax;
+  font-weight: 700;
+}
+
+.home_gotop {
+  width: 100%;
+  height: 10vh;
+  background-color: black;
+}
