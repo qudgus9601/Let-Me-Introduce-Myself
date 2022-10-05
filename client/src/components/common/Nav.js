@@ -4,12 +4,19 @@ import { Link } from "react-router-dom";
 const Nav = () => {
   return (
     <div className="nav">
-      <div className="nav_slogan">
-        <Link to="/">Challenging Developer</Link>
-      </div>
-      <div className="nav_menu">HOME</div>
-      <div className="nav_menu">WORK</div>
-      <div className="nav_menu">LOGIN</div>
+      <Link className="nav_slogan" to="/">
+        Challenging Developer
+      </Link>
+
+      <Link className="nav_menu" to="/">
+        HOME
+      </Link>
+      <Link className="nav_menu" to="/work">
+        WORK
+      </Link>
+      <Link className="nav_menu" to="/signin">
+        SIGNIN
+      </Link>
     </div>
   );
 };
