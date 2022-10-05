@@ -23,6 +23,10 @@ app.use(morgan("dev"));
 // route
 app.use("/api/v1", Router);
 
+app.get("/", (req, res) => {
+  res.send("EC2 SERVER!!");
+});
+
 app.listen(process.env.SERVER_PORT, () => {
   console.log(`server listening on ${process.env.SERVER_PORT}`);
 });
