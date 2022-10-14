@@ -15,12 +15,8 @@ const app = express();
 dotenv.config();
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => {
-    console.log("🍀 MONGO DB CONNECTED COMPLETE");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+  .then(() => {})
+  .catch((err) => {});
 app.use(passport.initialize());
 passportConfig();
 
@@ -51,6 +47,4 @@ app.get("/", (req, res) => {
   res.send("HELLO HONEY 🐝");
 });
 
-app.listen(process.env.SERVER_PORT, () => {
-  console.log(`server listening on ${process.env.SERVER_PORT}`);
-});
+app.listen(process.env.SERVER_PORT, () => {});

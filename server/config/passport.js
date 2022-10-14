@@ -24,7 +24,7 @@ const passportConfig = () => {
             provider: profile.provider,
             accessToken: accessToken,
           };
-          console.log(user);
+
           if (findUser) {
             return done(null, user);
           } else {
