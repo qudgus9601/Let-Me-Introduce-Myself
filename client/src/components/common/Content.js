@@ -1,13 +1,51 @@
-import Home from "../../pages/Home";
-import { Routes, Route } from "react-router-dom";
-import SignIn from "../../pages/SignIn";
+import Home from "../../pages/home";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import SignIn from "../../pages/signIn";
+import SignUp from "../../pages/signUp";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/userSlice";
+import axios from "axios";
 
 const Content = () => {
+  // configure
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  // useRef
+
+  // useEffect
+  useEffect(() => {});
+  useEffect(() => {
+    // 초기값 설정
+
+    axios({
+      method: "GET",
+      url: `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/check/accesstoken`,
+      withCredentials: true,
+    })
+      .then((data) => {
+        console.log(data);
+        dispatch(login({ isLogin: true, ...data.data.userInfo }));
+      })
+      .catch((error) => {
+        if (error.response.data.message === "Invalid Token") {
+          // 만료된 토큰 메세지 모달 띄우기
+          navigate("/signIn");
+        } else {
+          // 예상치 못한 오류 메세지 모달 띄우기
+        }
+      });
+  }, [navigate, dispatch]);
+
+  // useState
+
   return (
     <div className="content">
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signin/*" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </div>
   );

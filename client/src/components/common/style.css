@@ -27,6 +27,7 @@
   align-items: center;
   justify-content: center;
   font-size: 1.2vmax;
+  background-color: inherit;
 }
 
 .nav_menu:hover {

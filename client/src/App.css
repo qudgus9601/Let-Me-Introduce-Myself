@@ -17,6 +17,20 @@ li {
   list-style: none;
 }
 
+input,
+button {
+  padding: 0;
+  margin: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+.content {
+  width: 100vw;
+}
+
 .list_style_disc li {
   list-style: inside disc;
 }
@@ -45,4 +59,25 @@ button:hover {
 
 .main_color {
   background-color: #8f1ce9;
+}
+
+.spin {
+  animation: rotate 0.5s infinite linear;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }

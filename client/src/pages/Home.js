@@ -19,7 +19,6 @@ const Home = () => {
         <SelfIntroduce />
         <Project />
         <Resume />
-
         <div className="home_gotop"></div>
       </div>
     </div>
