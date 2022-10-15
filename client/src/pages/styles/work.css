@@ -1,0 +1,19 @@
+.works {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.works_center {
+  margin: 15vh 12.5% 0 12.5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.works_post_card_container {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+}

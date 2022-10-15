@@ -16,14 +16,14 @@ const Nav = () => {
   };
   return (
     <div className="nav">
-      <Link className="nav_slogan" to="/">
-        Challenging Developer
-      </Link>
+      <div className="nav_slogan">
+        <Link to="/">Challenging Developer</Link>
+      </div>
 
       <Link className="nav_menu" to="/">
         HOME
       </Link>
-      <Link className="nav_menu" to="/work">
+      <Link className="nav_menu" to="/works">
         WORK
       </Link>
       {user.isLogin ? (
