@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/userSlice";
 import axios from "axios";
-import Works from "../../pages/works";
+import Projects from "../../pages/projects";
 
 const Content = () => {
   // configure
@@ -26,7 +26,6 @@ const Content = () => {
       withCredentials: true,
     })
       .then((data) => {
-        console.log(data);
         dispatch(login({ isLogin: true, ...data.data.userInfo }));
       })
       .catch((error) => {
@@ -47,7 +46,7 @@ const Content = () => {
         <Route exact path="/" element={<Home />} />
         <Route path="/signin/*" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/works" element={<Works />} />
+        <Route path="/projects/*" element={<Projects />} />
       </Routes>
     </div>
   );

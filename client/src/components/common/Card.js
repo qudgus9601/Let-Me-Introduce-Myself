@@ -9,14 +9,14 @@ const Card = ({ data }) => {
     desc: card 컴포넌트를 클릭 시 해당 프로젝트 페이지로 넘어갑니다.
   */
   const cardClick = (e) => {
-    navigate(`/work/${e.currentTarget.id}`);
+    navigate(`/projects/${e.currentTarget.id}`);
   };
 
   /*
    desc: image를 키웁니다.
   */
   const imageScaleUp = (e) => {
-    e.currentTarget.querySelector(".post_card_thumbnail").style.scale = "1.2";
+    e.currentTarget.querySelector(".post_card_thumbnail").style.scale = "1.1";
     e.currentTarget.querySelector(".post_card_thumbnail").style.transition =
       "0.2s";
   };
@@ -30,6 +30,7 @@ const Card = ({ data }) => {
       "0.2s";
   };
 
+  console.log(data);
   return (
     <div
       className="post_card"
@@ -47,6 +48,7 @@ const Card = ({ data }) => {
           <div>{data.desc}</div>
           <div>{data.size}</div>
           <div>{data.type}</div>
+          <div>{data.language.map((e) => e)}</div>
           <div>
             🗓 {data.startDate} ~ {data.finishDate}
           </div>

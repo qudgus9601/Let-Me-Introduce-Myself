@@ -4,6 +4,7 @@ const user = require("../controllers/user.controller");
 
 const router = express.Router();
 
-router.post("/exist-email", user.findUserByEmail);
+router.post("/exist-email", user.isAlreadyUseEmail);
+router.get("/find", user.findUserByEmail);
 
 module.exports = router;

@@ -26,7 +26,7 @@ const Section1 = ({ userObj, changeUserObj, section, setSection }) => {
     const el = e.target;
 
     if (
-      !/^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,3}$/i.test(el.value)
+      !/^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,4}$/i.test(el.value)
     ) {
       el.style.border = "1px solid red";
       require.current.style.display = "block";
@@ -49,7 +49,7 @@ const Section1 = ({ userObj, changeUserObj, section, setSection }) => {
   const submit = async () => {
     try {
       if (
-        /^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,3}$/i.test(
+        /^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,4}$/i.test(
           userObj.email
         )
       ) {

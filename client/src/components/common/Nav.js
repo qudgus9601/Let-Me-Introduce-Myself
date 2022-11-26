@@ -23,8 +23,8 @@ const Nav = () => {
       <Link className="nav_menu" to="/">
         HOME
       </Link>
-      <Link className="nav_menu" to="/works">
-        WORK
+      <Link className="nav_menu" to="/projects">
+        PROJECT
       </Link>
       {user.isLogin ? (
         <button className="nav_menu" onClick={logout}>

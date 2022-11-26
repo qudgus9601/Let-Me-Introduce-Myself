@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
 
-const WorkSchema = new mongoose.Schema(
+const ProjectSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
     author: { type: String, required: true },
     thumbnail: { type: String, required: true },
-    content: { type: Text, required: true },
-    notice: { type: Boolean, default: false },
+    content: { type: String, required: true },
     startDate: { type: Date, required: true },
     finishDate: { type: Date },
     viewCount: { type: Number, default: 0 },
@@ -14,10 +13,14 @@ const WorkSchema = new mongoose.Schema(
     desc: { type: String, required: true },
     size: { type: String, required: true },
     type: { type: String, required: true },
+    language: { type: Array, required: true },
+    skill: { type: Array, required: true },
+    enviroment: { type: Array, required: true },
   },
   {
     timestamps: true,
+    versionKey: false,
   }
 );
 
-module.exports = mongoose.model("Work", WorkSchema);
+module.exports = mongoose.model("Project", ProjectSchema);
