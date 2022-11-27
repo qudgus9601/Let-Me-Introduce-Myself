@@ -5,6 +5,7 @@ import FilterMenu from "../components/project/FilterMenu";
 import "./styles/projects.css";
 import WriteProject from "./writeProject";
 import axios from "axios";
+import ProjectDetail from "./projectDetail";
 
 const Projects = () => {
   const [projectList, setProjectList] = useState([]);
@@ -23,13 +24,13 @@ const Projects = () => {
   };
 
   return (
-    <div className="projects">
-      <Routes>
-        <Route
-          exact
-          path=""
-          element={
-            <>
+    <Routes>
+      <Route
+        exact
+        path=""
+        element={
+          <>
+            <div className="projects">
               <div className="projects_left">
                 <FilterMenu setProjectList={setProjectList} />
               </div>
@@ -46,12 +47,13 @@ const Projects = () => {
                     })}
                 </div>
               </div>
-            </>
-          }
-        />
-        <Route path="/write" element={<WriteProject />} />
-      </Routes>
-    </div>
+            </div>
+          </>
+        }
+      />
+      <Route path="/write" element={<WriteProject />} />
+      <Route path="/:id" element={<ProjectDetail />} />
+    </Routes>
   );
 };
 

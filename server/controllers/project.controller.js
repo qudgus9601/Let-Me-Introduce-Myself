@@ -25,7 +25,20 @@ const getProjects = async (req, res, next) => {
   }
 };
 
+/**
+ * 특정 프로젝트 정보를 받아옵니다.
+ */
+const getProjectById = async (req, res, next) => {
+  try {
+    const project = await Project.find({ _id: req.params.id });
+    res.json({ message: "ok", status: 200, projectInfo: project });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   write,
   getProjects,
+  getProjectById,
 };

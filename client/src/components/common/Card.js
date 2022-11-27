@@ -3,8 +3,9 @@ import thumbnail from "../../img/didnow-icon.png";
 import { useNavigate } from "react-router-dom";
 
 const Card = ({ data }) => {
-  //
+  // navigation 초기화
   const navigate = useNavigate();
+
   /*
     desc: card 컴포넌트를 클릭 시 해당 프로젝트 페이지로 넘어갑니다.
   */
@@ -45,12 +46,14 @@ const Card = ({ data }) => {
         </div>
         <div className="post_card_right">
           <div className="post_card_title">{data.title}</div>
-          <div>{data.desc}</div>
+          <div>
+            {data.desc.length > 20 ? `${data.desc.slice(0, 20)}...` : data.desc}
+          </div>
           <div>{data.size}</div>
-          <div>{data.type}</div>
+          <div>{data.type} Project</div>
           <div>{data.language.map((e) => e)}</div>
           <div>
-            🗓 {data.startDate} ~ {data.finishDate}
+            🗓 {data.startDate.slice(0, 10)} ~ {data.finishDate.slice(0, 10)}
           </div>
           <div className="post_card_view_count">👁‍🗨 {data.viewCount}</div>
         </div>
