@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Card from "../components/common/Card";
-import FilterMenu from "../components/project/FilterMenu";
 import "./styles/projects.css";
-import WriteProject from "./writeProject";
+import ProjectWrite from "./projectWrite";
 import axios from "axios";
 import ProjectDetail from "./projectDetail";
+import { FaPen } from "@react-icons/all-files/fa/FaPen";
 
 const Projects = () => {
   const [projectList, setProjectList] = useState([]);
@@ -31,11 +31,25 @@ const Projects = () => {
         element={
           <>
             <div className="projects">
-              <div className="projects_left">
-                <FilterMenu setProjectList={setProjectList} />
-              </div>
               <div className="projects_center">
-                <div>{"0" && projectList.length}개</div>
+                <div className="breadcrumb">
+                  <Link className="breadcrumb" to="/">
+                    Home{" "}
+                  </Link>
+                  &gt;{" "}
+                  <Link className="breadcrumb" to="/projects">
+                    Projects
+                  </Link>
+                </div>
+                <div className="projects_action_menu">
+                  <span>{"0" && `Total : ${projectList.length} Projects`}</span>
+                  {/* 어드민만 풀어주기 */}
+                  <span>
+                    <Link to="/projects/write">
+                      <FaPen />
+                    </Link>
+                  </span>
+                </div>
                 <div className="projects_center_wrapper">
                   {projectList &&
                     projectList.map((e, idx) => {
@@ -51,7 +65,7 @@ const Projects = () => {
           </>
         }
       />
-      <Route path="/write" element={<WriteProject />} />
+      <Route exact path="/write" element={<ProjectWrite />} />
       <Route path="/:id" element={<ProjectDetail />} />
     </Routes>
   );

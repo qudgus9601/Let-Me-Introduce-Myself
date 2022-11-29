@@ -9,3 +9,27 @@
   width: 100%;
   margin: 15vh 12.5% 0 12.5%;
 }
+
+.project_detail_title {
+  width: 100%;
+  font-size: 3rem;
+  font-weight: 900;
+  height: 3rem;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  margin: 2% 0 0 0;
+}
+
+.project_detail_date {
+  display: flex;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #777777;
+  margin-left: 1%;
+}
+
+.project_detail_teammate {
+  font-size: 1.5rem;
+  font-weight: 700;
+}

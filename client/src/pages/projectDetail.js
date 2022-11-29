@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./styles/projectDetail.css";
 
 const ProjectDetail = () => {
@@ -39,10 +39,40 @@ const ProjectDetail = () => {
   return (
     <div className="project_detail">
       <div className="project_detail_container">
-        <div>{project.title}</div>
-        <div>{project.content}</div>
-        <div>{project.startDate.slice(0, 10)}</div>
-        <div>{project.finishDate.slice(0, 10)}</div>
+        <div className="breadcrumb">
+          <Link className="breadcrumb" to="/">
+            Home{" "}
+          </Link>
+          &gt;{" "}
+          <Link className="breadcrumb" to="/projects">
+            Projects{" "}
+          </Link>
+          &gt;{" "}
+          <Link
+            className="breadcrumb"
+            to={`/projects/${location.pathname.slice(10)}`}
+          >
+            {location.pathname.slice(10)}
+          </Link>
+        </div>
+
+        <div className="project_detail_title">
+          {project.title}
+          <div className="project_detail_date">
+            <div>{`( ${project.startDate.slice(
+              0,
+              10
+            )} ~ ${project.finishDate.slice(0, 10)} )`}</div>
+          </div>
+        </div>
+        <div>{`이 프로젝트는 ${project.teamMate.length} 명의 팀원이 ${
+          (new Date(project.finishDate) - new Date(project.startDate)) /
+          24 /
+          60 /
+          60 /
+          1000
+        }일 동안 협업하여 만든 ${project.type} 프로젝트입니다.`}</div>
+        <div> 자세한 사항은 아래를 참고해주세요.</div>
         <div>
           {project.teamMate.map((e) => {
             return e;

@@ -81,3 +81,7 @@ button:hover {
     transform: rotate(360deg);
   }
 }
+
+.breadcrumb {
+  color: #777777;
+}
