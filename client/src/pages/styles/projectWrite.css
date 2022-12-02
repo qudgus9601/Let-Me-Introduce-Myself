@@ -10,11 +10,18 @@
   height: 2.5rem;
   border-radius: 5px;
   font-size: 0.8rem;
-  border: 1px solid black;
+  border: 1px solid #c0c0c0;
   text-indent: 1%;
 }
 
-.project_write_date_size_type_container {
+.project_write_input_container_first {
+  margin: 2% 0 0 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.project_write_input_container_second {
   margin: 2% 0 0 0;
   display: flex;
   width: 100%;
@@ -30,7 +37,7 @@
 
 .project_write_label {
   padding: 0 0.3%;
-  color: black;
+  color: #707070;
   font-size: 0.8rem;
   position: absolute;
   margin: -0.5% 0 0 1%;
@@ -39,42 +46,46 @@
 
 .project_write_date {
   height: 2.5rem;
-  color: black;
-  border: 1px solid black;
+  color: #707070;
+  border: 1px solid #c0c0c0;
   border-radius: 5px;
   text-indent: 5%;
 }
 
 .project_write_size_wrapper {
   width: 15%;
+  margin: 0 0 0 2%;
 }
 
 .project_write_size {
   width: 100%;
   height: 2.5rem;
-  color: black;
-  border: 1px solid black;
+  color: #707070;
+  border: 1px solid #c0c0c0;
   border-radius: 5px;
   text-indent: 5%;
 }
 
 .project_write_type_wrapper {
-  margin: 0 0 0 2%;
+  margin: 0 2% 0 0;
   width: 15%;
 }
 
 .project_write_type {
   width: 100%;
   height: 2.5rem;
-  color: black;
-  border: 1px solid black;
+  color: #707070;
+  border: 1px solid #c0c0c0;
   border-radius: 5px;
   text-indent: 5%;
 }
 
+.project_write_type::placeholder {
+  color: #707070;
+}
+
 .project_write_skill_wrapper {
-  width: 40%;
-  margin: 0 0 0 2%;
+  width: 49%;
 }
 
 .project_write_skill {
@@ -82,9 +93,9 @@
   width: 100%;
   font-size: 0.8rem;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid #c0c0c0;
   text-indent: 2.5%;
-  color: black;
+  color: #707070;
 }
 
 .project_write_team_wrapper {
@@ -94,14 +105,14 @@
 
 .project_write_team {
   min-height: 6rem;
-  border: 1px solid black;
+  border: 1px solid #c0c0c0;
   border-radius: 5px;
   padding: 3% 5%;
   box-sizing: border-box;
 }
 
 .project_write_mate {
-  border: 1px solid black;
+  border: 1px solid #c0c0c0;
   border-radius: 5px;
   width: 100%;
   height: 4rem;
@@ -141,7 +152,7 @@
   margin: 0 0 0 1%;
   height: 1.6rem;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid #c0c0c0;
   text-indent: 5%;
 }
 
@@ -149,7 +160,7 @@
   margin: 0 0 0 1%;
   height: 1.6rem;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid #c0c0c0;
   text-indent: 5%;
   width: 40%;
 }
@@ -176,11 +187,11 @@
 }
 
 .project_write_mate_plus_button:hover {
-  box-shadow: 0 0 2px black;
+  box-shadow: 0 0 2px #c0c0c0;
 }
 
 .project_write_input_delete_button {
-  background-color: black;
+  background-color: #c0c0c0;
   color: white;
   width: 10%;
   height: 1.7rem;
@@ -191,4 +202,60 @@
 .project_write_input_delete_button:hover {
   background-color: red;
   transition: 0.3s;
+}
+
+.project_write_desc_wrapper {
+  width: 15%;
+  margin: 0 2% 0 0;
+}
+
+.project_write_desc {
+  width: 100%;
+  height: 2.5rem;
+  color: #707070;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+  text-indent: 5%;
+}
+
+.project_write_enviroment_wrapper {
+  width: 15%;
+  margin: 0 2% 0 0;
+}
+
+.project_write_enviroment {
+  width: 100%;
+  height: 2.5rem;
+  color: #707070;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+  text-indent: 5%;
+}
+
+.project_write_language_wrapper {
+  width: 15%;
+}
+
+.project_write_language {
+  width: 100%;
+  height: 2.5rem;
+  color: #707070;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+  text-indent: 5%;
+}
+
+.project_write_complete_button_wrapper {
+  width: 100%;
+  margin: 5% 0 5% 0;
+  display: flex;
+  justify-content: center;
+}
+
+.project_write_complete_button {
+  width: 50%;
+  background-color: black;
+  color: white;
+  height: 3rem;
+  border-radius: 5px;
 }

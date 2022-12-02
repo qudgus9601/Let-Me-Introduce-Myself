@@ -1,3 +1,4 @@
+import React from "react";
 import "./styles/card.css";
 import thumbnail from "../../img/didnow-icon.png";
 import { useNavigate } from "react-router-dom";

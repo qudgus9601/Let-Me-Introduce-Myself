@@ -1,6 +1,6 @@
 import "./styles/localSignIn.css";
 import axios from "axios";
-import { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/userSlice";
@@ -105,7 +105,12 @@ const LocalSignIn = () => {
 
   return (
     <div className="signin_local">
-      <div className="signin_local_title">🙋 로그인</div>
+      <div className="signin_local_title">
+        <span role="img" aria-label="hello">
+          🙋
+        </span>
+        로그인
+      </div>
       <label className="singin_local_label" htmlFor="email">
         이메일
       </label>

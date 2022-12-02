@@ -1,3 +1,4 @@
+import React from "react";
 import myself from "../../img/myself.jpeg";
 import "./styles/selfIntroduce.css";
 
@@ -25,7 +26,10 @@ const SelfIntroduce = () => {
             </div>
           </article>
           <button className="selfIntroduce_left_button">
-            자기소개서 보러가기 📝
+            자기소개서 보러가기{" "}
+            <span role="img" aria-label="profile">
+              📝
+            </span>
           </button>
         </div>
         <div className="selfIntroduce_right">

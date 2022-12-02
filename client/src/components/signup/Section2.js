@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 const Section2 = ({ userObj, changeUserObj, section, setSection }) => {
   // useRef
@@ -91,7 +91,12 @@ const Section2 = ({ userObj, changeUserObj, section, setSection }) => {
   return (
     <>
       <div className="signup_body_input">
-        <div className="signup_body_input_title">🔑 비밀번호</div>
+        <div className="signup_body_input_title">
+          <span role="img" aria-label="key">
+            🔑
+          </span>{" "}
+          비밀번호
+        </div>
         <input
           type="password"
           id="password"
@@ -105,7 +110,12 @@ const Section2 = ({ userObj, changeUserObj, section, setSection }) => {
           className="signup_body_input_require"
           ref={passwordRequire}
         >{`영어, 숫자, 특수문자 (!@#$%^&)를 포함한 8-20글자여야합니다.`}</div>
-        <div className="signup_body_input_title">🔐 비밀번호 확인</div>
+        <div className="signup_body_input_title">
+          <span role="img" aria-label="lock">
+            🔐
+          </span>{" "}
+          비밀번호 확인
+        </div>
         <input
           type="password"
           id="passwordCheck"

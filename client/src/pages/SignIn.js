@@ -3,9 +3,8 @@ import headerImage from "../img/walkcat.gif";
 import SignInButton from "../components/signin/SignInButton";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import LocalSignIn from "../components/signin/LocalSignIn";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-
 
 const SignIn = () => {
   const userInfo = useSelector((state) => state.user);

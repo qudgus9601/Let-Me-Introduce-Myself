@@ -1,3 +1,4 @@
+import React from "react";
 import didnow from "../../img/didnow.png";
 import "./styles/project.css";
 const Project = () => {
@@ -12,7 +13,10 @@ const Project = () => {
           </div>
         </div>
         <button className="project_header_detail">
-          📂 더 많은 프로젝트 보러 가기
+          <span role="img" aria-label="project">
+            📂
+          </span>{" "}
+          더 많은 프로젝트 보러 가기
         </button>
       </div>
       <div className="project_body">

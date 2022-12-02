@@ -1,6 +1,6 @@
 import "./styles/signup.css";
 import headerImage from "../img/nope.gif";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Section1 from "../components/signup/Section1";
 import Section2 from "../components/signup/Section2";
 import Section3 from "../components/signup/Section3";
@@ -41,7 +41,13 @@ const SignUp = () => {
         </div>
         <div className="signup_body">
           <div>
-            <span className="signup_deprecated spin">🚫</span>
+            <span
+              className="signup_deprecated spin"
+              role="img"
+              aria-label="forbidden"
+            >
+              🚫
+            </span>
             {`\u00a0`}Deprecated!!! 당장은 보안이 허술하니 가입하지마세요!
           </div>
           {section === 1 && (

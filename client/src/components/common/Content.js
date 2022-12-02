@@ -2,7 +2,7 @@ import Home from "../../pages/home";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import SignIn from "../../pages/signIn";
 import SignUp from "../../pages/signUp";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/userSlice";
 import axios from "axios";

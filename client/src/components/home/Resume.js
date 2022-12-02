@@ -1,3 +1,4 @@
+import React from "react";
 import "./styles/resume.css";
 import pdfIcon from "../../img/pdf_ico.svg";
 

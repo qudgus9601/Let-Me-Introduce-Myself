@@ -85,3 +85,7 @@ button:hover {
 .breadcrumb {
   color: #777777;
 }
+
+.lmim_ckeditor5_container {
+  margin: 2% 0 0 0;
+}

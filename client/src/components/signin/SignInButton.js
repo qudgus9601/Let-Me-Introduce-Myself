@@ -1,3 +1,4 @@
+import React from "react";
 import kakaoIcon from "../../img/kakao_icon.png";
 import googleIcon from "../../img/google_icon.svg";
 import { Link } from "react-router-dom";

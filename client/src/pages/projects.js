@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import Card from "../components/common/Card";
 import "./styles/projects.css";

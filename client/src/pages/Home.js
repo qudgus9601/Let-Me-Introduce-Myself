@@ -1,5 +1,5 @@
 import "./style.css";
-
+import React from "react";
 import SelfIntroduce from "../components/home/SelfIntroduce";
 import Project from "../components/home/Project";
 import Resume from "../components/home/Resume";

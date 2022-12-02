@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import axios from "axios";
 
 const Section1 = ({ userObj, changeUserObj, section, setSection }) => {
@@ -90,7 +90,10 @@ const Section1 = ({ userObj, changeUserObj, section, setSection }) => {
     <>
       <div className="signup_body_input">
         <label className="signup_body_input_title" htmlFor="email">
-          📮 이메일
+          <span role="img" aria-label="post">
+            📮
+          </span>{" "}
+          이메일
         </label>
         <input
           type="text"

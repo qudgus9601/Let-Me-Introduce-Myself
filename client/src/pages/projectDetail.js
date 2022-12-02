@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./styles/projectDetail.css";
 
@@ -65,13 +65,14 @@ const ProjectDetail = () => {
             )} ~ ${project.finishDate.slice(0, 10)} )`}</div>
           </div>
         </div>
-        <div>{`이 프로젝트는 ${project.teamMate.length} 명의 팀원이 ${
-          (new Date(project.finishDate) - new Date(project.startDate)) /
+        <div>{`이 프로젝트는 ${project.teamMate.length} 명의 팀원이 ${(new Date(
+          project.finishDate
+        ) -
+          new Date(project.startDate)) /
           24 /
           60 /
           60 /
-          1000
-        }일 동안 협업하여 만든 ${project.type} 프로젝트입니다.`}</div>
+          1000}일 동안 협업하여 만든 ${project.type} 프로젝트입니다.`}</div>
         <div> 자세한 사항은 아래를 참고해주세요.</div>
         <div>
           {project.teamMate.map((e) => {
