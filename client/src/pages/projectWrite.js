@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./styles/projectWrite.css";
-import "./styles/projectWriteCkeditor.css";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import ToastEditor from "../components/project/toastEditor";
+import axios from "axios";
 
 const ProjectWrite = () => {
+  const navigate = useNavigate();
   const [project, setProject] = useState({
     title: "",
     author: "",
@@ -83,6 +83,24 @@ const ProjectWrite = () => {
         skill: filteredArr,
       };
     });
+  };
+
+  /**
+   * 프로젝트 작성 요청을 보냅니다.
+   */
+  const submit = () => {
+    axios({
+      method: "POST",
+      url: `${process.env.REACT_APP_SERVER_URL}/api/v1/projects/write`,
+      data: project,
+      withCredentials: true,
+    })
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -167,13 +185,18 @@ const ProjectWrite = () => {
         </div>
         <div className="project_write_enviroment_wrapper">
           <label className="project_write_label">Enviroment</label>
-          <select className="project_write_enviroment">
-            <option>MacOS</option>
-            <option>Windows</option>
-            <option>Ubuntu</option>
-            <option>Linux</option>
-            <option>Unix</option>
-            <option>E.T.C.</option>
+          <select
+            className="project_write_enviroment"
+            onChange={changeValue}
+            id="enviroment"
+          >
+            <option value={""}>개발환경</option>
+            <option value={"MacOS"}>MacOS</option>
+            <option value={"Windows"}>Windows</option>
+            <option value={"Ubuntu"}>Ubuntu</option>
+            <option value={"Linux"}>Linux</option>
+            <option value={"Unix"}>Unix</option>
+            <option value={"E.T.C."}>E.T.C.</option>
           </select>
         </div>
         <div className="project_write_language_wrapper">
@@ -207,14 +230,7 @@ const ProjectWrite = () => {
       </div>
 
       <section className="lmim_ckeditor5_container">
-        <CKEditor
-          editor={ClassicEditor}
-          data=""
-          onChange={(e, editor) => {
-            project.content = editor.getData();
-            setProject({ ...project });
-          }}
-        />
+        <ToastEditor setProject={setProject} />
       </section>
 
       <div className="project_write_team_wrapper">
@@ -291,7 +307,9 @@ const ProjectWrite = () => {
       </div>
 
       <div className="project_write_complete_button_wrapper">
-        <button className="project_write_complete_button">작성완료</button>
+        <button className="project_write_complete_button" onClick={submit}>
+          작성완료
+        </button>
       </div>
     </div>
   );
