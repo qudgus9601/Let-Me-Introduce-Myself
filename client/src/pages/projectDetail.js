@@ -57,7 +57,11 @@ const ProjectDetail = () => {
             {location.pathname.slice(10)}
           </Link>
         </div>
-
+        <img
+          src="http://localhost:9999/api/v1/image/Hello.png"
+          alt=""
+          width={400}
+        />
         <div className="project_detail_title">
           {project.title}
           <div className="project_detail_date">
