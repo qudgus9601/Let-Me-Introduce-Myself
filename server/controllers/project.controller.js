@@ -5,8 +5,11 @@ const Project = require("../models/Project");
  */
 const write = async (req, res, next) => {
   try {
-    const project = await Project.create(req.body);
-    console.log(project);
+    const newProject = {
+      ...req.body,
+      thumbnail: `${req.body.title}-thumbnail.png`,
+    };
+    const project = await Project.create(newProject);
     res.json({ message: "ok", status: 200, projectInfo: project });
   } catch (error) {
     next(error);
