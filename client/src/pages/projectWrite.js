@@ -1,32 +1,15 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./styles/projectWrite.css";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import ToastEditor from "../components/project/toastEditor";
+import ToastEditor from "../components/project/ToastEditor";
 import axios from "axios";
+import Breadcrumb from "../components/common/Breadcrumb";
+import { projectWrite } from "../models/projectWrite";
 
 const ProjectWrite = () => {
   const navigate = useNavigate();
-  const [project, setProject] = useState({
-    title: "",
-    author: "",
-    content: "",
-    startDate: "",
-    finishDate: "",
-    teamMate: [
-      {
-        gender: "male",
-        name: "안병현",
-        github: "https://github.com/qudgus9601/",
-      },
-    ],
-    desc: "",
-    size: "",
-    type: "",
-    language: "",
-    skill: "",
-    enviroment: "",
-  });
+  const [project, setProject] = useState(projectWrite);
 
   const user = useSelector((state) => {
     return state.user;
@@ -96,7 +79,7 @@ const ProjectWrite = () => {
       withCredentials: true,
     })
       .then(() => {
-        navigate("/");
+        navigate("/projects");
       })
       .catch((error) => {
         console.log(error);
@@ -105,19 +88,7 @@ const ProjectWrite = () => {
 
   return (
     <div className="project_write">
-      <div className="breadcrumb">
-        <Link className="breadcrumb" to="/">
-          Home{" "}
-        </Link>
-        &gt;{" "}
-        <Link className="breadcrumb" to="/projects">
-          Projects{" "}
-        </Link>
-        &gt;{" "}
-        <Link className="breadcrumb" to="/projects/write">
-          Write{" "}
-        </Link>
-      </div>
+      <Breadcrumb crumbs={["projects", "write"]} />
 
       <input
         type="text"
@@ -172,17 +143,6 @@ const ProjectWrite = () => {
       </div>
 
       <div className="project_write_input_container_second">
-        <div className="project_write_desc_wrapper">
-          <label className="project_write_label">Desc</label>
-          <input
-            type="text"
-            value={project.desc}
-            placeholder="프로젝트 요약"
-            id="desc"
-            onChange={changeValue}
-            className="project_write_desc"
-          />
-        </div>
         <div className="project_write_enviroment_wrapper">
           <label className="project_write_label">Enviroment</label>
           <select
@@ -226,6 +186,17 @@ const ProjectWrite = () => {
             <option value="Side">Side</option>
             <option value="Capstone Design">Capstone Design</option>
           </select>
+        </div>
+        <div className="project_write_desc_wrapper">
+          <label className="project_write_label">Desc</label>
+          <input
+            type="text"
+            value={project.desc}
+            placeholder="프로젝트 요약"
+            id="desc"
+            onChange={changeValue}
+            className="project_write_desc"
+          />
         </div>
       </div>
 

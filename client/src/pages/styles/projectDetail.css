@@ -14,11 +14,11 @@
   width: 100%;
   font-size: 3rem;
   font-weight: 900;
-  height: 3rem;
+  height: 4rem;
   vertical-align: middle;
   display: flex;
-  align-items: center;
-  margin: 2% 0 0 0;
+  align-items: flex-end;
+  margin: 2% 0 2% 0;
 }
 
 .project_detail_date {
@@ -32,4 +32,21 @@
 .project_detail_teammate {
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+.project_detail_title_container {
+  width: 100%;
+}
+
+.project_detail_desc_container {
+  width: 100%;
+}
+
+.project_detail_subtitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.project_detail_content {
+  margin: 2% 0;
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import "@toast-ui/editor/dist/toastui-editor.css";
 import { Editor } from "@toast-ui/react-editor";
 import axios from "axios";
+import "@toast-ui/editor/dist/i18n/ko-kr";
 
 const ToastEditor = ({ setProject }) => {
   const editorRef = useRef();
@@ -23,9 +24,9 @@ const ToastEditor = ({ setProject }) => {
       placeholder="내용을 입력해주세요."
       previewStyle="vertical"
       height="600px"
-      initialEditType="markdown"
+      initialEditType="wysiwyg"
       useCommandShortcut={true}
-      language="ko-KR"
+      language="ko"
       ref={editorRef}
       onChange={() => {
         onchange();

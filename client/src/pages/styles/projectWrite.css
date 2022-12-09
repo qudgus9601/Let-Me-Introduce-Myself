@@ -7,9 +7,9 @@
 .project_write_title {
   width: 100%;
   margin: 5% 0 0 0;
-  height: 2.5rem;
+  height: 3.5rem;
   border-radius: 5px;
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   border: 1px solid #c0c0c0;
   text-indent: 1%;
 }
@@ -205,8 +205,8 @@
 }
 
 .project_write_desc_wrapper {
-  width: 15%;
-  margin: 0 2% 0 0;
+  width: 49%;
+  margin: 0 0 0 2%;
 }
 
 .project_write_desc {
@@ -215,7 +215,7 @@
   color: #707070;
   border: 1px solid #c0c0c0;
   border-radius: 5px;
-  text-indent: 5%;
+  text-indent: 2%;
 }
 
 .project_write_enviroment_wrapper {

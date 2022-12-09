@@ -1,25 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./styles/projectDetail.css";
 import "@toast-ui/editor/dist/toastui-editor-viewer.css";
 import { Viewer } from "@toast-ui/react-editor";
+import Breadcrumb from "../components/common/Breadcrumb";
 
 const ProjectDetail = () => {
   // location 초기화
   const location = useLocation();
 
   // useState
-  const [project, setProject] = useState({
-    title: "",
-    content: "",
-    startDate: "",
-    finishDate: "",
-    teamMate: [],
-    language: [],
-    skill: [],
-    enviroment: [],
-  });
+  const [project, setProject] = useState({});
 
   // useEffect
   useEffect(() => {
@@ -34,84 +26,49 @@ const ProjectDetail = () => {
       }/api/v1/projects/${location.pathname.slice(10)}`,
       withCredentials: true,
     }).then((data) => {
-      setProject(data.data.projectInfo[0]);
+      setProject(data?.data?.projectInfo[0]);
     });
   }, [location.pathname]);
-
   return (
     <div className="project_detail">
       <div className="project_detail_container">
-        <div className="breadcrumb">
-          <Link className="breadcrumb" to="/">
-            Home{" "}
-          </Link>
-          &gt;{" "}
-          <Link className="breadcrumb" to="/projects">
-            Projects{" "}
-          </Link>
-          &gt;{" "}
-          <Link
-            className="breadcrumb"
-            to={`/projects/${location.pathname.slice(10)}`}
-          >
-            {location.pathname.slice(10)}
-          </Link>
-        </div>
-        <img
-          src="http://localhost:9999/api/v1/image/Hello.png"
-          alt=""
-          width={400}
-        />
-        <div className="project_detail_title">
-          {project.title}
-          <div className="project_detail_date">
-            <div>{`( ${project.startDate.slice(
-              0,
-              10
-            )} ~ ${project.finishDate.slice(0, 10)} )`}</div>
+        <Breadcrumb crumbs={["projects", location.pathname.slice(10)]} />
+
+        <div className="project_detail_title_container">
+          <div className="project_detail_title">
+            {project?.title}
+
+            <div className="project_detail_date">
+              <div>{`( ${project?.startDate?.slice(
+                0,
+                10
+              )} ~ ${project?.finishDate?.slice(0, 10)} )`}</div>
+            </div>
           </div>
         </div>
-        <div>{`이 프로젝트는 ${project.teamMate.length} 명의 팀원이 ${
-          (new Date(project.finishDate) - new Date(project.startDate)) /
-          24 /
-          60 /
-          60 /
-          1000
-        }일 동안 협업하여 만든 ${project.type} 프로젝트입니다.`}</div>
-        <div> 자세한 사항은 아래를 참고해주세요.</div>
-        <div>
-          {/* {project.teamMate.map((e) => {
-            return e;
-          })} */}
-        </div>
-        <div>
-          {project.language.map((e) => {
-            return (
-              <img
-                src={require(`../img/${e}_logo.png`)}
-                alt={`${e}`}
-                width="100"
-                key={e}
-              />
-            );
-          })}
-        </div>
-        <div>
-          {project.skill.map((e) => {
-            return e;
-          })}
-        </div>
-        <div>
-          {project.enviroment.map((e) => {
-            return e;
-          })}
+
+        <div className="project_detail_desc_container">
+          <div className="project_detail_subtitle">
+            <span className="emoji" role="img" aria-label="project_summary">
+              📘
+            </span>
+            프로젝트 요약
+          </div>
+          <div className="project_detail_desc">
+            <div>{project?.desc}</div>
+            <div>{`${project?.teamMate?.length} 명의 팀원이 `}</div>
+          </div>
         </div>
 
-        {project.content === "" ? (
-          ""
-        ) : (
-          <Viewer initialValue={project.content} />
-        )}
+        <div className="project_detail_content">
+          <div className="project_detail_subtitle">
+            <span className="emoji" role="img" aria-label="project_summary">
+              📖
+            </span>
+            프로젝트 세부내용
+          </div>
+          {project?.content && <Viewer initialValue={project?.content} />}
+        </div>
       </div>
     </div>
   );
