@@ -21,23 +21,8 @@ router.get("/", (req, res) => {
   res.send("hello image");
 });
 
-router.post("/upload", upload.single("image"), (req, res) => {
-  res.json({
-    message: "ok",
-    status: 200,
-    fileName: req.file.filename,
-  });
-});
+router.post("/upload", upload.single("image"), image.uploadImage);
 
-router.get("/:filename", (req, res) => {
-  console.log(req.params);
-  const fileName = req.params.filename;
-
-  fs.readFile(`./uploads/${fileName}`, function (err, data) {
-    res.writeHead(200);
-    res.write(data);
-    res.end();
-  });
-});
+router.get("/:filename", image.getImage);
 
 module.exports = router;

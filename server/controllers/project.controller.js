@@ -40,8 +40,21 @@ const getProjectById = async (req, res, next) => {
   }
 };
 
+/**
+ * 특정 프로젝트를 삭제합니다.
+ */
+const deleteProjectById = async (req, res, next) => {
+  try {
+    const project = await Project.deleteOne({ _id: req.params.id });
+    res.json({ message: "ok", status: 200, projectInfo: project });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   write,
   getProjects,
   getProjectById,
+  deleteProjectById,
 };
