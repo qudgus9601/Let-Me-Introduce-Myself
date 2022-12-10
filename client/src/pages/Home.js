@@ -1,8 +1,10 @@
-import "./style.css";
+import "./styles/home.css";
 import React from "react";
 import SelfIntroduce from "../components/home/SelfIntroduce";
 import Project from "../components/home/Project";
 import Resume from "../components/home/Resume";
+import GoToTop from "../components/common/GoToTop";
+
 const Home = () => {
   return (
     <div className="home">
@@ -19,7 +21,7 @@ const Home = () => {
         <SelfIntroduce />
         <Project />
         <Resume />
-        <div className="home_gotop"></div>
+        <GoToTop />
       </div>
     </div>
   );

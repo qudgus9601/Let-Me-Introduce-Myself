@@ -50,24 +50,37 @@ const ProjectDetail = () => {
         <div className="project_detail_desc_container">
           <div className="project_detail_subtitle">
             <span className="emoji" role="img" aria-label="project_summary">
-              📘
+              📘{" "}
             </span>
             프로젝트 요약
           </div>
           <div className="project_detail_desc">
             <div>{project?.desc}</div>
-            <div>{`${project?.teamMate?.length} 명의 팀원이 `}</div>
+            <div>{`${project?.size} 프로젝트 규모의 ${project?.type} 이며`}</div>
+            <div>{`${project?.teamMate?.length} 명의 팀원이 ${
+              (new Date(project?.finishDate) - new Date(project?.startDate)) /
+              86400000
+            } 일간 제작하였습니다.`}</div>
           </div>
         </div>
 
         <div className="project_detail_content">
           <div className="project_detail_subtitle">
             <span className="emoji" role="img" aria-label="project_summary">
-              📖
+              📖{" "}
             </span>
             프로젝트 세부내용
           </div>
           {project?.content && <Viewer initialValue={project?.content} />}
+        </div>
+
+        <div className="project_detail_content">
+          <div className="project_detail_subtitle">
+            <span className="emoji" role="img" aria-label="project_summary">
+              🧑🏻‍💻{" "}
+            </span>
+            프로젝트 참여인원
+          </div>
         </div>
       </div>
     </div>

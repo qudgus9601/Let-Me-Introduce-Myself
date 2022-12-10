@@ -27,6 +27,10 @@ input:focus {
   outline: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 details {
   margin: 1% 0;
 }
@@ -119,8 +123,4 @@ button:hover {
 
 .lmim_ckeditor5_container {
   margin: 2% 0 0 0;
-}
-
-.emoji {
-  margin-right: 0.5em;
 }
