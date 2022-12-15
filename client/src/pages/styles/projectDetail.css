@@ -29,11 +29,6 @@
   margin-left: 1%;
 }
 
-.project_detail_teammate {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
 .project_detail_title_container {
   width: 100%;
 }
@@ -49,4 +44,9 @@
 
 .project_detail_content {
   margin: 2% 0;
+}
+
+.project_detail_team {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }

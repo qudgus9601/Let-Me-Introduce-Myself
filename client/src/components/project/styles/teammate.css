@@ -1,0 +1,45 @@
+.teammate {
+  width: 100%;
+  height: 60vh;
+}
+
+.teammate_header {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teammate_header_profile_image {
+  width: 70%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.teammate_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.teammate_content_header {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.teammate_content_name {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.teammate_content_mate_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.teammate_content_mate_github_url {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}

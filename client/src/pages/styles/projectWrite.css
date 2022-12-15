@@ -145,15 +145,16 @@
 }
 
 .project_write_input_label {
-  margin: 0 0 0 3%;
+  margin: 0 0 0 2%;
 }
 
-.project_write_input_text {
+.project_write_input_name {
   margin: 0 0 0 1%;
   height: 1.6rem;
   border-radius: 5px;
   border: 1px solid #c0c0c0;
-  text-indent: 5%;
+  text-indent: 10%;
+  width: 7%;
 }
 
 .project_write_input_github {
@@ -162,7 +163,16 @@
   border-radius: 5px;
   border: 1px solid #c0c0c0;
   text-indent: 5%;
-  width: 40%;
+  width: 30%;
+}
+
+.project_write_input_position {
+  margin: 0 0 0 1%;
+  height: 1.6rem;
+  border-radius: 5px;
+  border: 1px solid #c0c0c0;
+  text-indent: 5%;
+  width: 13%;
 }
 
 .project_write_female_button {

@@ -15,9 +15,7 @@ const ProjectWrite = () => {
     return state.user;
   });
 
-  useEffect(() => {
-    console.log(project);
-  });
+  useEffect(() => {});
   useEffect(() => {
     setProject((prev) => {
       return { ...prev, author: user._id };
@@ -25,7 +23,12 @@ const ProjectWrite = () => {
   }, [user._id]);
 
   const addMember = () => {
-    project.teamMate.push({ gender: "male", name: "", github: "" });
+    project.teamMate.push({
+      gender: "male",
+      name: "",
+      github: "",
+      position: "",
+    });
     setProject({ ...project });
   };
 
@@ -225,7 +228,7 @@ const ProjectWrite = () => {
                   </button>
                   <label className="project_write_input_label">이름</label>
                   <input
-                    className="project_write_input_text"
+                    className="project_write_input_name"
                     type="text"
                     value={e.name}
                     disabled={idx === 0 ? true : false}
@@ -247,6 +250,20 @@ const ProjectWrite = () => {
                     }}
                     id="github"
                   />
+                  <label className="project_write_input_label">포지션</label>
+                  <select
+                    className="project_write_input_position"
+                    onChange={(el) => {
+                      changeMemberValue(el, idx);
+                    }}
+                    id="position"
+                  >
+                    <option value={"Front-End"}>Front-End</option>
+                    <option value={"Back-End"}>Back-End</option>
+                    <option value={"Project-Manager"}>Project-Manager</option>
+                    <option value={"Designer"}>Designer</option>
+                    <option value={"Smart-Contract"}>Smart-Contract</option>
+                  </select>
                   {idx === 0 ? (
                     ""
                   ) : (

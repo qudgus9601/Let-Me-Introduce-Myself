@@ -9,6 +9,7 @@ export const projectWrite = {
       gender: "male",
       name: "안병현",
       github: "https://github.com/qudgus9601/",
+      position: "",
     },
   ],
   desc: "",
