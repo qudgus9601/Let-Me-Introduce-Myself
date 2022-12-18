@@ -12,13 +12,12 @@
 
 .projects_center_wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 10fr 1fr 10fr;
   justify-items: center;
 }
 
 .projects_post_card_container {
-  width: 90%;
-  margin: 0 10% 0 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

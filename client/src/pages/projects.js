@@ -54,8 +54,14 @@ const Projects = () => {
                   {projectList &&
                     projectList.map((e, idx) => {
                       return (
-                        <div key={idx} className="projects_post_card_container">
-                          <Card data={e} />
+                        <div key={idx}>
+                          <div
+                            key={idx}
+                            className="projects_post_card_container"
+                          >
+                            <Card data={e} />
+                          </div>
+                          {idx % 2 === 0 ? <div></div> : ""}
                         </div>
                       );
                     })}

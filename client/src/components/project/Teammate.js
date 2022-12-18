@@ -1,15 +1,15 @@
 import "./styles/teammate.css";
 import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
+import github_default_image from "../../img/github_default.png";
 
 const Teammate = ({ mate, idx }) => {
-  console.log(mate);
-
+  console.log(github_default_image);
   return (
     <div className="teammate">
       <header className="teammate_header">
         <img
           className="teammate_header_profile_image"
-          src={mate.githubInfo?.avatar_url}
+          src={mate.githubInfo?.avatar_url || github_default_image}
           alt=""
         />
       </header>
@@ -20,18 +20,23 @@ const Teammate = ({ mate, idx }) => {
             <span role="img" aria-label="crown">
               👑
             </span>
-            {` ${mate?.name}(${mate?.githubInfo?.name})`}
+            {` ${mate?.name || "이름"}(${
+              mate?.githubInfo?.name || "깃허브 아이디"
+            })`}
           </div>
         </header>
         <article className="teammate_content_mate_info">
-          <div>Full Stack</div>
+          <div className="teammate_content_mate_position">
+            {"Full Stack" || "포지션"}
+          </div>
           <a
             className="teammate_content_mate_github_url"
-            href={mate.github}
+            href={mate.github || "https://github.com/"}
             target={"_blank"}
             rel={"noreferrer"}
           >
-            <AiFillGithub size={"1.5rem"} /> {mate.github}
+            <AiFillGithub size={"1.5rem"} />{" "}
+            {mate.github || "https://github.com/"}
           </a>
         </article>
       </article>

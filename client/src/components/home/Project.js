@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import didnow from "../../img/didnow.png";
 import "./styles/project.css";
 const Project = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="project">
       <div className="project_header">
@@ -12,7 +15,12 @@ const Project = () => {
             BackEnd, SmartContract (22/08 - 22/09)
           </div>
         </div>
-        <button className="project_header_detail">
+        <button
+          className="project_header_detail"
+          onClick={() => {
+            navigate("/projects");
+          }}
+        >
           <span role="img" aria-label="project">
             📂
           </span>{" "}

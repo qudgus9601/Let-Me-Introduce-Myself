@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles/card.css";
-import thumbnail from "../../img/didnow-icon.png";
 import { useNavigate } from "react-router-dom";
 
 const Card = ({ data }) => {
@@ -32,7 +31,6 @@ const Card = ({ data }) => {
       "0.2s";
   };
 
-  console.log(data);
   return (
     <div
       className="post_card"
@@ -43,7 +41,11 @@ const Card = ({ data }) => {
     >
       <div className="post_card_grid">
         <div className="post_card_left">
-          <img className="post_card_thumbnail" src={thumbnail} alt="" />
+          <img
+            className="post_card_thumbnail"
+            src={`https://avatars.githubusercontent.com/u/68590947?v=4`}
+            alt=""
+          />
         </div>
         <div className="post_card_right">
           <div className="post_card_title">{data.title}</div>

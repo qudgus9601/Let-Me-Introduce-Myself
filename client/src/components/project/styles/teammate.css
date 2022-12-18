@@ -17,6 +17,10 @@
   border-radius: 50%;
 }
 
+.teammate_header_profile_image::after {
+  padding-bottom: 100%;
+}
+
 .teammate_content {
   display: flex;
   flex-direction: column;
@@ -42,4 +46,12 @@
   font-size: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.teammate_content_mate_position {
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
 }

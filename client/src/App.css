@@ -124,3 +124,11 @@ button:hover {
 .lmim_ckeditor5_container {
   margin: 2% 0 0 0;
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.color-white {
+  color: white;
+}
