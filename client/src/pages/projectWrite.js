@@ -10,12 +10,15 @@ import { projectWrite } from "../models/projectWrite";
 const ProjectWrite = () => {
   const navigate = useNavigate();
   const [project, setProject] = useState(projectWrite);
+  const [leaderIdx, setLeaderIdx] = useState();
 
   const user = useSelector((state) => {
     return state.user;
   });
 
-  useEffect(() => {});
+  useEffect(() => {
+    console.log(project);
+  });
   useEffect(() => {
     setProject((prev) => {
       return { ...prev, author: user._id };
@@ -44,6 +47,10 @@ const ProjectWrite = () => {
         [e.target.id]: e.target.value,
       };
     });
+  };
+
+  const isLeader = (e) => {
+    setLeaderIdx(e.target.value);
   };
 
   const changeMemberValue = (e, idx) => {
@@ -75,6 +82,7 @@ const ProjectWrite = () => {
    * 프로젝트 작성 요청을 보냅니다.
    */
   const submit = () => {
+    project.teamMate[leaderIdx].isLeader = true;
     axios({
       method: "POST",
       url: `${process.env.REACT_APP_SERVER_URL}/api/v1/projects/write`,
@@ -215,6 +223,15 @@ const ProjectWrite = () => {
               <div className="project_write_mate" key={idx}>
                 <label className="project_write_label">Mate {idx + 1}</label>
                 <div className="project_write_mate_input_wrapper">
+                  <input
+                    type="radio"
+                    onChange={(e) => {
+                      isLeader(e);
+                    }}
+                    id={idx}
+                    name="leader"
+                    value={idx}
+                  />
                   <label className="project_write_input_label">성별</label>
                   <button className="project_write_male_button">
                     <span role="img" aria-label="male">
@@ -263,6 +280,7 @@ const ProjectWrite = () => {
                     <option value={"Project-Manager"}>Project-Manager</option>
                     <option value={"Designer"}>Designer</option>
                     <option value={"Smart-Contract"}>Smart-Contract</option>
+                    <option value={"Smart-Contract"}>Full-Stack</option>
                   </select>
                   {idx === 0 ? (
                     ""
