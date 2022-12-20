@@ -33,7 +33,7 @@ const getProjects = async (req, res, next) => {
  */
 const getProjectById = async (req, res, next) => {
   try {
-    const project = await Project.find({ _id: req.params.id });
+    const project = await Project.findOne({ _id: req.params.id });
     res.json({ message: "ok", status: 200, projectInfo: project });
   } catch (error) {
     next(error);
@@ -52,9 +52,25 @@ const deleteProjectById = async (req, res, next) => {
   }
 };
 
+/**
+ * 특정 프로젝트의 조회수를 늘립니다.
+ */
+const incrementViewCount = async (req, res, next) => {
+  try {
+    const project = await Project.findOneAndUpdate(
+      { _id: req.params.id },
+      { $inc: { viewCount: 1 } }
+    );
+    res.json({ message: "ok", status: 200, projectInfo: project });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   write,
   getProjects,
   getProjectById,
   deleteProjectById,
+  incrementViewCount,
 };

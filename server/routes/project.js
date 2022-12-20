@@ -8,5 +8,6 @@ router.post("/write", project.write);
 router.get("/", project.getProjects);
 router.get("/:id", project.getProjectById);
 router.delete("/:id", project.deleteProjectById);
+router.put("/:id", project.incrementViewCount);
 
 module.exports = router;
