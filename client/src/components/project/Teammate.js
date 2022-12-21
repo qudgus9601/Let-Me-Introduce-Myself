@@ -3,7 +3,6 @@ import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
 import github_default_image from "../../img/github_default.png";
 
 const Teammate = ({ mate, idx }) => {
-  console.log(github_default_image);
   return (
     <div className="teammate">
       <header className="teammate_header">
@@ -18,10 +17,10 @@ const Teammate = ({ mate, idx }) => {
           <div className="teammate_content_name">
             {/* fix : 이 부분 팀장일 시 왕관 나오도록 해야함 */}
             <span role="img" aria-label="crown">
-              👑
+              {mate.isLeader === true ? "👑" : "😎"}
             </span>
             {` ${mate?.name || "이름"}(${
-              mate?.githubInfo?.name || "깃허브 아이디"
+              mate?.githubInfo?.name || "계정 없음"
             })`}
           </div>
         </header>
@@ -35,8 +34,7 @@ const Teammate = ({ mate, idx }) => {
             target={"_blank"}
             rel={"noreferrer"}
           >
-            <AiFillGithub size={"1.5rem"} />{" "}
-            {mate.github || "https://github.com/"}
+            <AiFillGithub size={"1.5rem"} /> {mate.github || "깃허브 계정 없음"}
           </a>
         </article>
       </article>

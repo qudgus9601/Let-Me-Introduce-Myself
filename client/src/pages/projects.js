@@ -6,8 +6,10 @@ import ProjectWrite from "./projectWrite";
 import axios from "axios";
 import ProjectDetail from "./projectDetail";
 import { FaPen } from "@react-icons/all-files/fa/FaPen";
+import { useSelector } from "react-redux";
 
 const Projects = () => {
+  const user = useSelector((state) => state.user);
   const [projectList, setProjectList] = useState([]);
   useEffect(() => {});
   useEffect(() => {
@@ -45,9 +47,13 @@ const Projects = () => {
                   <span>{"0" && `Total : ${projectList.length} Projects`}</span>
                   {/* 어드민만 풀어주기 */}
                   <span>
-                    <Link to="/projects/write">
-                      <FaPen />
-                    </Link>
+                    {user.isLogin ? (
+                      <Link to="/projects/write">
+                        <FaPen />
+                      </Link>
+                    ) : (
+                      ""
+                    )}
                   </span>
                 </div>
                 <div className="projects_center_wrapper">

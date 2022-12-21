@@ -4,7 +4,7 @@ import { Editor } from "@toast-ui/react-editor";
 import axios from "axios";
 import "@toast-ui/editor/dist/i18n/ko-kr";
 
-const ToastEditor = ({ setProject }) => {
+const ToastEditor = ({ setProject, defaultContent }) => {
   const editorRef = useRef();
 
   useEffect(() => {});
@@ -20,7 +20,7 @@ const ToastEditor = ({ setProject }) => {
 
   return (
     <Editor
-      initialValue=""
+      initialValue={defaultContent || ""}
       placeholder="내용을 입력해주세요."
       previewStyle="vertical"
       height="600px"
