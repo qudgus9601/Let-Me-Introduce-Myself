@@ -6,11 +6,13 @@
 
 .project_write_title {
   width: 100%;
-  margin: 5% 0 0 0;
-  height: 3.5rem;
-  border-radius: 5px;
+  margin: 5% 0 3% 0;
+  height: 2.5rem;
   font-size: 1.1rem;
-  border: 1px solid #c0c0c0;
+  border-bottom: 1px solid #c0c0c0;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
   text-indent: 1%;
 }
 

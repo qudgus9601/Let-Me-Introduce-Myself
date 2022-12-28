@@ -3,6 +3,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import Card from "../components/common/Card";
 import "./styles/projects.css";
 import ProjectWrite from "./projectWrite";
+import ProjectUpdate from "./projectUpdate";
 import axios from "axios";
 import ProjectDetail from "./projectDetail";
 import { FaPen } from "@react-icons/all-files/fa/FaPen";
@@ -60,15 +61,14 @@ const Projects = () => {
                   {projectList &&
                     projectList.map((e, idx) => {
                       return (
-                        <div key={idx}>
-                          <div
-                            key={idx}
-                            className="projects_post_card_container"
-                          >
-                            <Card data={e} />
+                        <React.Fragment key={idx}>
+                          <div>
+                            <div className="projects_post_card_container">
+                              <Card data={e} />
+                            </div>
                           </div>
-                          {idx % 2 === 0 ? <div></div> : ""}
-                        </div>
+                          {idx % 2 === 0 ? <div key={idx}></div> : ""}
+                        </React.Fragment>
                       );
                     })}
                 </div>
@@ -78,6 +78,7 @@ const Projects = () => {
         }
       />
       <Route exact path="/write" element={<ProjectWrite />} />
+      <Route exact path="/write/:id" element={<ProjectUpdate />} />
       <Route path="/:id" element={<ProjectDetail />} />
     </Routes>
   );

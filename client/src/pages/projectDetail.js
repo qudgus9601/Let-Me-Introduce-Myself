@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./styles/projectDetail.css";
 import "@toast-ui/editor/dist/toastui-editor-viewer.css";
 import { Viewer } from "@toast-ui/react-editor";
@@ -118,7 +118,7 @@ const ProjectDetail = () => {
           <div className="project_detail_title">
             <div className="project_detail_title_date_wrapper">
               <span className="project_detail_title_wrapper">
-                {project?.title}
+                {project?.title || "title"}
               </span>
               <div className="project_detail_date">
                 <div>{`( ${project?.startDate?.slice(
@@ -134,9 +134,12 @@ const ProjectDetail = () => {
                   {`\u00a0`}
                   {project.viewCount + 1}
                 </span>
-                <span className="pointer project_detail_title_button">
+                <Link
+                  to={`/projects/write/${location.pathname.slice(10)}`}
+                  className="pointer project_detail_title_button"
+                >
                   <FaPen />
-                </span>
+                </Link>
                 <span className="pointer project_detail_title_button">
                   <FaTrashAlt onClick={deleteProject} />
                 </span>
@@ -157,7 +160,8 @@ const ProjectDetail = () => {
             <div>{`${project?.size} 프로젝트 규모의 ${project?.type} 이며`}</div>
             <div>{`${project?.teamMate?.length} 명의 팀원이 ${
               (new Date(project?.finishDate) - new Date(project?.startDate)) /
-              86400000
+                86400000 +
+              1
             } 일간 제작하였습니다.`}</div>
           </div>
         </div>

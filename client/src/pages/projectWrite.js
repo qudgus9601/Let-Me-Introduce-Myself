@@ -6,19 +6,19 @@ import ToastEditor from "../components/project/ToastEditor";
 import axios from "axios";
 import Breadcrumb from "../components/common/Breadcrumb";
 import { projectWrite } from "../models/projectWrite";
+import Modal from "../components/common/Modal.js";
 
 const ProjectWrite = () => {
   const navigate = useNavigate();
   const [project, setProject] = useState(projectWrite);
   const [leaderIdx, setLeaderIdx] = useState();
+  const [modalOpen, setModalOpen] = useState(false);
 
   const user = useSelector((state) => {
     return state.user;
   });
 
-  useEffect(() => {
-    console.log(project);
-  });
+  useEffect(() => {});
   useEffect(() => {
     setProject((prev) => {
       return { ...prev, author: user._id };
@@ -99,6 +99,9 @@ const ProjectWrite = () => {
 
   return (
     <div className="project_write">
+      {modalOpen === true ? (
+        <Modal setModalOpen={setModalOpen} elements={<div>hello</div>} />
+      ) : null}
       <Breadcrumb crumbs={["projects", "write"]} />
 
       <input
@@ -313,7 +316,12 @@ const ProjectWrite = () => {
       </div>
 
       <div className="project_write_complete_button_wrapper">
-        <button className="project_write_complete_button" onClick={submit}>
+        <button
+          className="project_write_complete_button"
+          onClick={() => {
+            setModalOpen(true);
+          }}
+        >
           작성완료
         </button>
       </div>

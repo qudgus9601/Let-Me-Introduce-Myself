@@ -7,7 +7,7 @@
   top: 0;
   display: grid;
   grid-template-columns: 1.5fr 6fr repeat(3, 1fr) 1.5fr;
-  z-index: 1000;
+  z-index: 997;
 }
 
 .nav_slogan {
