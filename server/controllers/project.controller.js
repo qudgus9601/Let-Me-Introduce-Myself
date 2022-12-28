@@ -3,7 +3,7 @@ const Project = require("../models/Project");
 /**
  * 새로운 프로젝트를 작성합니다.
  */
-const write = async (req, res, next) => {
+const writeProject = async (req, res, next) => {
   try {
     const newProject = {
       ...req.body,
@@ -67,10 +67,27 @@ const incrementViewCount = async (req, res, next) => {
   }
 };
 
+/**
+ * 특정 프로젝트를 수정합니다.
+ */
+const updateProject = async (req, res, next) => {
+  try {
+    const updatedProject = { ...req.body };
+    const project = await Project.findOneAndUpdate(
+      { _id: req.params.id },
+      { ...updatedProject }
+    );
+    res.json({ message: "ok", status: 200, projectInfo: project });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
-  write,
+  writeProject,
   getProjects,
   getProjectById,
   deleteProjectById,
   incrementViewCount,
+  updateProject,
 };
