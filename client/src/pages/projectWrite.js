@@ -7,6 +7,10 @@ import axios from "axios";
 import Breadcrumb from "../components/common/Breadcrumb";
 import { projectWrite } from "../models/projectWrite";
 import Modal from "../components/common/Modal.js";
+import {
+  ModalContent,
+  ModalHeader,
+} from "../components/common/ProjectWriteModal";
 
 const ProjectWrite = () => {
   const navigate = useNavigate();
@@ -18,7 +22,9 @@ const ProjectWrite = () => {
     return state.user;
   });
 
-  useEffect(() => {});
+  useEffect(() => {
+    console.log(project);
+  });
   useEffect(() => {
     setProject((prev) => {
       return { ...prev, author: user._id };
@@ -86,6 +92,7 @@ const ProjectWrite = () => {
     axios({
       method: "POST",
       url: `${process.env.REACT_APP_SERVER_URL}/api/v1/projects/write`,
+      //eslint-disable-next-line
       data: project,
       withCredentials: true,
     })
@@ -100,7 +107,17 @@ const ProjectWrite = () => {
   return (
     <div className="project_write">
       {modalOpen === true ? (
-        <Modal setModalOpen={setModalOpen} elements={<div>hello</div>} />
+        <Modal
+          setModalOpen={setModalOpen}
+          header={<ModalHeader />}
+          content={
+            <ModalContent
+              project={project}
+              submit={submit}
+              setProject={setProject}
+            />
+          }
+        />
       ) : null}
       <Breadcrumb crumbs={["projects", "write"]} />
 

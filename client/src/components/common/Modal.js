@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import "./styles/modal.css";
 
-const Modal = ({ setModalOpen, title, elements }) => {
+const Modal = ({ setModalOpen, header, content, footer }) => {
   const modal = useRef();
   useEffect(() => {
     // mount
@@ -16,8 +16,9 @@ const Modal = ({ setModalOpen, title, elements }) => {
   return (
     <div className="modal" ref={modal}>
       <div className="modal_container">
-        <header className="modal_title">{title}</header>
-        <main className="modal_content">{elements}</main>
+        <header className="modal_title">{header}</header>
+        <main className="modal_content">{content}</main>
+        <footer className="modal_footer">{footer}</footer>
       </div>
       <div
         className="modal_background"

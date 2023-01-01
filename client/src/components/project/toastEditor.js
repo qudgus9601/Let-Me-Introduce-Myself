@@ -49,8 +49,6 @@ const ToastEditor = ({ setProject, defaultContent }) => {
               withCredentials: true,
             });
 
-            console.log(imageURI);
-
             callback(
               `${
                 process.env.REACT_APP_SERVER_URL

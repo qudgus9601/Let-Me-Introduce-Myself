@@ -18,4 +18,5 @@ export const projectWrite = {
   language: "",
   skill: "",
   enviroment: "",
+  thumbnail: "",
 };

@@ -42,6 +42,7 @@
 .post_card_thumbnail {
   width: 110%;
   height: 110%;
+  background-color: black;
 }
 
 .post_card_right {

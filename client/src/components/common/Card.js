@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles/card.css";
 import { useNavigate } from "react-router-dom";
+import mainLogo from "../../img/behoney_logo.png";
 
 const Card = ({ data }) => {
   // navigation 초기화
@@ -31,6 +32,7 @@ const Card = ({ data }) => {
       "0.2s";
   };
 
+  console.log(data);
   return (
     <div
       className="post_card"
@@ -43,7 +45,7 @@ const Card = ({ data }) => {
         <div className="post_card_left">
           <img
             className="post_card_thumbnail"
-            src={`https://avatars.githubusercontent.com/u/68590947?v=4`}
+            src={data.thumbnail || mainLogo}
             alt=""
           />
         </div>
