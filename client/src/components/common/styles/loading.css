@@ -1,0 +1,9 @@
+.project_loading {
+  position: absolute;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  background-color: red;
+  width: 10%;
+  height: 1.4rem;
+}

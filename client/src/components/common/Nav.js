@@ -1,8 +1,8 @@
-import "./style.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import "./styles/nav.css";
 
 const Nav = () => {
   const user = useSelector((state) => state.user);

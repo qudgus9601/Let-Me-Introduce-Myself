@@ -43,6 +43,7 @@
   width: 110%;
   height: 110%;
   background-color: black;
+  background-size: cover;
 }
 
 .post_card_right {

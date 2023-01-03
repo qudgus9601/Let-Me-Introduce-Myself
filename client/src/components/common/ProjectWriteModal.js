@@ -1,5 +1,5 @@
 import "./styles/projectwritemodal.css";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import mainLogo from "../../img/behoney_logo.png";
 import axios from "axios";
 import { AiOutlinePlus } from "@react-icons/all-files/ai/AiOutlinePlus";
@@ -17,6 +17,7 @@ const ModalHeader = () => {
 };
 
 const ModalContent = ({ project, submit, setProject }) => {
+  useEffect(() => {});
   /**
    * 썸네일을 업로드합니다.
    */
@@ -25,13 +26,9 @@ const ModalContent = ({ project, submit, setProject }) => {
     if (!!e.target.value) {
       const imageData = new FormData();
       const blobType = blob.type.toString().slice(6);
-      const file = new File(
-        [blob],
-        encodeURI(`${project.title}-thumbnail.${blobType}`),
-        {
-          type: blob.type,
-        }
-      );
+      const file = new File([blob], encodeURI(`${project.title}.${blobType}`), {
+        type: blob.type,
+      });
       imageData.append("image", file);
       axios({
         method: "POST",
@@ -41,15 +38,17 @@ const ModalContent = ({ project, submit, setProject }) => {
         },
         data: imageData,
         withCredentials: true,
-      }).then((data) => {
-        const thumbnailURL = `${process.env.REACT_APP_SERVER_URL}/api/v1/image/${data.data.fileName}`;
-        setProject((prev) => {
-          return {
-            ...prev,
-            thumbnail: thumbnailURL,
-          };
-        });
-      });
+      })
+        .then((data) => {
+          const thumbnailURL = `${process.env.REACT_APP_SERVER_URL}/api/v1/image/${data.data.fileName}`;
+          setProject((prev) => {
+            return {
+              ...prev,
+              thumbnail: thumbnailURL,
+            };
+          });
+        })
+        .catch((error) => {});
     }
   };
 

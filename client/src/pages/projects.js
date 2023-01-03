@@ -8,12 +8,20 @@ import axios from "axios";
 import ProjectDetail from "./projectDetail";
 import { FaPen } from "@react-icons/all-files/fa/FaPen";
 import { useSelector } from "react-redux";
+import Loading from "../components/common/Loading";
+import Breadcrumb from "../components/common/Breadcrumb";
 
 const Projects = () => {
   const user = useSelector((state) => state.user);
+
   const [projectList, setProjectList] = useState([]);
-  useEffect(() => {});
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
+    console.log(isLoading);
+    console.log(projectList);
+  });
+  useEffect(() => {
+    setIsLoading(true);
     fetchProjects();
   }, []);
 
@@ -24,6 +32,7 @@ const Projects = () => {
       withCredentials: true,
     });
     setProjectList(projects.data.projectsInfo);
+    setIsLoading(false);
   };
 
   return (
@@ -35,43 +44,42 @@ const Projects = () => {
           <>
             <div className="projects">
               <div className="projects_center">
-                <div className="breadcrumb">
-                  <Link className="breadcrumb" to="/">
-                    Home{" "}
-                  </Link>
-                  &gt;{" "}
-                  <Link className="breadcrumb" to="/projects">
-                    Projects
-                  </Link>
-                </div>
-                <div className="projects_action_menu">
-                  <span>{"0" && `Total : ${projectList.length} Projects`}</span>
-                  {/* 어드민만 풀어주기 */}
-                  <span>
-                    {user.isLogin ? (
-                      <Link to="/projects/write">
-                        <FaPen />
-                      </Link>
-                    ) : (
-                      ""
-                    )}
-                  </span>
-                </div>
-                <div className="projects_center_wrapper">
-                  {projectList &&
-                    projectList.map((e, idx) => {
-                      return (
-                        <React.Fragment key={idx}>
-                          <div>
-                            <div className="projects_post_card_container">
-                              <Card data={e} />
-                            </div>
-                          </div>
-                          {idx % 2 === 0 ? <div key={idx}></div> : ""}
-                        </React.Fragment>
-                      );
-                    })}
-                </div>
+                <Breadcrumb crumbs={["Projects"]} />
+                {isLoading ? (
+                  <Loading title={"프로젝트 로딩 중"} />
+                ) : (
+                  <>
+                    <div className="projects_action_menu">
+                      <span>
+                        {"0" && `Total : ${projectList.length} Projects`}
+                      </span>
+                      {/* 어드민만 풀어주기 */}
+                      <span>
+                        {user.isLogin ? (
+                          <Link to="/projects/write">
+                            <FaPen />
+                          </Link>
+                        ) : (
+                          ""
+                        )}
+                      </span>
+                    </div>
+                    <div className="projects_center_wrapper">
+                      {projectList &&
+                        projectList.map((e, idx) => {
+                          return (
+                            <React.Fragment key={idx}>
+                              <div className="projects_post_card_container">
+                                <Card data={e} />
+                              </div>
+
+                              {idx % 2 === 0 ? <div key={idx}></div> : ""}
+                            </React.Fragment>
+                          );
+                        })}
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </>

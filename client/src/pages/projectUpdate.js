@@ -4,16 +4,26 @@ import Breadcrumb from "../components/common/Breadcrumb";
 import ToastEditor from "../components/project/ToastEditor";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import Modal from "../components/common/Modal";
+import {
+  ModalContent,
+  ModalHeader,
+} from "../components/common/ProjectWriteModal";
+import { projectWrite } from "../models/projectWrite";
 
 const ProjectUpdate = ({ id, defaultValue }) => {
   const navigate = useNavigate();
-  const [project, setProject] = useState({});
+  const [project, setProject] = useState(projectWrite);
   const [leaderIdx, setLeaderIdx] = useState();
+  const [modalOpen, setModalOpen] = useState(false);
 
   const user = useSelector((state) => {
     return state.user;
   });
 
+  useEffect(() => {
+    console.log(project);
+  });
   useEffect(() => {
     axios({
       method: "GET",
@@ -111,6 +121,19 @@ const ProjectUpdate = ({ id, defaultValue }) => {
 
   return (
     <div className="project_write">
+      {modalOpen === true ? (
+        <Modal
+          setModalOpen={setModalOpen}
+          header={<ModalHeader />}
+          content={
+            <ModalContent
+              project={project}
+              submit={updateSubmit}
+              setProject={setProject}
+            />
+          }
+        />
+      ) : null}
       <Breadcrumb
         crumbs={["projects", "write", window.location.pathname.slice(16)]}
       />
@@ -342,7 +365,9 @@ const ProjectUpdate = ({ id, defaultValue }) => {
       <div className="project_write_complete_button_wrapper">
         <button
           className="project_write_complete_button"
-          onClick={updateSubmit}
+          onClick={() => {
+            setModalOpen(true);
+          }}
         >
           작성완료
         </button>

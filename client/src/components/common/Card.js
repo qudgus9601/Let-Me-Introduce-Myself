@@ -32,7 +32,6 @@ const Card = ({ data }) => {
       "0.2s";
   };
 
-  console.log(data);
   return (
     <div
       className="post_card"
