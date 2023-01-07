@@ -9,6 +9,8 @@ const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const passportConfig = require("./config/passport");
 const session = require("express-session");
+const https = require("https");
+const fs = require("fs");
 
 // config
 const app = express();
@@ -46,11 +48,18 @@ app.use(passport.session());
 // route
 app.use("/api/v1", Router);
 
-app.get("/", (req, res) => {
-  res.send("HELLO HONEY 🐝");
-});
-
-app.listen(process.env.SERVER_PORT, () => {
-  console.log("🍀 Server Listening");
-  console.log("🐝 Hello HoneyB");
-});
+// https로 서버를 엽니다.
+https
+  .createServer(
+    {
+      key: fs.readFileSync(__dirname + "/key.pem", "utf-8"),
+      cert: fs.readFileSync(__dirname + "/cert.pem", "utf-8"),
+    },
+    app.get("/", (req, res) => {
+      res.send("HELLO HONEY 🐝");
+    })
+  )
+  .listen(process.env.SERVER_PORT, () => {
+    console.log("🍀 Server Listening");
+    console.log("🐝 Hello HoneyB");
+  });
