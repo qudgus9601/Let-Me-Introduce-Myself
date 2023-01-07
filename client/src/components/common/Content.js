@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../../redux/userSlice";
 import axios from "axios";
 import Projects from "../../pages/projects";
+import TestPage from "../../pages/testPage";
 
 const Content = () => {
   // configure
@@ -47,6 +48,7 @@ const Content = () => {
         <Route path="/signin/*" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/projects/*" element={<Projects />} />
+        <Route path="/test" element={<TestPage />} />
       </Routes>
     </div>
   );

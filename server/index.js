@@ -51,5 +51,6 @@ app.get("/", (req, res) => {
 });
 
 app.listen(process.env.SERVER_PORT, () => {
-  console.log("Hello Honey 🐝");
+  console.log("🍀 Server Listening");
+  console.log("🐝 Hello HoneyB");
 });

@@ -1,11 +1,14 @@
 const multer = require("multer");
 const fs = require("fs");
 const sharp = require("sharp");
+const AWS = require("../utils/aws");
+require("dotenv").config();
 
 /**
- * 이미지 파일을 업로드합니다.
+ * @deprecated *
+ * 이미지 파일을 로컬 저장소에 업로드합니다.
  */
-const uploadImage = (req, res, next) => {
+const uploadImageToLocal = (req, res, next) => {
   try {
     const upload = multer({
       storage: multer.diskStorage({
@@ -30,9 +33,10 @@ const uploadImage = (req, res, next) => {
 };
 
 /**
- * 축소된 이미지 파일을 업로드합니다.
+ * @deprecated *
+ * 축소된 이미지 파일을 로컬 저장소에 업로드합니다.
  */
-const uploadResizedImage = (req, res) => {
+const uploadResizedImageToLocal = (req, res) => {
   try {
     const file = req.file;
     sharp(file.path)
@@ -78,6 +82,7 @@ const uploadResizedImage = (req, res) => {
 };
 
 /**
+ * @deprecated *
  * 썸네일 이미지 파일을 업로드합니다.
  */
 const uploadThumbnail = async (req, res) => {
@@ -107,7 +112,8 @@ const uploadThumbnail = async (req, res) => {
 };
 
 /**
- * 특정 이미지를 출력합니다.
+ * @deprecated
+ * 특정 로컬 저장소의 이미지를 출력합니다.
  */
 const getImage = (req, res) => {
   const fileName = req.params.filename;
@@ -118,9 +124,45 @@ const getImage = (req, res) => {
   });
 };
 
+/**
+ * 이미지를 S3에 저장합니다.
+ */
+const uploadImageToS3 = async (req, res, next) => {
+  const s3 = new AWS.S3();
+  const file = await s3
+    .getObject({
+      Bucket: process.env.AWS_S3_BUCKET,
+      Key: req.file.key,
+    })
+    .promise();
+  const buffer = await sharp(file.Body).webp({ lossless: true }).toBuffer();
+  await s3
+    .putObject({
+      Bucket: process.env.AWS_S3_BUCKET,
+      Key: `resized/resized-${
+        req.file.key.split("/").pop().split(".")[0]
+      }.webp`,
+      ACL: "public-read",
+      Body: buffer,
+    })
+    .promise()
+    .then(() => {
+      res.json({
+        message: "ok",
+        status: 200,
+        fileURL: `https://${process.env.AWS_S3_BUCKET}.s3.${
+          process.env.AWS_S3_REGION
+        }.amazonaws.com/resized/resized-${
+          req.file.key.split("/").pop().split(".")[0]
+        }.webp`,
+      });
+    });
+};
+
 module.exports = {
-  uploadImage,
-  uploadResizedImage,
+  uploadImageToLocal,
+  uploadResizedImageToLocal,
   getImage,
   uploadThumbnail,
+  uploadImageToS3,
 };
