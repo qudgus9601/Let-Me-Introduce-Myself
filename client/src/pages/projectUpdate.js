@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Breadcrumb from "../components/common/Breadcrumb";
-import ToastEditor from "../components/project/ToastEditor";
+import ToastEditor from "../components/project/toastEditor";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import Modal from "../components/common/Modal";

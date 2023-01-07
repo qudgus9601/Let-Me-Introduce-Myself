@@ -149,7 +149,7 @@ const ProjectDetail = () => {
         </div>
 
         <div className="project_detail_desc_container">
-          <div className="project_detail_subtitle">
+          {/* <div className="project_detail_subtitle">
             <span className="emoji" role="img" aria-label="project_summary">
               📘{" "}
             </span>
@@ -163,16 +163,10 @@ const ProjectDetail = () => {
                 86400000 +
               1
             } 일간 제작하였습니다.`}</div>
-          </div>
+          </div> */}
         </div>
 
         <div className="project_detail_content">
-          <div className="project_detail_subtitle">
-            <span className="emoji" role="img" aria-label="project_summary">
-              📖{" "}
-            </span>
-            프로젝트 세부내용
-          </div>
           {project?.content && <Viewer initialValue={project?.content} />}
         </div>
 
