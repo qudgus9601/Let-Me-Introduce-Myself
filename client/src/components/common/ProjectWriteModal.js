@@ -74,7 +74,7 @@ const ModalContent = ({ project, submit, setProject }) => {
             id="thumbnail"
             type="file"
             onChange={(e) => {
-              uploadThumbnail(e, project.title);
+              uploadThumbnail(e);
             }}
             ref={thumbnail}
           />
