@@ -44,17 +44,12 @@ const ToastEditor = ({ setProject, defaultContent }) => {
               headers: {
                 "Content-Type": "multipart/form-data",
               },
-              url: `${process.env.REACT_APP_SERVER_URL}/api/v1/image/upload`,
+              url: `${process.env.REACT_APP_SERVER_URL}/api/v1/image/upload/s3`,
               data: imageData,
               withCredentials: true,
             });
 
-            callback(
-              `${
-                process.env.REACT_APP_SERVER_URL
-              }/api/v1/image/${encodeURIComponent(imageURI.data.fileName)}`,
-              "image"
-            );
+            callback(imageURI.data.fileURL, "image");
           } catch (error) {
             console.log(error);
           }

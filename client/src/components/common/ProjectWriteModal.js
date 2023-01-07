@@ -32,7 +32,7 @@ const ModalContent = ({ project, submit, setProject }) => {
       imageData.append("image", file);
       axios({
         method: "POST",
-        url: `${process.env.REACT_APP_SERVER_URL}/api/v1/image/upload/thumbnail`,
+        url: `${process.env.REACT_APP_SERVER_URL}/api/v1/image/upload/thumbnail/s3`,
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -40,7 +40,7 @@ const ModalContent = ({ project, submit, setProject }) => {
         withCredentials: true,
       })
         .then((data) => {
-          const thumbnailURL = `${process.env.REACT_APP_SERVER_URL}/api/v1/image/${data.data.fileName}`;
+          const thumbnailURL = data.data.fileURL;
           setProject((prev) => {
             return {
               ...prev,

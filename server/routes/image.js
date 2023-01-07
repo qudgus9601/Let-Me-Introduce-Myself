@@ -14,7 +14,15 @@ router.post(
   localUpload.single("image"),
   image.uploadThumbnail
 );
+
 router.get("/:filename", image.getImage);
+
 router.post("/upload/s3", uploadToS3.single("image"), image.uploadImageToS3);
+
+router.post(
+  "/upload/thumbnail/s3",
+  uploadToS3.single("image"),
+  image.uploadThumbnailImageToS3
+);
 
 module.exports = router;

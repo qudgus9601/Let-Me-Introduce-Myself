@@ -159,10 +159,49 @@ const uploadImageToS3 = async (req, res, next) => {
     });
 };
 
+/**
+ * 썸네일 이미지를 S3에 업로드 합니다.
+ */
+const uploadThumbnailImageToS3 = async (req, res, next) => {
+  const s3 = new AWS.S3();
+  const file = await s3
+    .getObject({
+      Bucket: process.env.AWS_S3_BUCKET,
+      Key: req.file.key,
+    })
+    .promise();
+  const buffer = await sharp(file.Body)
+    .resize({ width: 300 })
+    .webp({ lossless: true })
+    .toBuffer();
+  await s3
+    .putObject({
+      Bucket: process.env.AWS_S3_BUCKET,
+      Key: `thumbnail/resized-${
+        req.file.key.split("/").pop().split(".")[0]
+      }.webp`,
+      ACL: "public-read",
+      Body: buffer,
+    })
+    .promise()
+    .then(() => {
+      res.json({
+        message: "ok",
+        status: 200,
+        fileURL: `https://${process.env.AWS_S3_BUCKET}.s3.${
+          process.env.AWS_S3_REGION
+        }.amazonaws.com/thumbnail/resized-${
+          req.file.key.split("/").pop().split(".")[0]
+        }.webp`,
+      });
+    });
+};
+
 module.exports = {
   uploadImageToLocal,
   uploadResizedImageToLocal,
   getImage,
   uploadThumbnail,
   uploadImageToS3,
+  uploadThumbnailImageToS3,
 };
