@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./styles/projectWrite.css";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import ToastEditor from "../components/project/ToastEditor";
+import ToastEditor from "../components/project/toastEditor.js";
 import axios from "axios";
 import Breadcrumb from "../components/common/Breadcrumb";
 import { projectWrite } from "../models/projectWrite";

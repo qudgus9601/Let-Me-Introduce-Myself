@@ -111,4 +111,6 @@ uploads/
 
 #### 절대 지우지 말것 ########
 awsconfig.json
+cert.pem
+key.pem
 ##########################
