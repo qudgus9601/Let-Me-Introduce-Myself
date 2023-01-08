@@ -32,20 +32,18 @@ const LocalSignIn = () => {
   //useDispatch
   const dispatch = useDispatch();
 
-  /* 
-    desc:
-      - 엔터 키 입력을 확인합니다.
-  */
+  /**
+   * 엔터 키 입력을 확인합니다.
+   */
   const isEnter = (e) => {
     if (e.keyCode === 13) {
       signIn();
     }
   };
 
-  /* 
-    desc:
-      - 서버로 로그인 요청을 보냅니다.
-  */
+  /**
+   * 서버로 로그인 요청을 보냅니다.
+   */
   const signIn = async () => {
     try {
       if (!/^(.){8,30}$/.test(userDto.email)) {
@@ -72,10 +70,9 @@ const LocalSignIn = () => {
     } catch (error) {}
   };
 
-  /* 
-    desc:
-      - 입력값에 따라 상태를 변화시킵니다.
-  */
+  /**
+   * 입력값에 따라 상태를 변화시킵니다.
+   */
   const changeInput = (e) => {
     setUserDto((prev) => {
       return {

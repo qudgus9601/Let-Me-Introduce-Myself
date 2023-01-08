@@ -6,12 +6,14 @@ const userSlice = createSlice({
     _id: "",
     email: "",
     username: "",
+    role: "",
     isLogin: false,
   },
   reducers: {
     login: (state, action) => {
       state._id = action.payload._id;
       state.email = action.payload.email;
+      state.role = action.payload.role;
       state.username = action.payload.username;
       state.isLogin = action.payload.isLogin;
       return state;
@@ -20,6 +22,7 @@ const userSlice = createSlice({
       state._id = "";
       state.email = "";
       state.username = "";
+      state.role = "";
       state.isLogin = false;
       return state;
     },

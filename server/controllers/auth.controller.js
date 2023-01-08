@@ -29,9 +29,9 @@ const signUp = async (req, res, next) => {
   }
 };
 
-/*
-  desc : 자체적인 로그인을 진행합니다.
-*/
+/**
+ * 자체적인 로그인을 진행합니다.
+ */
 const signIn = async (req, res, next) => {
   try {
     // user 를 찾는다.
@@ -73,9 +73,9 @@ const signIn = async (req, res, next) => {
   }
 };
 
-/*
-  desc : 쿠키에 담긴 AccessToken을 통해 유저 정보를 반환합니다.
-*/
+/**
+ * 쿠키에 담긴 AccessToken을 통해 유저 정보를 반환합니다.
+ */
 const getUserByAccessToken = (req, res, next) => {
   try {
     if (req.cookies.AccessToken) {
@@ -102,9 +102,9 @@ const getUserByAccessToken = (req, res, next) => {
   }
 };
 
-/* 
-  desc : 토큰을 만료시켜 로그아웃을 진행합니다.
-*/
+/**
+ * 토큰을 만료시켜 로그아웃을 진행합니다.
+ */
 const logout = (req, res, next) => {
   try {
     res
