@@ -15,9 +15,7 @@ router.get(
   passport.authenticate("kakao", {
     failureRedirect: "/",
   }),
-  (req, res) => {
-    res.redirect("http://localhost:3000");
-  }
+  auth.signInByKakao
 );
 
 module.exports = router;

@@ -116,9 +116,32 @@ const logout = (req, res, next) => {
   }
 };
 
+/**
+ * 카카오 로그인을 시도합니다.
+ */
+const signInByKakao = async (req, res, next) => {
+  try {
+    const user = await User.findOne({ email: req.user.email });
+    console.log(user);
+    const { password, ...rest } = user.toObject();
+    const token = jwt.sign({ ...rest }, process.env.JWT_SECRET, {
+      issuer: "BEHONEY",
+      expiresIn: "7d",
+    });
+    res
+      .cookie("AccessToken", token, {
+        httpOnly: true,
+        secure: false,
+        maxAge: 60 * 60 * 24 * 7 * 1000,
+      })
+      .redirect("https://localhost:3000/");
+  } catch (error) {}
+};
+
 module.exports = {
   signIn,
   signUp,
   getUserByAccessToken,
   logout,
+  signInByKakao,
 };
