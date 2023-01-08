@@ -17,5 +17,16 @@ router.get(
   }),
   auth.signInByKakao
 );
+router.get(
+  "/oauth/google",
+  passport.authenticate("google", { scope: ["email", "profile"] })
+);
+router.get(
+  "/oauth/google/callback",
+  passport.authenticate("google", {
+    failureRedirect: "/",
+  }),
+  auth.signInByGoogle
+);
 
 module.exports = router;

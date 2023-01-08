@@ -21,10 +21,13 @@ const SignInButton = () => {
         <img className="signin_body_kakao_icon" src={kakaoIcon} alt="" />
         카카오 로그인
       </a>
-      <button className="signin_body_google">
+      <a
+        className="signin_body_google"
+        href={`${process.env.REACT_APP_SERVER_URL}/api/v1/auth/oauth/google`}
+      >
         <img className="signin_body_google_icon" src={googleIcon} alt="" />
         구글 로그인
-      </button>
+      </a>
     </>
   );
 };
