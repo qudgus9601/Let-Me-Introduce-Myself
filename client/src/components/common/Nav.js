@@ -17,25 +17,35 @@ const Nav = () => {
   };
   return (
     <div className="nav">
-      <div className="nav_slogan">
-        <Link to="/">Challenging Developer</Link>
-      </div>
+      <div className="nav_container">
+        <div className="nav_left">
+          <div className="nav_slogan">
+            <Link to="/">Challenging Developer</Link>
+          </div>
+        </div>
 
-      <Link className="nav_menu" to="/">
-        HOME
-      </Link>
-      <Link className="nav_menu" to="/projects">
-        PROJECT
-      </Link>
-      {user.isLogin ? (
-        <button className="nav_menu" onClick={logout}>
-          LOGOUT
-        </button>
-      ) : (
-        <Link className="nav_menu" to="/signin">
-          SIGNIN
-        </Link>
-      )}
+        <div className="nav_right">
+          <Link className="nav_menu" to="/resume">
+            RESUME
+          </Link>
+          <Link className="nav_menu" to="/">
+            HOME
+          </Link>
+          <Link className="nav_menu" to="/projects">
+            PROJECT
+          </Link>
+
+          {user.isLogin ? (
+            <Link className="nav_menu" onClick={logout}>
+              LOGOUT
+            </Link>
+          ) : (
+            <Link className="nav_menu" to="/signin">
+              SIGNIN
+            </Link>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
