@@ -1,0 +1,8 @@
+.home {
+  min-height: 100vh;
+}
+
+.home_container {
+  width: 1200px;
+  margin: 0 auto;
+}

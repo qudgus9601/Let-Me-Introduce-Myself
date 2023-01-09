@@ -1,0 +1,9 @@
+.content {
+  width: 100vw;
+  min-width: 1200px;
+}
+
+.content_container {
+  display: flex;
+  justify-content: center;
+}

@@ -1,7 +1,7 @@
 import "./App.css";
-import Content from "./components/common/Content";
-import Nav from "./components/common/Nav";
-import Footer from "./components/common/Footer";
+import Content from "./common/components/Content";
+import Nav from "./common/components/Nav";
+import Footer from "./common/components/Footer";
 // import { useSelector } from "react-redux";
 
 function App() {

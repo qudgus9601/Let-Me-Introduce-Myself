@@ -62,10 +62,6 @@ details[open] summary ~ * {
   animation: sweep 0.5s ease-in-out;
 }
 
-.content {
-  width: 100vw;
-}
-
 .list_style_disc li {
   list-style: inside disc;
 }

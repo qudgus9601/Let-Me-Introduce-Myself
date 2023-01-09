@@ -1,0 +1,16 @@
+.home_main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.home_main_desc {
+  font-size: 50px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+}
+
+.home_main_text {
+  display: inline;
+}
