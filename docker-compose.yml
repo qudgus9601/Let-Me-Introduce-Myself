@@ -5,18 +5,18 @@ services:
     build:
       context: ./server
       dockerfile: dockerfile
-    image: bhyunnie/lmim:latest
+    image: bhyunnie/lmim_server:latest
     expose:
-      - 9991
+      - 9999
     ports:
-      - 9991:9999
+      - 9999:9999
     container_name: lmim_server
 
   client:
     build:
       context: ./client
       dockerfile: dockerfile
-    image: bhyunnie/lmim_client:5.0
+    image: bhyunnie/lmim_client:latest
     expose:
       - 3000
     ports:
