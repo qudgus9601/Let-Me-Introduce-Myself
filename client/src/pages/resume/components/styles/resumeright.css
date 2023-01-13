@@ -1,0 +1,56 @@
+.resume_right {
+  background-color: #e1e1e1;
+}
+
+.resume_right_container {
+  margin: 0 0 0 4%;
+  width: 96%;
+  height: 100%;
+}
+
+.resume_section_header {
+  width: 100%;
+  height: 40px;
+  font-size: 28px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  background-color: #777777;
+}
+
+.resume_subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 10px 0 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.resume_stacks {
+  margin: 0 0 20px 0;
+}
+
+.resume_icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 2px;
+  margin: 0 10px 0 0;
+}
+
+.resume_explain {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.resume_explain li {
+  font-size: 15px;
+}
+
+.resume_explain li::before {
+  content: "-";
+  margin: 0 5px 0 0;
+}
+
+.resume_projects {
+  margin: 0 0 20px 0;
+}

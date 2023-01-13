@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 1vmax;
+  overflow-x: hidden;
 }
 
 button {
@@ -113,10 +114,6 @@ button:hover {
   }
 }
 
-.breadcrumb {
-  color: #777777;
-}
-
 .lmim_ckeditor5_container {
   margin: 2% 0 0 0;
 }
@@ -126,7 +123,27 @@ button:hover {
 }
 
 .color-white {
-  color: white;
+  color: white !important;
+}
+
+.color-black {
+  color: black !important;
+}
+
+.color-gray {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.back-white {
+  background-color: white;
+}
+
+.font-small {
+  font-size: 15px !important;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .fadein {

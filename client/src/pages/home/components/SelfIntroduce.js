@@ -1,5 +1,4 @@
 import React from "react";
-import myself from "../img/myself.jpeg";
 import "./styles/selfIntroduce.css";
 
 const SelfIntroduce = () => {
@@ -33,7 +32,13 @@ const SelfIntroduce = () => {
           </button>
         </div>
         <div className="selfIntroduce_right">
-          <img className="selfIntroduce_right_img" src={myself} alt=""></img>
+          <img
+            className="selfIntroduce_right_img"
+            src={
+              "https://lmim.s3.ap-northeast-2.amazonaws.com/thumbnail/resized-1673350398246.webp"
+            }
+            alt=""
+          ></img>
         </div>
       </div>
     </div>

@@ -8,6 +8,8 @@ import { login } from "../../redux/userSlice";
 import axios from "axios";
 import Projects from "../../pages/project/projects";
 import TestPage from "../../pages/testpage/testPage";
+import Resume from "../../pages/resume/resume";
+import Blog from "../../pages/blog/blog";
 import "./styles/content.css";
 
 const Content = () => {
@@ -51,6 +53,8 @@ const Content = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/projects/*" element={<Projects />} />
           <Route path="/test" element={<TestPage />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </div>
     </div>

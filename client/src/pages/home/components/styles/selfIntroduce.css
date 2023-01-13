@@ -9,7 +9,7 @@
 .selfIntroduce_container {
   display: flex;
   justify-content: space-between;
-  height: 50%;
+  height: 100%;
   width: 100%;
 }
 
@@ -22,19 +22,19 @@
   background-color: black;
   border: 0px;
   border-radius: 10px;
-  height: 13%;
+  height: 40px;
   width: 50%;
-  font-size: 1vmax;
+  font-size: 14px;
 }
 
 .selfIntroduce_left_title {
-  font-size: 2.2vmax;
+  font-size: 35px;
   font-weight: 700;
 }
 
 .selfIntroduce_left_desc_container {
   margin: 10% 0 0 0;
-  font-size: 1.2vmax;
+  font-size: 16px;
 }
 
 .selfIntroduce_left_desc {

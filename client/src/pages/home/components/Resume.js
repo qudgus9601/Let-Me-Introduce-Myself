@@ -4,13 +4,9 @@ import pdfIcon from "../img/pdf_ico.svg";
 
 const Resume = () => {
   return (
-    <div className="resume">
+    <React.Fragment>
       <header className="resume_header">
         <div className="resume_header_title">Resume</div>
-        <button className="resume_header_pdf_button">
-          <img className="resume_header_pdf_icon" src={pdfIcon} alt="" />
-          {`\u00A0 PDF로 발급`}
-        </button>
       </header>
       <section className="resume_section">
         <article className="resume_section_factor">
@@ -498,7 +494,13 @@ const Resume = () => {
           </div>
         </article>
       </section>
-    </div>
+      <div className="resume_print_container">
+        <button className="resume_pdf_button">
+          <img className="resume_pdf_icon" src={pdfIcon} alt="" />
+          {`\u00A0 PDF로 발급`}
+        </button>
+      </div>
+    </React.Fragment>
   );
 };
 

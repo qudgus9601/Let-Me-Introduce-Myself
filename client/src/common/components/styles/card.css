@@ -12,7 +12,7 @@
   display: grid;
   grid-template-columns: 5fr 7fr;
   box-shadow: 0px 0px 2px black;
-  border-radius: 0.5rem;
+  border-radius: 5px;
 }
 
 .post_card_grid:hover {
@@ -35,8 +35,8 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .post_card_thumbnail {
@@ -55,14 +55,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-size: 14px;
 }
 
 .post_card_title {
-  font-size: 1.8vmax;
+  font-size: 24px;
   font-weight: 700;
 }
 
 .post_card_view_count {
   color: #777777;
   text-align: right;
+  font-size: 12px;
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import didnow from "../img/didnow.png";
 import "./styles/project.css";
 const Project = () => {
   const navigate = useNavigate();
@@ -28,7 +27,13 @@ const Project = () => {
         </button>
       </div>
       <div className="project_body">
-        <img className="project_body_img" src={didnow} alt="" />
+        <img
+          className="project_body_img"
+          src={
+            "https://lmim.s3.ap-northeast-2.amazonaws.com/original/1673350565984.png"
+          }
+          alt=""
+        />
       </div>
     </div>
   );

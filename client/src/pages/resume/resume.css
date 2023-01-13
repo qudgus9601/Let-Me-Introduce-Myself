@@ -1,0 +1,24 @@
+.resume {
+  min-height: 100vh;
+  margin-top: 200px;
+}
+
+.resume_container {
+  width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  height: 1680px;
+}
+.resume_right {
+  width: 100%;
+}
+
+.resume_print_button {
+  margin: 150px 0 150px calc(50% - 200px);
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+}
