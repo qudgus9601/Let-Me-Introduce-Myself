@@ -11,6 +11,7 @@ import TestPage from "../../pages/testpage/testPage";
 import Resume from "../../pages/resume/resume";
 import Blog from "../../pages/blog/blog";
 import "./styles/content.css";
+import Blockchain from "../../pages/blockchain/blockchain";
 
 const Content = () => {
   // configure
@@ -55,6 +56,7 @@ const Content = () => {
           <Route path="/test" element={<TestPage />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blockchain" element={<Blockchain />} />
         </Routes>
       </div>
     </div>

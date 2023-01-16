@@ -16,9 +16,6 @@ const fs = require("fs");
 const app = express();
 dotenv.config();
 mongoose
-  .set("debug", (collectionName, method, query, doc) => {
-    console.log(`${collectionName}.${method}`, JSON.stringify(query), doc);
-  })
   .connect(process.env.MONGO_URI)
   .then(() => {})
   .catch((err) => {});

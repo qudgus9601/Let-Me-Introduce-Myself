@@ -22,3 +22,45 @@
   background-color: black;
   color: white;
 }
+
+.resume_or_self_introduce {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  height: 40px;
+  margin: 0 auto 50px auto;
+  cursor: pointer;
+}
+
+.resume_view_button {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1px solid #777777;
+  background-color: black;
+  color: white;
+}
+
+.resume_view_button:hover {
+  scale: 1.1;
+  transition: 0.1s linear;
+}
+
+.self_introduce_view_button {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #777777;
+  background-color: #e1e1e1;
+}
+
+.self_introduce_view_button:hover {
+  scale: 1.1;
+  transition: 0.1s linear;
+}

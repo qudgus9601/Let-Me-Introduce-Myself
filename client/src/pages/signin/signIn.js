@@ -1,7 +1,7 @@
 import "./signin.css";
 import headerImage from "./img/walkcat.gif";
 import SignInButton from "./components/SignInButton";
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import LocalSignIn from "./components/LocalSignIn";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -27,10 +27,6 @@ const SignIn = () => {
             <Route path="" element={<SignInButton />} />
             <Route path="local" element={<LocalSignIn />} />
           </Routes>
-        </div>
-
-        <div className="signin_body_signup_link">
-          <Link to="/signup">계정이 없으신가요?</Link>
         </div>
       </section>
     </div>

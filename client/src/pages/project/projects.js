@@ -55,7 +55,7 @@ const Projects = () => {
                       </span>
                       {/* 어드민만 풀어주기 */}
                       <span>
-                        {user.isLogin ? (
+                        {user.isLogin && user.role === 1 ? (
                           <Link to="/projects/write">
                             <FaPen />
                           </Link>

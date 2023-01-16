@@ -37,6 +37,9 @@ const Nav = () => {
           <Link className="nav_menu" to="/blog">
             BLOG
           </Link>
+          <Link className="nav_menu" to="/blockchain">
+            WEB3.0
+          </Link>
 
           {user.isLogin ? (
             <Link className="nav_menu" onClick={logout}>

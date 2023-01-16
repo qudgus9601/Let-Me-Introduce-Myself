@@ -59,4 +59,5 @@
 .nav_menu:hover {
   cursor: pointer;
   color: #8f1ce9;
+  transition: 0.1s linear;
 }

@@ -10,10 +10,6 @@ const SignInButton = () => {
         주인장과 친구들 입장
       </Link>
 
-      <div className="signin_body_hr">
-        <hr />
-        <div className="signin_body_hr_title">또는</div>
-      </div>
       <a
         href={`${process.env.REACT_APP_SERVER_URL}/api/v1/auth/oauth/kakao`}
         className="signin_body_kakao"
@@ -28,6 +24,9 @@ const SignInButton = () => {
         <img className="signin_body_google_icon" src={googleIcon} alt="" />
         구글 로그인
       </a>
+      <div className="signin_body_signup_link">
+        <Link to="/signup">계정이 없으신가요?</Link>
+      </div>
     </>
   );
 };

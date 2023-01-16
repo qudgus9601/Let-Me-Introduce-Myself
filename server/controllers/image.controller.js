@@ -135,7 +135,10 @@ const uploadImageToS3 = async (req, res, next) => {
       Key: req.file.key,
     })
     .promise();
-  const buffer = await sharp(file.Body).webp({ lossless: true }).toBuffer();
+  const buffer = await sharp(file.Body)
+    .rotate()
+    .webp({ lossless: true })
+    .toBuffer();
   await s3
     .putObject({
       Bucket: process.env.AWS_S3_BUCKET,
@@ -171,9 +174,11 @@ const uploadThumbnailImageToS3 = async (req, res, next) => {
     })
     .promise();
   const buffer = await sharp(file.Body)
+    .rotate()
     .resize({ width: 300 })
     .webp({ lossless: true })
     .toBuffer();
+
   await s3
     .putObject({
       Bucket: process.env.AWS_S3_BUCKET,
