@@ -1,0 +1,49 @@
+.bc_profile {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.bc_profile_img {
+  width: 60px;
+  height: 60px;
+  margin: 0 0 0 50px;
+  border-radius: 50%;
+}
+
+.bc_profile_title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 0 20px;
+}
+
+.bc_profile_balance {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 0 20px;
+}
+
+.bc_profile_title:hover {
+  color: #8f1ce9;
+}
+
+.bc_copy {
+  margin: 0 0 0 10px;
+}
+
+.bc_copy:hover {
+  color: #8f1ce9;
+  cursor: pointer;
+}
+
+.bc_profile_ether {
+  width: 40px;
+  margin: 0 0 0 50px;
+}
+
+.bc_profile_chain {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 0 40px;
+}

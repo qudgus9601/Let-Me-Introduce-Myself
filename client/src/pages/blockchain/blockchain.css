@@ -1,10 +1,13 @@
 .blockchain {
-  min-height: 100vh;
-  margin-top: 200px;
+  min-height: 450px;
+  margin-top: 150px;
+  box-shadow: 0 0 2px #777777;
 }
 
 .blockchain_theme {
   display: flex;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
 }
 
 .blockchain_theme_button {
@@ -12,16 +15,27 @@
   height: 30px;
 }
 
+.blockchain_theme_selected {
+  background-color: #555555;
+  color: white;
+  cursor: initial !important;
+}
+
+.blockchain_theme_selected:hover {
+  scale: 1 !important;
+  background-color: #555555 !important;
+  color: white !important;
+}
+
 .blockchain_theme_button:hover {
   background-color: black;
   color: white;
   transition: 0.1s linear;
-  scale: 1.1;
+  scale: 1.1 1;
 }
 
 .blockchain_container {
   width: 1200px;
   margin: 0 auto;
-  background-color: red;
   min-height: 100vh;
 }

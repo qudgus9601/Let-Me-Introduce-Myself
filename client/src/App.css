@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-size: 1vmax;
+  font-size: 14px;
   overflow-x: hidden;
 }
 
@@ -148,6 +148,10 @@ button:hover {
 
 .fadein {
   animation: fadein 0.2s linear;
+}
+
+.fadeout {
+  animation: fadeout 0.2s linear;
 }
 
 @keyframes fadein {
