@@ -56,7 +56,7 @@ const Content = () => {
           <Route path="/test" element={<TestPage />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blockchain" element={<Blockchain />} />
+          <Route path="/blockchain/*" element={<Blockchain />} />
         </Routes>
       </div>
     </div>

@@ -8,8 +8,8 @@ export default {
   4: "",
   5: "",
   6: "",
-  7: "",
-  8: "",
+  7: "blockchain_theme_button",
+  8: "blockchain_theme_button:hover",
   9: "",
   10: "",
 };

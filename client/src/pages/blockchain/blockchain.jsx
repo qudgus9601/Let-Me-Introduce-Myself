@@ -8,18 +8,13 @@ import { ThemeBar } from "./components/Theme-bar";
 import { Connect } from "./components/Connect";
 import { useEffect } from "react";
 import { Profile } from "./components/Profile";
-import { SubMenuBar } from "./components/Sub-menu-bar";
+import { Route, Routes } from "react-router-dom";
+import { Define } from "./components/nft/Define";
+import { List } from "./components/nft/List";
 
 const Blockchain = () => {
-  const [theme, setTheme] = useState();
   const [isConnect, setIsConnect] = useState(false);
-
-  const changeTheme = (e) => {
-    setTheme(e.target.id);
-  };
-
   useEffect(() => {}, []);
-
   useEffect(() => {});
 
   return (
@@ -27,20 +22,17 @@ const Blockchain = () => {
       {isConnect ? (
         <>
           <Profile />
-          <ThemeBar changeTheme={changeTheme} />
-          <SubMenuBar />
+          <ThemeBar />
+
           <div className="blockchain_container">
-            {theme === "nft" ? (
-              <Nft />
-            ) : theme === "did" ? (
-              <Did />
-            ) : theme === "dao" ? (
-              <Dao />
-            ) : theme === "ga" ? (
-              <Ga />
-            ) : (
-              <></>
-            )}
+            <Routes>
+              <Route path="/nft" element={<Nft />}></Route>
+              <Route path="/nft/define" element={<Define />}></Route>
+              <Route path="/nft/list" element={<List />}></Route>
+              <Route path="/did" element={<Did />}></Route>
+              <Route path="/dao" element={<Dao />}></Route>
+              <Route path="/ga" element={<Ga />}></Route>
+            </Routes>
           </div>
         </>
       ) : (
