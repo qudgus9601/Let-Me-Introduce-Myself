@@ -12,7 +12,7 @@ const uploadToS3 = multer({
     key: function (req, file, cb) {
       cb(
         null,
-        `original/${new Date().valueOf()}.${file.originalname.split(".").pop()}`
+        `original/${new Date().valueOf()}-${decodeURI(file.originalname)}`
       );
     },
   }),

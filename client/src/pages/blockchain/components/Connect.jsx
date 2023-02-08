@@ -3,6 +3,8 @@ import { AiOutlineWallet } from "@react-icons/all-files/ai/AiOutlineWallet";
 import { useEffect } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { metamaskConnector } from "../../../utils/metamask-connector";
+import wallet from "../img/wallet.webp";
+import metamask from "../img/metamask.webp";
 
 export const Connect = ({ setIsConnect }) => {
   const { ethereum } = window;
@@ -39,13 +41,7 @@ export const Connect = ({ setIsConnect }) => {
     <div className="bc_connect">
       <div className="bc_connect_container">
         <div className="bc_left">
-          <img
-            className="bc_left_img"
-            src={
-              "https://lmim.s3.ap-northeast-2.amazonaws.com/static/wallet.webp"
-            }
-            alt=""
-          />
+          <img className="bc_left_img" src={wallet} alt="" />
         </div>
         <div className="bc_right">
           <div className="bc_right_title">
@@ -53,6 +49,7 @@ export const Connect = ({ setIsConnect }) => {
             {`\u00a0`}Connect Wallet
           </div>
           <div className="bc_right_button metamask" onClick={connectMetamask}>
+            <img className="bc_right_logo" src={metamask} alt="" />
             METAMASK
           </div>
           <div className="bc_right_button kaikas" onClick={connectKaikas}>

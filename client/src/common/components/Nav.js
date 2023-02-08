@@ -25,18 +25,18 @@ const Nav = () => {
         </div>
 
         <div className="nav_right">
-          <Link className="nav_menu" to="/">
+          {/* <Link className="nav_menu" to="/">
             HOME
-          </Link>
+          </Link> */}
           <Link className="nav_menu" to="/projects">
             PROJECT
           </Link>
           <Link className="nav_menu" to="/resume">
             RESUME
           </Link>
-          <Link className="nav_menu" to="/blog">
+          {/* <Link className="nav_menu" to="/blog">
             BLOG
-          </Link>
+          </Link> */}
           <Link className="nav_menu" to="/blockchain">
             WEB3.0
           </Link>

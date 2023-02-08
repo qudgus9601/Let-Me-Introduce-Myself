@@ -8,18 +8,15 @@ import axios from "axios";
 import ProjectDetail from "./components/projectDetail";
 import { FaPen } from "@react-icons/all-files/fa/FaPen";
 import { useSelector } from "react-redux";
-import Loading from "../../common/components/Loading";
 import Breadcrumb from "../../common/components/Breadcrumb";
+import { Loader } from "../../common/components/Loader";
 
 const Projects = () => {
   const user = useSelector((state) => state.user);
 
   const [projectList, setProjectList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    console.log(isLoading);
-    console.log(projectList);
-  });
+  useEffect(() => {});
   useEffect(() => {
     setIsLoading(true);
     fetchProjects();
@@ -46,7 +43,7 @@ const Projects = () => {
               <div className="projects_center">
                 <Breadcrumb crumbs={["Projects"]} />
                 {isLoading ? (
-                  <Loading title={"프로젝트 로딩 중"} />
+                  <Loader title={"프로젝트 로딩 중"} />
                 ) : (
                   <>
                     <div className="projects_action_menu">

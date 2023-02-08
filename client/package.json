@@ -22,7 +22,8 @@
     "redux": "^4.2.0",
     "redux-persist": "^6.0.0",
     "source-map-explorer": "^2.5.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "web3": "^1.8.2"
   },
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",

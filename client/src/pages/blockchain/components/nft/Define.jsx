@@ -17,7 +17,7 @@ export const Define = () => {
           남김으로써 그 고유성을 보장받는다.
         </p>
         <span>
-          출처: <blue>업비트</blue> 투자자 보호센터
+          출처: <span className="color-blue">업비트</span> 투자자 보호센터
           <a
             href="https://upbitcare.com/academy/education/nft/95"
             target={"_blank"}

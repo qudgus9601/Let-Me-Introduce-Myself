@@ -202,6 +202,16 @@ const uploadThumbnailImageToS3 = async (req, res, next) => {
     });
 };
 
+const onlyUploadToS3 = async (req, res, next) => {
+  console.log(req.file.location);
+  res.json({
+    message: "ok",
+    status: 200,
+    // fileURL: `https://${process.env.AWS_S3_BUCKET}.s3.${process.env.AWS_S3_REGION}.amazonaws.com/original/${req.file.key}`,
+    fileURL: req.file.location,
+  });
+};
+
 module.exports = {
   uploadImageToLocal,
   uploadResizedImageToLocal,
@@ -209,4 +219,5 @@ module.exports = {
   uploadThumbnail,
   uploadImageToS3,
   uploadThumbnailImageToS3,
+  onlyUploadToS3,
 };

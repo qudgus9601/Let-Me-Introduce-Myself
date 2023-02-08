@@ -26,6 +26,19 @@ export const Profile = () => {
     window.navigator.clipboard.writeText(account.toString());
   };
 
+  // enum 이 없어서 임시방편이랄까
+  const Network = {
+    1: "Mainnet",
+    5: "Goerli",
+    11155111: "Sepolia",
+  };
+
+  const switchNetwork = async () => {
+    await window.ethereum.request({
+      method: "wallet_switchEthereumChain",
+      params: [{ chainId: "0x5" }],
+    });
+  };
   return (
     <div className="bc_profile">
       <img className="bc_profile_img" src={metamaskLogo} alt="" />
@@ -43,11 +56,17 @@ export const Profile = () => {
 
       <img className="bc_profile_ether" src={etherLogo} alt="" />
       <div className="bc_profile_balance">
-        {balance || "0"}
+        {Math.floor(balance * 1000) / 1000 || "0"}
         {" ETH"}
       </div>
-      <div className="bc_profile_chain">{`NetWork : ${chainId}`}</div>
-      <div className="bc_profile_chain">{`네트워크 변경`}</div>
+      <div className="bc_profile_chain">
+        <div>{`Current NetWork : ${Network[chainId] || "Localhost"}`}</div>
+        <div>
+          <div className="bc_profile_chain_alert" onClick={switchNetwork}>
+            {chainId !== 5 ? "⛔️ Goerli Network 에서만 작동합니다." : ""}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

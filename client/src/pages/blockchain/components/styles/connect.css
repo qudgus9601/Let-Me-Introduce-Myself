@@ -1,7 +1,6 @@
 .bc_connect {
   width: 900px;
   height: 450px;
-  border-radius: 10px;
   box-shadow: 0 0 2px #bbbbbb;
 }
 
@@ -20,12 +19,15 @@
 .bc_left_img {
   width: 100%;
   object-fit: fill;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 
 .bc_right {
   padding: 30px;
+}
+
+.bc_right_logo {
+  width: 30px;
+  margin: 0 10px 0 0;
 }
 
 .bc_right_title {
@@ -40,16 +42,16 @@
 
 .bc_right_button {
   width: 80%;
-  height: 40px;
+  height: 50px;
   margin: 0 auto 20px auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 1px 1px #bbbbbb;
+  box-shadow: 0 2px 1px #bbbbbb;
 }
 
 .bc_right_button:hover {
@@ -58,16 +60,11 @@
 }
 
 .metamask {
-  background-color: #ff9625;
-  background: linear-gradient(45deg, #ff9625 0%, rgb(211, 99, 43) 100%);
+  background-color: rgb(255, 205, 119);
 }
 
 .kaikas {
-  background: linear-gradient(
-    45deg,
-    rgba(129, 152, 243, 1) 0%,
-    rgba(78, 71, 244, 1) 100%
-  );
+  background-color: rgba(129, 152, 243, 1);
 }
 
 .sui {

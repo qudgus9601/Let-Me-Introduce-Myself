@@ -9,7 +9,7 @@ export const ThemeBar = () => {
   const navigator = useNavigate();
 
   useEffect(() => {}, [selected]);
-  useEffect(() => console.log(selected));
+  useEffect(() => {});
 
   const selectTheme = (event) => {
     if (selected !== event.target.id) {
@@ -46,14 +46,8 @@ export const ThemeBar = () => {
         {isSubMenuOpen && hoverTheme === "nft" ? (
           <SubMenu
             idName={"nft"}
-            elements={[
-              "NFT 란",
-              "NFT 목록",
-              "NFT 판매등록",
-              "NFT 민팅",
-              "내 NFT",
-            ]}
-            links={["define", "list", "regist", "mint", "mine"]}
+            elements={["NFT 란", "NFT 목록", "NFT 민팅", "내 NFT"]}
+            links={["define", "list", "mint", "mine"]}
             setIsSubMenuOpen={setIsSubMenuOpen}
             selectTheme={selectTheme}
           />

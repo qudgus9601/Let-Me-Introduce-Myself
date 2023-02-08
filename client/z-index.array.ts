@@ -12,4 +12,9 @@ export default {
   8: "blockchain_theme_button:hover",
   9: "",
   10: "",
+  11: "",
+  12: "",
+  13: "",
+  14: "",
+  15: "nav",
 };

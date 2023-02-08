@@ -5,7 +5,7 @@
   opacity: 0.8;
   top: 0;
   display: flex;
-  z-index: 7;
+  z-index: 15;
 }
 
 .nav_container {
