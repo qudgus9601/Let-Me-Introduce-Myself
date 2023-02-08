@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "node run ./bin/index.js",
+    "start": "nodemon run ./bin/index.js",
     "prestart": "tsc",
     "build": "tsc -p .",
     "start:dev": "nodemon --watch '**/*.ts' --exec \"ts-node\" index.ts"

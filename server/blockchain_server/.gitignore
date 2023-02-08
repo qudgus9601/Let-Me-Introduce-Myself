@@ -114,3 +114,5 @@ awsconfig.json
 cert.pem
 key.pem
 ##########################
+
+bin
