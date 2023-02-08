@@ -1,26 +1,37 @@
 version: "3.8"
 
 services:
-  server:
+  auth_server:
     build:
-      context: ./server
+      context: ./server/auth_server
       dockerfile: dockerfile
     image: bhyunnie/lmim_server:latest
     expose:
       - 9999
     ports:
       - 9999:9999
-    container_name: lmim_server
+    container_name: lmim_auth_server
 
-  client:
-    build:
-      context: ./client
-      dockerfile: dockerfile
-    image: bhyunnie/lmim_client:latest
-    expose:
-      - 3000
-    ports:
-      - 3000:3000
-    container_name: lmim_client
-    environment:
-      - CHOKIDAR_USEPOLLING=true
+blockchain_server:
+  build:
+    context: ./server/blockchain_server
+    dockerfile: dockerfile
+  image: bhyunnie/lmim_blockchain_server:latest
+  expose:
+    - 9992
+  ports:
+    - 9992:9992
+  container_name: lmim_blockchain_server
+
+client:
+  build:
+    context: ./client
+    dockerfile: dockerfile
+  image: bhyunnie/lmim_client:latest
+  expose:
+    - 3000
+  ports:
+    - 3000:3000
+  container_name: lmim_client
+  environment:
+    - CHOKIDAR_USEPOLLING=true
