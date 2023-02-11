@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 14px;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 button {
@@ -170,4 +170,25 @@ button:hover {
   to {
     opacity: 0;
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
 }

@@ -1,10 +1,12 @@
 .resume_left {
   background-color: #9b9b9b;
   width: 100%;
+  height: calc(1680px - 6mm);
+  box-sizing: border-box;
 }
 
 .resume_left_name {
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 700;
   text-align: center;
 }
@@ -23,8 +25,9 @@
 }
 
 .resume_left_dept {
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
+  font-weight: 700;
 }
 
 .resume_left_features ul {
@@ -32,13 +35,14 @@
 }
 
 .resume_left_contact {
-  margin: 200px 0 0 0;
   text-align: center;
-  margin: 150px 0 0 0;
+  margin: 120px 0 0 0;
 }
 
 .resume_left_contact ul {
-  margin: 0 0 0 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: left;
   font-size: 20px;
   box-sizing: border-box;
@@ -47,6 +51,9 @@
 .resume_left_contact li {
   display: flex;
   align-items: center;
+  width: 70%;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .resume_left_contact_header {

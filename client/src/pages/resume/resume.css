@@ -8,19 +8,31 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 4fr 8fr;
-  height: 1680px;
+  padding-top: 3mm;
+  height: calc(1680px - 6mm);
+  box-sizing: border-box;
 }
 .resume_right {
   width: 100%;
 }
 
-.resume_print_button {
-  margin: 150px 0 150px calc(50% - 200px);
-  width: 400px;
+.resume_action_container {
+  width: 100%;
   height: 50px;
-  border-radius: 5px;
-  background-color: black;
-  color: white;
+
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.resume_print_button {
+  width: 50px;
+  height: 100%;
+  background-color: transparent;
+  color: black;
+  font-size: 34px;
+  display: flex;
+  align-items: center;
 }
 
 .resume_or_self_introduce {
@@ -63,4 +75,17 @@
 .self_introduce_view_button:hover {
   scale: 1.1;
   transition: 0.1s linear;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    width: 1200px;
+    height: 1680px;
+  }
 }

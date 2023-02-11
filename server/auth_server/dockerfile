@@ -15,4 +15,4 @@ RUN npm install
 # 앱 소스 추가
 COPY . .
 
-CMD [ "node", "index.js" ]
+CMD [ "npm","run" , "start" ]

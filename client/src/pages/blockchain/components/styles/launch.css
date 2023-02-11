@@ -1,0 +1,41 @@
+.blockchain_launch {
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.blockchain_launch_title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.blockchain_launch_subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 5px 0 0 0;
+}
+
+.blockchain_launch_checklist {
+  margin: 20px 0 0 0;
+}
+
+.blockchain_launch_checkbox {
+  margin: 0 5px 0 0;
+}
+
+.blockchain_launch_checkbox_label {
+  font-size: 14px;
+}
+
+.blockchain_launch_checklist_title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 0 5px 0;
+}
+
+.blockchain_launch_checklist ul {
+  margin: 10px 0 0 10px;
+}
+
+.blockchain_launch_checklist_title::before {
+  content: "🔖 ";
+}

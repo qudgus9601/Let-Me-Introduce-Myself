@@ -17,6 +17,7 @@ const Project = () => {
         <button
           className="project_header_detail"
           onClick={() => {
+            window.scrollTo(0, 0);
             navigate("/projects");
           }}
         >

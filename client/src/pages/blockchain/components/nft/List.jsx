@@ -37,6 +37,7 @@ export const List = () => {
     }
 
     return () => sse.close();
+    // eslint-disable-next-line
   }, []);
   return (
     <div className="bc_list">

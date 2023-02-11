@@ -1,7 +1,10 @@
 import React from "react";
 import "./styles/selfIntroduce.css";
+import { useNavigate } from "react-router-dom";
 
 const SelfIntroduce = () => {
+  const navigator = useNavigate();
+
   return (
     <div className="selfIntroduce">
       <div className="selfIntroduce_container">
@@ -24,7 +27,13 @@ const SelfIntroduce = () => {
               제가 가진 기술을 좀 더 잘 보여드리고 싶어서 제작하게되었습니다.
             </div>
           </article>
-          <button className="selfIntroduce_left_button">
+          <button
+            className="selfIntroduce_left_button"
+            onClick={() => {
+              window.scrollTo(0, 0);
+              navigator("/resume");
+            }}
+          >
             자기소개서 보러가기{" "}
             <span role="img" aria-label="profile">
               📝

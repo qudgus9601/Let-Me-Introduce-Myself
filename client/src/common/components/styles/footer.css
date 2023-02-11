@@ -5,7 +5,9 @@
   background-color: black;
   margin: 10vh 0 0 0;
   color: white;
-  font-size: 0.9rem;
+  font-size: 12px;
+  bottom: 0;
+  justify-content: center;
 }
 
 .footer a {
@@ -24,8 +26,7 @@
 }
 
 .footer_container {
-  margin: 0 12.5% 0 12.5%;
-  width: 100%;
+  min-width: 1200px;
   display: flex;
 }
 
@@ -36,10 +37,6 @@
 }
 
 .footer_title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
   width: 20%;
 }
 
@@ -55,12 +52,12 @@
 }
 
 .footer_menu_section {
-  width: 20%;
+  width: 200px;
   margin: 4% 0 0 0;
 }
 
 .footer_menu_section_title {
-  font-size: 1.2rem;
+  font-size: 18px;
   font-weight: 700;
   margin: 0 0 3% 0;
 }
@@ -72,6 +69,6 @@
   justify-content: flex-end;
   align-items: flex-end;
   padding: 2% 0;
-  font-size: 0.8rem;
+  font-size: 12px;
   flex-direction: column;
 }

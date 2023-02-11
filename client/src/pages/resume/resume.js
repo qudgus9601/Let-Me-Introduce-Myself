@@ -1,49 +1,41 @@
 import Left from "./components/Left";
 import Right from "./components/Right";
 import "./resume.css";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useReactToPrint } from "react-to-print";
+import { AiOutlinePrinter } from "@react-icons/all-files/ai/AiOutlinePrinter";
+import { Loader } from "../../common/components/Loader";
 
 const Resume = () => {
   const printArea = useRef();
-
-  const [mode, setMode] = useState("resume");
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {});
+  const print = () => {
+    setIsLoading(true);
+    printing();
+  };
   const printing = useReactToPrint({
     content: () => printArea.current,
+    documentTitle: "안병현 이력서.pdf",
+    onAfterPrint: () => {
+      setIsLoading(false);
+    },
   });
+
   return (
     <div className="resume">
-      <div className="resume_or_self_introduce">
-        <div
-          className="resume_view_button"
-          onClick={() => {
-            setMode("resume");
-          }}
-        >
-          이력서
-        </div>
-        <div
-          className="self_introduce_view_button"
-          onClick={() => {
-            setMode("introduce");
-          }}
-        >
-          자기소개서
-        </div>
+      {isLoading ? <Loader text={"인쇄 중입니다"} /> : <></>}
+      <div className="resume_action_container">
+        <button onClick={print} className="resume_print_button">
+          <AiOutlinePrinter />
+        </button>
       </div>
       <div className="resume_container" ref={printArea}>
-        {mode === "resume" ? (
-          <>
-            <Left />
-            <Right />
-          </>
-        ) : (
-          <></>
-        )}
+        <>
+          <Left />
+          <Right />
+        </>
       </div>
-      <button onClick={printing} className="resume_print_button">
-        🖨️ 이력서 프린트
-      </button>
     </div>
   );
 };

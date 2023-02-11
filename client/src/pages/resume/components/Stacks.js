@@ -34,7 +34,7 @@ const Stacks = () => {
           TypeScript
         </div>
         <div className="resume_explain">
-          클론 코딩과 프로젝트를 통한 경험을 가졌습니다.
+          클론 코딩과 1회의 프로젝트를 통한 경험이 있습니다.
         </div>
         <div className="resume_explain">
           TypeScript 에 대한 관심을 가지고 꾸준히 새로운 정보에대해
@@ -51,7 +51,7 @@ const Stacks = () => {
           있습니다.
         </div>
         <div className="resume_explain">
-          각종 외부 API 들과 연동하는 작업이 가능합니다.
+          각종 API 들과 연동하는 작업을 하는데 무리가없습니다.
         </div>
 
         {/* NestJS Part */}
@@ -60,24 +60,8 @@ const Stacks = () => {
           NestJS
         </div>
         <div className="resume_explain">
-          NestJS의 기본적인 구조에 대해 알고있습니다.
-        </div>
-        <div className="resume_explain">
           NestJS를 통한 프로젝트, 클론코딩을 경험했습니다.
         </div>
-
-        {/* ReactJS Part */}
-        <div className="resume_subtitle">
-          <img src={reactIcon} alt="" className="resume_icon back-white" />
-          ReactJS
-        </div>
-        <div className="resume_explain">
-          React-Hooks 를 이용하여 컴포넌트 작성이 가능합니다.
-        </div>
-        <div className="resume_explain">
-          Redux 를 통해 전역 상태를 다룰 수 있습니다.
-        </div>
-
         {/* AWS Part */}
         <div className="resume_subtitle">
           <img src={AWSIcon} alt="" className="resume_icon back-white" />
@@ -109,11 +93,8 @@ const Stacks = () => {
           MongoDB
         </div>
         <div className="resume_explain">
-          학부생 때 관련 수업을 이수하여 NoSQL에 대한 기본적인 특징, 구조, 샤딩,
-          분산 데이터베이스에 대해 학습했습니다.
-        </div>
-        <div className="resume_explain">
-          프로젝트를 할 때 주로 몽고DB를 사용했으며 CRUD 작업이 가능합니다.
+          수차례 경험이 있고, Master Slave에 대해 이해하고 있으며 CRUD 를
+          수월하게 작업 할 수 있습니다.
         </div>
 
         {/* DataBase Part */}
@@ -123,17 +104,9 @@ const Stacks = () => {
           MySQL, Postgre
         </div>
         <div className="resume_explain">
-          RDB에 대한 기본적인 지식이 있으며 CRUD 작업이 가능합니다.
+          RDB에 대한 기본적인 지식이 있으며 CRUD 작업이 가능합니다. JOIN 작업이
+          가능합니다.
         </div>
-
-        <div className="resume_subtitle">
-          <img src={graphqlIcon} alt="" className="resume_icon back-white" />
-          Graphql
-        </div>
-        <div className="resume_explain">
-          클론코딩을 통해 GQL에 대한 경험을 해봤습니다.
-        </div>
-
         <div className="resume_subtitle">
           <img src={solidityIcon} alt="" className="resume_icon back-white" />
           Solidity
@@ -141,6 +114,26 @@ const Stacks = () => {
         <div className="resume_explain">
           ERC-721, ERC-21, KIP-17 등 작성된 컨트랙트를 보고 활용해본 경험이
           있습니다.
+        </div>
+
+        {/* ReactJS Part */}
+        <div className="resume_subtitle">
+          <img src={reactIcon} alt="" className="resume_icon back-white" />
+          ReactJS
+        </div>
+        <div className="resume_explain">
+          React를 3개 이상의 프로젝트에서 다뤄보아 FE와의 소통이 원활하게
+          가능합니다.
+        </div>
+
+        {/* GraphQL Part */}
+        <div className="resume_subtitle">
+          <img src={graphqlIcon} alt="" className="resume_icon back-white" />
+          Graphql
+        </div>
+        <div className="resume_explain">
+          클론코딩을 통해 GQL에 대한 경험을 해보아서 FE와 소통이 원활하게
+          가능합니다.
         </div>
       </section>
     </>
