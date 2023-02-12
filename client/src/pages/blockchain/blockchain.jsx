@@ -1,5 +1,5 @@
 import "./blockchain.css";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Did from "./components/Did";
 import Nft from "./components/Nft";
 import Ga from "./components/Generative-art";
@@ -12,6 +12,7 @@ import { Define } from "./components/nft/Define";
 import { List } from "./components/nft/List";
 import { Launch } from "./components/Launch";
 import { Mint } from "./components/nft/Mint";
+import background from "./img/wallet.webp";
 
 const Blockchain = () => {
   const [isConnect, setIsConnect] = useState(false);
@@ -38,7 +39,10 @@ const Blockchain = () => {
           </div>
         </>
       ) : (
-        <Connect setIsConnect={setIsConnect} />
+        <React.Fragment>
+          <img className="background_image" src={background} alt="" />
+          <Connect setIsConnect={setIsConnect} />
+        </React.Fragment>
       )}
     </div>
   );

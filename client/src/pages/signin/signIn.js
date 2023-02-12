@@ -1,5 +1,5 @@
 import "./signin.css";
-import headerImage from "./img/walkcat.gif";
+import headerImage from "./img/signin_header.webp";
 import SignInButton from "./components/SignInButton";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import LocalSignIn from "./components/LocalSignIn";

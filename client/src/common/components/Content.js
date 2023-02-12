@@ -12,10 +12,11 @@ import Resume from "../../pages/resume/resume";
 import Blog from "../../pages/blog/blog";
 import "./styles/content.css";
 import Blockchain from "../../pages/blockchain/blockchain";
+import background from "../../pages/signin/img/signin_header.webp";
 
 const Content = () => {
   // configure
-  const navigate = useNavigate();
+  const navigator = useNavigate();
   const dispatch = useDispatch();
 
   // useRef
@@ -36,12 +37,12 @@ const Content = () => {
       .catch((error) => {
         if (error.response.data.message === "Invalid Token") {
           // 만료된 토큰 메세지 모달 띄우기
-          navigate("/signIn");
+          navigator("/signIn");
         } else {
           // 예상치 못한 오류 메세지 모달 띄우기
         }
       });
-  }, [navigate, dispatch]);
+  }, [navigator, dispatch]);
 
   // useState
 
@@ -50,8 +51,24 @@ const Content = () => {
       <div className="content_container">
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/signin/*" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route
+            path="/signin/*"
+            element={
+              <React.Fragment>
+                <img className="background_image" src={background} alt="" />
+                <SignIn />
+              </React.Fragment>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <React.Fragment>
+                <img className="background_image" src={background} alt="" />
+                <SignUp />
+              </React.Fragment>
+            }
+          />
           <Route path="/projects/*" element={<Projects />} />
           <Route path="/test" element={<TestPage />} />
           <Route path="/resume" element={<Resume />} />

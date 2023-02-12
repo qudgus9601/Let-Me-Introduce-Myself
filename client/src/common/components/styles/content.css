@@ -8,3 +8,14 @@
   justify-content: center;
   min-height: 100vh;
 }
+
+.background_image {
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  scale: 1.1;
+  position: absolute;
+  filter: blur(30px);
+  left: 0;
+  top: 0;
+}

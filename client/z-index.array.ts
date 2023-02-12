@@ -2,6 +2,8 @@
 // ts로 해놓은 이유는
 // 그냥 ts도 쓸거라고 포부를 당당하게!!
 export default {
+  "-10": "background_image",
+  0: "default",
   1: "",
   2: "",
   3: "",

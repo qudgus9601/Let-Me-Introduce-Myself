@@ -43,7 +43,7 @@ export const List = () => {
     <div className="bc_list">
       {isLoading ? <Loader text={"NFT 리스트를 가져오는중"} /> : ""}
       <div className="bc_list_container">
-        {list?.reverse().map((e, idx) => {
+        {[...list]?.reverse().map((e, idx) => {
           return (
             <div className="bc_list_card" key={idx}>
               <div className="bc_list_card_container">
