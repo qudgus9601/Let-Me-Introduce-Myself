@@ -9,11 +9,14 @@ import Teammate from "./Teammate";
 import { FaPen } from "@react-icons/all-files/fa/FaPen";
 import { FaTrashAlt } from "@react-icons/all-files/fa/FaTrashAlt";
 import { AiOutlineEye } from "@react-icons/all-files/ai/AiOutlineEye";
+import { useSelector } from "react-redux";
 
 const ProjectDetail = () => {
   // location 초기화
   const location = useLocation();
 
+  // user 값 받아오기
+  const user = useSelector((state) => state.user);
   // useState
   const [project, setProject] = useState({});
 
@@ -134,15 +137,21 @@ const ProjectDetail = () => {
                   {`\u00a0`}
                   {project.viewCount + 1}
                 </span>
-                <Link
-                  to={`/projects/write/${location.pathname.slice(10)}`}
-                  className="pointer project_detail_title_button"
-                >
-                  <FaPen />
-                </Link>
-                <span className="pointer project_detail_title_button">
-                  <FaTrashAlt onClick={deleteProject} />
-                </span>
+                {user.isLogin && user.role === 1 ? (
+                  <React.Fragment>
+                    <Link
+                      to={`/projects/write/${location.pathname.slice(10)}`}
+                      className="pointer project_detail_title_button"
+                    >
+                      <FaPen />
+                    </Link>
+                    <span className="pointer project_detail_title_button">
+                      <FaTrashAlt onClick={deleteProject} />
+                    </span>
+                  </React.Fragment>
+                ) : (
+                  ""
+                )}
               </div>
             </div>
           </div>
