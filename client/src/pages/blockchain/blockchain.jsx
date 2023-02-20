@@ -12,7 +12,6 @@ import { Define } from "./components/nft/Define";
 import { List } from "./components/nft/List";
 import { Launch } from "./components/Launch";
 import { Mint } from "./components/nft/Mint";
-import background from "./img/wallet.webp";
 
 const Blockchain = () => {
   const [isConnect, setIsConnect] = useState(false);
@@ -40,7 +39,13 @@ const Blockchain = () => {
         </>
       ) : (
         <React.Fragment>
-          <img className="background_image" src={background} alt="" />
+          <img
+            className="background_image"
+            src={
+              "https://lmim.s3.ap-northeast-2.amazonaws.com/static/wallet.webp"
+            }
+            alt=""
+          />
           <Connect setIsConnect={setIsConnect} />
         </React.Fragment>
       )}

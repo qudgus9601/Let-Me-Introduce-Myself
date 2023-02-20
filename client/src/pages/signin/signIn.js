@@ -1,5 +1,4 @@
 import "./signin.css";
-import headerImage from "./img/signin_header.webp";
 import SignInButton from "./components/SignInButton";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import LocalSignIn from "./components/LocalSignIn";
@@ -20,7 +19,13 @@ const SignIn = () => {
     <div className="signin">
       <section className="signin_container">
         <div className="signin_header">
-          <img className="signin_header_img" src={headerImage} alt="" />
+          <img
+            className="signin_header_img"
+            src={
+              "https://lmim.s3.ap-northeast-2.amazonaws.com/static/signin_header.webp"
+            }
+            alt=""
+          />
         </div>
         <div className="signin_body">
           <Routes>

@@ -29,7 +29,7 @@ const ProjectDetail = () => {
     project?.data?.projectInfo?.teamMate?.map(async (e) => {
       await axios({
         method: "GET",
-        url: `https://api.github.com/users/${e.github.slice(19, -1)}`,
+        url: `https://api.github.com/users/${e.github.split("/")[3]}`,
       })
         .then((data) => {
           e = { ...e, githubInfo: data.data };

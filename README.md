@@ -145,7 +145,13 @@ npm run start:dev // TS로 작성되어서 필수입니다.
 
 ### 2023-02-13
 
-FE - FOOTER UI 수정
-FE - Project 작성 규격 수정
+- FE - FOOTER UI 수정
+- FE - Project 작성 규격 수정
+
+### 2023-02-20
+
+- FE - asset 저장소 변경 docker 이미지 크기 축소
+- FE - UI UX 수정
+- BE - GIF 업로드 안되던것 수정
 
 # 수정 해야 할 사항

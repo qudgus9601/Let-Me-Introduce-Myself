@@ -36,6 +36,10 @@ details {
   margin: 1% 0;
 }
 
+.margin_bottom {
+  height: 300px;
+}
+
 details summary {
   cursor: pointer;
   width: 100%;
@@ -191,4 +195,11 @@ button:hover {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #777;
+}
+.toastui-editor-contents {
+  z-index: 1 !important;
+}
+
+.cursor_pointer {
+  cursor: pointer;
 }

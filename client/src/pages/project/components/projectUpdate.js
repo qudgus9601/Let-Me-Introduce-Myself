@@ -18,9 +18,7 @@ const ProjectUpdate = () => {
     return state.user;
   });
 
-  useEffect(() => {
-    console.log(project);
-  });
+  useEffect(() => {});
   useEffect(() => {
     axios({
       method: "GET",
@@ -121,7 +119,7 @@ const ProjectUpdate = () => {
       {modalOpen === true ? (
         <Modal
           setModalOpen={setModalOpen}
-          header={<ModalHeader />}
+          header={<ModalHeader setModalOpen={setModalOpen} />}
           content={
             <ModalContent
               project={project}

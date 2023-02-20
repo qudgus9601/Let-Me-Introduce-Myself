@@ -19,9 +19,7 @@ const ProjectWrite = () => {
     return state.user;
   });
 
-  useEffect(() => {
-    console.log(project);
-  });
+  useEffect(() => {});
   useEffect(() => {
     setProject((prev) => {
       return { ...prev, author: user._id };
@@ -106,7 +104,7 @@ const ProjectWrite = () => {
       {modalOpen === true ? (
         <Modal
           setModalOpen={setModalOpen}
-          header={<ModalHeader />}
+          header={<ModalHeader setModalOpen={setModalOpen} />}
           content={
             <ModalContent
               project={project}
@@ -297,7 +295,7 @@ const ProjectWrite = () => {
                     <option value={"Project-Manager"}>Project-Manager</option>
                     <option value={"Designer"}>Designer</option>
                     <option value={"Smart-Contract"}>Smart-Contract</option>
-                    <option value={"Smart-Contract"}>Full-Stack</option>
+                    <option value={"Full-Stack"}>Full-Stack</option>
                   </select>
                   {idx === 0 ? (
                     ""

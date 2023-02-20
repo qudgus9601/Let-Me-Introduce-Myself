@@ -1,7 +1,6 @@
 import React from "react";
 import "./styles/card.css";
 import { useNavigate } from "react-router-dom";
-import mainLogo from "../img/behoney_logo.png";
 
 const Card = ({ data }) => {
   // navigation 초기화
@@ -44,7 +43,10 @@ const Card = ({ data }) => {
         <div className="post_card_left">
           <img
             className="post_card_thumbnail"
-            src={data.thumbnail || mainLogo}
+            src={
+              data.thumbnail ||
+              "https://lmim.s3.ap-northeast-2.amazonaws.com/static/behoney_logo.png"
+            }
             alt=""
           />
         </div>
@@ -57,7 +59,7 @@ const Card = ({ data }) => {
           <div>{data.type} Project</div>
           <div>{data.language.map((e) => e)}</div>
           <div>
-            🗓 {data.startDate.slice(0, 10)} ~ {data.finishDate.slice(0, 10)}
+            {data.startDate.slice(0, 10)} ~ {data.finishDate.slice(0, 10)}
           </div>
           <div className="post_card_view_count">👁‍🗨 {data.viewCount}</div>
         </div>

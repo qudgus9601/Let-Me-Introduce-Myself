@@ -12,7 +12,6 @@ import Resume from "../../pages/resume/resume";
 import Blog from "../../pages/blog/blog";
 import "./styles/content.css";
 import Blockchain from "../../pages/blockchain/blockchain";
-import background from "../../pages/signin/img/signin_header.webp";
 
 const Content = () => {
   // configure
@@ -55,7 +54,13 @@ const Content = () => {
             path="/signin/*"
             element={
               <React.Fragment>
-                <img className="background_image" src={background} alt="" />
+                <img
+                  className="background_image"
+                  src={
+                    "https://lmim.s3.ap-northeast-2.amazonaws.com/static/signin_header.webp"
+                  }
+                  alt=""
+                />
                 <SignIn />
               </React.Fragment>
             }
@@ -64,7 +69,13 @@ const Content = () => {
             path="/signup"
             element={
               <React.Fragment>
-                <img className="background_image" src={background} alt="" />
+                <img
+                  className="background_image"
+                  src={
+                    "https://lmim.s3.ap-northeast-2.amazonaws.com/static/signin_header.webp"
+                  }
+                  alt=""
+                />
                 <SignUp />
               </React.Fragment>
             }

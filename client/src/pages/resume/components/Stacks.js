@@ -1,16 +1,3 @@
-import js from "../img/js.ico";
-import ts from "../img/ts.ico";
-import reactIcon from "../img/react.ico";
-import nestjsIcon from "../img/nestjs.ico";
-import nodeJSIcon from "../img/nodejs.ico";
-import AWSIcon from "../img/AWS.ico";
-import dockerIcon from "../img/docker.ico";
-import mongoIcon from "../img/mongodb.ico";
-import mysqlIcon from "../img/mysql.ico";
-import postgreIcon from "../img/postgre.ico";
-import graphqlIcon from "../img/graphql.ico";
-import solidityIcon from "../img/solidity.ico";
-
 const Stacks = () => {
   return (
     <>
@@ -18,7 +5,11 @@ const Stacks = () => {
       <section className="resume_stacks">
         {/* JavaScript Part */}
         <div className="resume_subtitle">
-          <img src={js} alt="" className="resume_icon" />
+          <img
+            src={"https://lmim.s3.ap-northeast-2.amazonaws.com/static/js.ico"}
+            alt=""
+            className="resume_icon"
+          />
           JavaScript
         </div>
         <div className="resume_explain">
@@ -30,7 +21,11 @@ const Stacks = () => {
 
         {/* TypeScript Part */}
         <div className="resume_subtitle">
-          <img src={ts} alt="" className="resume_icon" />
+          <img
+            src={"https://lmim.s3.ap-northeast-2.amazonaws.com/static/ts.ico"}
+            alt=""
+            className="resume_icon"
+          />
           TypeScript
         </div>
         <div className="resume_explain">
@@ -43,7 +38,13 @@ const Stacks = () => {
 
         {/* NodeJS Part */}
         <div className="resume_subtitle">
-          <img src={nodeJSIcon} alt="" className="resume_icon" />
+          <img
+            src={
+              "https://lmim.s3.ap-northeast-2.amazonaws.com/static/nodejs.ico"
+            }
+            alt=""
+            className="resume_icon"
+          />
           NodeJS
         </div>
         <div className="resume_explain">
@@ -56,7 +57,13 @@ const Stacks = () => {
 
         {/* NestJS Part */}
         <div className="resume_subtitle">
-          <img src={nestjsIcon} alt="" className="resume_icon" />
+          <img
+            src={
+              "https://lmim.s3.ap-northeast-2.amazonaws.com/static/nestjs.ico"
+            }
+            alt=""
+            className="resume_icon"
+          />
           NestJS
         </div>
         <div className="resume_explain">
@@ -64,7 +71,11 @@ const Stacks = () => {
         </div>
         {/* AWS Part */}
         <div className="resume_subtitle">
-          <img src={AWSIcon} alt="" className="resume_icon back-white" />
+          <img
+            src={"https://lmim.s3.ap-northeast-2.amazonaws.com/static/AWS.ico"}
+            alt=""
+            className="resume_icon back-white"
+          />
           AWS
         </div>
         <div className="resume_explain">
@@ -76,7 +87,13 @@ const Stacks = () => {
 
         {/* Docker Part */}
         <div className="resume_subtitle">
-          <img src={dockerIcon} alt="" className="resume_icon back-white" />
+          <img
+            src={
+              "https://lmim.s3.ap-northeast-2.amazonaws.com/static/docker.ico"
+            }
+            alt=""
+            className="resume_icon back-white"
+          />
           DOCKER
         </div>
         <div className="resume_explain">
@@ -89,7 +106,13 @@ const Stacks = () => {
 
         {/* DataBase Part */}
         <div className="resume_subtitle">
-          <img src={mongoIcon} alt="" className="resume_icon back-white" />
+          <img
+            src={
+              "https://lmim.s3.ap-northeast-2.amazonaws.com/static/mongodb.ico"
+            }
+            alt=""
+            className="resume_icon back-white"
+          />
           MongoDB
         </div>
         <div className="resume_explain">
@@ -99,8 +122,20 @@ const Stacks = () => {
 
         {/* DataBase Part */}
         <div className="resume_subtitle">
-          <img src={mysqlIcon} alt="" className="resume_icon back-white" />
-          <img src={postgreIcon} alt="" className="resume_icon back-white" />
+          <img
+            src={
+              "https://lmim.s3.ap-northeast-2.amazonaws.com/static/mysql.ico"
+            }
+            alt=""
+            className="resume_icon back-white"
+          />
+          <img
+            src={
+              "https://lmim.s3.ap-northeast-2.amazonaws.com/static/postgre.ico"
+            }
+            alt=""
+            className="resume_icon back-white"
+          />
           MySQL, Postgre
         </div>
         <div className="resume_explain">
@@ -108,7 +143,13 @@ const Stacks = () => {
           가능합니다.
         </div>
         <div className="resume_subtitle">
-          <img src={solidityIcon} alt="" className="resume_icon back-white" />
+          <img
+            src={
+              "https://lmim.s3.ap-northeast-2.amazonaws.com/static/solidity.ico"
+            }
+            alt=""
+            className="resume_icon back-white"
+          />
           Solidity
         </div>
         <div className="resume_explain">
@@ -118,7 +159,13 @@ const Stacks = () => {
 
         {/* ReactJS Part */}
         <div className="resume_subtitle">
-          <img src={reactIcon} alt="" className="resume_icon back-white" />
+          <img
+            src={
+              "https://lmim.s3.ap-northeast-2.amazonaws.com/static/react.ico"
+            }
+            alt=""
+            className="resume_icon back-white"
+          />
           ReactJS
         </div>
         <div className="resume_explain">
@@ -128,7 +175,13 @@ const Stacks = () => {
 
         {/* GraphQL Part */}
         <div className="resume_subtitle">
-          <img src={graphqlIcon} alt="" className="resume_icon back-white" />
+          <img
+            src={
+              "https://lmim.s3.ap-northeast-2.amazonaws.com/static/graphql.ico"
+            }
+            alt=""
+            className="resume_icon back-white"
+          />
           Graphql
         </div>
         <div className="resume_explain">

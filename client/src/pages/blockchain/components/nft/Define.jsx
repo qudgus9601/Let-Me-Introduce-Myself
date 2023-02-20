@@ -1,6 +1,4 @@
 import "./styles/define.css";
-import meowcat from "../../img/meowcat.webp";
-import opensea from "../../img/opensea.webp";
 
 export const Define = () => {
   return (
@@ -38,7 +36,12 @@ export const Define = () => {
           인터넷을 자주 이용한다면 한번쯤 봤을 냥캣으로 유명한 움짤이 있는데
           <br />이 움짤은 NFT 화 되어서 약 59만 달러에 팔렸다.
         </p>
-        <img src={meowcat} alt="" />
+        <img
+          src={
+            "https://lmim.s3.ap-northeast-2.amazonaws.com/static/meowcat.webp"
+          }
+          alt=""
+        />
       </div>
 
       <div className="bc_define_title">🖥 유명 사이트</div>
@@ -50,7 +53,12 @@ export const Define = () => {
           통용되고 있다.
         </p>
         <p>wyvern protocol {"=>"} seaport protocol 로 최근 구조를 바꿨다.</p>
-        <img src={opensea} alt="" />
+        <img
+          src={
+            "https://lmim.s3.ap-northeast-2.amazonaws.com/static/opensea.webp"
+          }
+          alt=""
+        />
         <p>
           오픈씨 바로가기 ({" "}
           <a

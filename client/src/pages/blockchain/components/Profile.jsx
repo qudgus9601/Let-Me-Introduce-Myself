@@ -1,9 +1,7 @@
 import "./styles/profile.css";
-import metamaskLogo from "../img/metamask.webp";
 import { useWeb3React } from "@web3-react/core";
 import { useEffect } from "react";
 import { AiOutlineCopy } from "@react-icons/all-files/ai/AiOutlineCopy";
-import etherLogo from "../img/ether.webp";
 import { ethers } from "ethers";
 import { useCallback, useState } from "react";
 
@@ -41,7 +39,13 @@ export const Profile = () => {
   };
   return (
     <div className="bc_profile">
-      <img className="bc_profile_img" src={metamaskLogo} alt="" />
+      <img
+        className="bc_profile_img"
+        src={
+          "https://lmim.s3.ap-northeast-2.amazonaws.com/static/metamask.webp"
+        }
+        alt=""
+      />
       <a
         className="bc_profile_title"
         target={"_blank"}
@@ -54,7 +58,11 @@ export const Profile = () => {
       </a>
       <AiOutlineCopy size={24} onClick={copyAddress} className="bc_copy" />
 
-      <img className="bc_profile_ether" src={etherLogo} alt="" />
+      <img
+        className="bc_profile_ether"
+        src={"https://lmim.s3.ap-northeast-2.amazonaws.com/static/ether.webp"}
+        alt=""
+      />
       <div className="bc_profile_balance">
         {Math.floor(balance * 1000) / 1000 || "0"}
         {" ETH"}

@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles/footer.css";
-import footerLogo from "../img/behoney_logo.png";
 import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
 import { AiOutlineInstagram } from "@react-icons/all-files/ai/AiOutlineInstagram";
 import { BiMessageRounded } from "@react-icons/all-files/bi/BiMessageRounded";
@@ -14,7 +13,13 @@ const Footer = () => {
       <div className="footer_container">
         <div className="footer_content">
           <div className="footer_title">
-            <img className="footer_logo" src={footerLogo} alt="logo"></img>
+            <img
+              className="footer_logo"
+              src={
+                "https://lmim.s3.ap-northeast-2.amazonaws.com/static/behoney_logo.png"
+              }
+              alt="logo"
+            ></img>
           </div>
           <div className="footer_menu">
             <div className="footer_menu_section">

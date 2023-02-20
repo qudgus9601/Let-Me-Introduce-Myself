@@ -3,6 +3,7 @@
   height: 100%;
   display: grid;
   grid-template-columns: 5fr 7fr;
+  z-index: 9999;
 }
 
 .project_write_modal_header {

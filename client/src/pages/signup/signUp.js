@@ -1,5 +1,4 @@
 import "./signup.css";
-import headerImage from "./img/nope.gif";
 import React, { useState, useEffect } from "react";
 import Section1 from "./components/Section1";
 import Section2 from "./components/Section2";
@@ -37,7 +36,11 @@ const SignUp = () => {
     <div className="signin">
       <section className="signin_container">
         <div className="signin_header">
-          <img className="signin_header_img" src={headerImage} alt="" />
+          <img
+            className="signin_header_img"
+            src={"https://lmim.s3.ap-northeast-2.amazonaws.com/static/nope.gif"}
+            alt=""
+          />
         </div>
         <div className="signup_body">
           <div>

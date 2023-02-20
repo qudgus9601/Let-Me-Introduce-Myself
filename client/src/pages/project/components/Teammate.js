@@ -1,14 +1,17 @@
 import "./styles/teammate.css";
 import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
-import github_default_image from "../img/github_default.png";
 
 const Teammate = ({ mate, idx }) => {
+  console.log(mate);
   return (
     <div className="teammate">
       <header className="teammate_header">
         <img
           className="teammate_header_profile_image"
-          src={mate.githubInfo?.avatar_url || github_default_image}
+          src={
+            mate.githubInfo?.avatar_url ||
+            "https://lmim.s3.ap-northeast-2.amazonaws.com/static/github_default.png"
+          }
           alt=""
         />
       </header>
@@ -26,7 +29,7 @@ const Teammate = ({ mate, idx }) => {
         </header>
         <article className="teammate_content_mate_info">
           <div className="teammate_content_mate_position">
-            {"Full Stack" || "포지션"}
+            {mate?.position || "포지션"}
           </div>
           <a
             className="teammate_content_mate_github_url"

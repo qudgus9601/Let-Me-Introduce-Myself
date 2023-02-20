@@ -13,7 +13,7 @@ const Left = () => {
         <img
           className="resume_profile_image"
           src={
-            "https://lmim.s3.ap-northeast-2.amazonaws.com/static/profile-image.jpeg"
+            "https://lmim.s3.ap-northeast-2.amazonaws.com/static/IDPhoto.webp"
           }
           alt=""
         />

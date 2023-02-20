@@ -1,16 +1,22 @@
 import "./styles/projectwritemodal.css";
 import { useEffect, useRef } from "react";
-import mainLogo from "../img/behoney_logo.png";
 import axios from "axios";
 import { AiOutlinePlus } from "@react-icons/all-files/ai/AiOutlinePlus";
 
 // components
-const ModalHeader = () => {
+const ModalHeader = ({ setModalOpen }) => {
+  useEffect(() => {});
   return (
     <div className="project_write_modal_header">
       <div></div>
       <div className="project_write_modal_header_cancel">
-        <AiOutlinePlus size={"1.5rem"} />
+        <AiOutlinePlus
+          size={"24px"}
+          onClick={() => {
+            setModalOpen(false);
+          }}
+          className="cursor_pointer"
+        />
       </div>
     </div>
   );
@@ -65,7 +71,11 @@ const ModalContent = ({ project, submit, setProject }) => {
           >
             <img
               className="project_write_modal_content_left_img"
-              src={!!project?.thumbnail ? project.thumbnail : mainLogo}
+              src={
+                !!project?.thumbnail
+                  ? project.thumbnail
+                  : "https://lmim.s3.ap-northeast-2.amazonaws.com/static/behoney_logo.png"
+              }
               alt=""
             />
           </div>

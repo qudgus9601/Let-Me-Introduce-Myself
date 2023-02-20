@@ -4,7 +4,7 @@
 export default {
   "-10": "background_image",
   0: "default",
-  1: "",
+  1: ".toastui-editor-contents",
   2: "",
   3: "",
   4: "",

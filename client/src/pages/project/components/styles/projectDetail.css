@@ -7,14 +7,14 @@
 
 .project_detail_container {
   width: 1200px;
-  margin: 20vh auto 0 auto;
+  margin: 15vh auto 0 auto;
 }
 
 .project_detail_title {
   width: 100%;
-  font-size: 3rem;
+  font-size: 50px;
   font-weight: 900;
-  height: 4rem;
+  height: 70px;
   vertical-align: middle;
   display: flex;
   align-items: flex-end;
@@ -35,7 +35,7 @@
 
 .project_detail_date {
   display: flex;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 400;
   color: #777777;
   margin-left: 1%;
@@ -51,7 +51,7 @@
 }
 
 .project_detail_subtitle {
-  font-size: 1.1rem;
+  font-size: 18px;
   font-weight: 700;
 }
 
@@ -72,7 +72,7 @@
   width: 30%;
   display: flex;
   justify-content: right;
-  font-size: 1rem;
+  font-size: 16px;
   color: #777777;
 }
 

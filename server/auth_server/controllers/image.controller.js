@@ -39,11 +39,12 @@ const uploadImageToLocal = (req, res, next) => {
 const uploadResizedImageToLocal = (req, res) => {
   try {
     const file = req.file;
+    console.log(file);
     sharp(file.path)
       .metadata()
       .then(({ width, height }) => {
         if ((width || height) > 1000) {
-          sharp(file.path)
+          sharp(file.path, { animated: true, limitInputPixels: false })
             .resize(Math.round(width * 0.5))
             .withMetadata()
             .toFile(
@@ -58,7 +59,7 @@ const uploadResizedImageToLocal = (req, res) => {
               }
             );
         } else {
-          sharp(file.path)
+          sharp(file.path, { animated: true, limitInputPixels: false })
             .withMetadata()
             .toFile(
               `uploads/${file.filename.split(".")[0]}.webp`,
@@ -135,7 +136,10 @@ const uploadImageToS3 = async (req, res, next) => {
       Key: req.file.key,
     })
     .promise();
-  const buffer = await sharp(file.Body)
+  const buffer = await sharp(file.Body, {
+    animated: true,
+    limitInputPixels: false,
+  })
     .rotate()
     .webp({ lossless: true })
     .toBuffer();
@@ -173,7 +177,10 @@ const uploadThumbnailImageToS3 = async (req, res, next) => {
       Key: req.file.key,
     })
     .promise();
-  const buffer = await sharp(file.Body)
+  const buffer = await sharp(file.Body, {
+    animated: true,
+    limitInputPixels: false,
+  })
     .rotate()
     .resize({ width: 300 })
     .webp({ lossless: true })
