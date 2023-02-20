@@ -1,5 +1,5 @@
 .resume_left {
-  background-color: #9b9b9b;
+  background-color: #abd9ff;
   width: 100%;
   height: calc(1680px - 6mm);
   box-sizing: border-box;
@@ -12,8 +12,10 @@
 }
 
 .resume_profile_image {
-  width: 100%;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .resume_left_profile {
