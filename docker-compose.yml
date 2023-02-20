@@ -2,27 +2,21 @@ version: "3.8"
 
 services:
   auth_server:
-    image: lmim/auth_server:latest
-    expose:
-      - 9991
+    image: bhyunnie/lmim_auth_server:1.01
     ports:
       - 9991:9991
     container_name: lmim_auth_server
 
-blockchain_server:
-  image: lmim/blockchain_server:latest
-  expose:
-    - 9992
-  ports:
-    - 9992:9992
-  container_name: lmim_blockchain_server
+  blockchain_server:
+    image: bhyunnie/lmim_blockchain_server:1.0
+    ports:
+      - 9992:9992
+    container_name: lmim_blockchain_server
 
-client:
-  image: lmim/client:latest
-  expose:
-    - 3000
-  ports:
-    - 3000:3000
-  container_name: lmim_client
-  environment:
-    - CHOKIDAR_USEPOLLING=true
+  client:
+    image: bhyunnie/lmim_client:1.0
+    ports:
+      - 3000:3000
+    container_name: lmim_client
+    environment:
+      - CHOKIDAR_USEPOLLING=true
