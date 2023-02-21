@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://localhost:3000",
+    origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -41,16 +41,10 @@ app.use(
 
 app.use("/api/v1", router);
 
-https
-  .createServer(
-    {
-      key: fs.readFileSync(__dirname + "/key.pem", "utf-8"),
-      cert: fs.readFileSync(__dirname + "/cert.pem", "utf-8"),
-    },
-    app.get("/", (req, res) => {
-      res.status(200).json({ message: "👋 This Is Blockchain Server" });
-    })
-  )
-  .listen(process.env.SERVER_PORT, () => {
-    console.log("📚 Blockchain Server Open In " + process.env.SERVER_PORT);
-  });
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "👋 This Is Blockchain Server" });
+});
+
+app.listen(process.env.SERVER_PORT, () => {
+  console.log("📚 Blockchain Server Open In " + process.env.SERVER_PORT);
+});

@@ -48,10 +48,10 @@ const LocalSignIn = () => {
     try {
       if (!/^(.){8,30}$/.test(userDto.email)) {
         emailInput.current.style.border = "1px solid red";
-        emailRequire.current.style.display = "block";
+        emailRequire.current.style.visibility = "initial";
       } else if (!/^(.){8,20}$/.test(userDto.password)) {
         passwordInput.current.style.border = "1px solid red";
-        passwordRequire.current.style.display = "block";
+        passwordRequire.current.style.visibility = "initial";
       } else {
         const data = await axios({
           method: "POST",
@@ -84,18 +84,18 @@ const LocalSignIn = () => {
     if (e.target.id === "email") {
       if (/^(.){8,30}$/.test(e.target.value)) {
         emailInput.current.style.border = "1px solid black";
-        emailRequire.current.style.display = "none";
+        emailRequire.current.style.visibility = "hidden";
       } else {
         emailInput.current.style.border = "1px solid red";
-        emailRequire.current.style.display = "block";
+        emailRequire.current.style.visibility = "initial";
       }
     } else if (e.target.id === "password") {
       if (/^(.){8,20}$/.test(e.target.value)) {
         passwordInput.current.style.border = "1px solid black";
-        passwordRequire.current.style.display = "none";
+        passwordRequire.current.style.visibility = "hidden";
       } else {
         passwordInput.current.style.border = "1px solid red";
-        passwordRequire.current.style.display = "block";
+        passwordRequire.current.style.visibility = "initial";
       }
     }
   };

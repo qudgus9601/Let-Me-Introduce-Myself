@@ -6,7 +6,9 @@ export const List = () => {
   const [list, setList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {});
+  useEffect(() => {
+    console.log(list);
+  });
   useEffect(() => {
     let sse;
     try {
@@ -20,10 +22,11 @@ export const List = () => {
       sse.onopen = () => {};
 
       sse.onmessage = async (event) => {
-        const res = await event.data;
+        const res = await event?.data;
         const resJSON = JSON.parse(res);
         list.push(resJSON);
         setList([...list]);
+
         if (isLoading) {
           setIsLoading(false);
         }

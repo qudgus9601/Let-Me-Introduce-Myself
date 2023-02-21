@@ -10,8 +10,6 @@ var cors_1 = __importDefault(require("cors"));
 var cookie_parser_1 = __importDefault(require("cookie-parser"));
 var morgan_1 = __importDefault(require("morgan"));
 var express_session_1 = __importDefault(require("express-session"));
-var fs_1 = __importDefault(require("fs"));
-var https_1 = __importDefault(require("https"));
 var index_1 = __importDefault(require("./routes/index"));
 var app = (0, express_1.default)();
 dotenv_1.default.config();
@@ -36,13 +34,9 @@ app.use((0, express_session_1.default)({
     secret: "secret",
 }));
 app.use("/api/v1", index_1.default);
-https_1.default
-    .createServer({
-    key: fs_1.default.readFileSync(__dirname + "/key.pem", "utf-8"),
-    cert: fs_1.default.readFileSync(__dirname + "/cert.pem", "utf-8"),
-}, app.get("/", function (req, res) {
+app.get("/", function (req, res) {
     res.status(200).json({ message: "👋 This Is Blockchain Server" });
-}))
-    .listen(process.env.SERVER_PORT, function () {
+});
+app.listen(process.env.SERVER_PORT, function () {
     console.log("📚 Blockchain Server Open In " + process.env.SERVER_PORT);
 });

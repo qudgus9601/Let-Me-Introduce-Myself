@@ -2,9 +2,9 @@ import "../models/nft";
 import pinataSDK from "@pinata/sdk";
 import Web3 from "web3";
 import LMIM from "../contracts/LMIM.json";
-import https from "https";
 import { Request, Response } from "express";
 import events from "events";
+import fetch from "node-fetch";
 
 const eventEmitter = new events.EventEmitter();
 /**
@@ -82,23 +82,7 @@ const getNftInfo = async (req: any, res: any) => {
     );
     const metadataURI = await lmim.methods.tokenInfo(req.params.tokenId).call();
 
-    const metadata = new Promise(function (resolve, reject) {
-      https
-        .get(metadataURI, (res) => {
-          let data = "";
-
-          res.on("data", (chunk) => {
-            data += chunk;
-          });
-
-          res.on("end", () => {
-            return JSON.parse(data);
-          });
-        })
-        .on("error", (err) => {
-          console.log("Error: " + err.message);
-        });
-    });
+    const metadata = await (await fetch(metadataURI)).json();
 
     if (!!metadata) {
       res.json({
@@ -124,7 +108,7 @@ const getAllNft = async (req: Request, res: Response) => {
     );
 
     res
-      .setHeader("Access-Control-Allow-Origin", "https://localhost:3000")
+      .setHeader("Access-Control-Allow-Origin", "http://localhost:3000")
       .setHeader("Access-Controll-Allow-Credentials", "true")
       .setHeader("Content-Type", "text/event-stream")
       .setHeader("Connection", "keep-alive")
@@ -134,34 +118,22 @@ const getAllNft = async (req: Request, res: Response) => {
 
     for (let i = 1; i <= totalSupply; i++) {
       const tokenInfo = await lmim.methods.tokenInfo(i).call();
-      const metadata = await new Promise(function (resolve, reject) {
-        https
-          .get(tokenInfo, (res) => {
-            let data = "";
-
-            res.on("data", (chunk) => {
-              data += chunk;
-            });
-
-            res.on("end", () => {
-              resolve(data);
-            });
-          })
-          .on("error", (err) => {
-            reject("Error: " + err.message);
-          });
-      });
-
+      const metadata = JSON.stringify(await (await fetch(tokenInfo)).json());
       if (!!metadata) {
         res.status(200).write("data:" + metadata + "\n\n");
+        if (i == totalSupply) {
+          res.emit("close");
+        }
       }
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const mintSse = async (req: Request, res: Response) => {
   res
-    .setHeader("Access-Control-Allow-Origin", "https://localhost:3000")
+    .setHeader("Access-Control-Allow-Origin", "http://localhost:3000")
     .setHeader("Access-Controll-Allow-Credentials", "true")
     .setHeader("Content-Type", "text/event-stream")
     .setHeader("Connection", "keep-alive")
