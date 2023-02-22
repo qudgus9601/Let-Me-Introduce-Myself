@@ -12,7 +12,7 @@ const Nav = () => {
       method: "GET",
       url: `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/logout`,
       withCredentials: true,
-    });
+    }).catch((error) => {});
     window.location.replace("/");
   };
   return (

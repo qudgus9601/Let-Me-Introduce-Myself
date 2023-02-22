@@ -9,8 +9,6 @@ const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const passportConfig = require("./utils/passport");
 const session = require("express-session");
-const https = require("https");
-const fs = require("fs");
 
 // config
 const app = express();

@@ -95,7 +95,7 @@ const getUserByAccessToken = (req, res, next) => {
         }
       );
     } else {
-      res.status(404).json({ message: "Need to SignIn" });
+      res.status(200).json({ message: "Need to SignIn" });
     }
   } catch (error) {
     res.status(400).json({ message: "Uncaught Error" });
