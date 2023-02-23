@@ -60,7 +60,7 @@ const ProjectDetail = () => {
   const incrementViewCount = (project) => {
     axios({
       method: "PUT",
-      url: `${process.env.REACT_APP_SERVER_URL}/api/v1/projects/${project.data.projectInfo._id}`,
+      url: `${process.env.REACT_APP_PROJECT_SERVER}/api/v1/projects/${project.data.projectInfo._id}`,
       withCredentials: true,
     })
       .then((data) => {})
@@ -75,7 +75,7 @@ const ProjectDetail = () => {
   const deleteProject = () => {
     axios({
       method: "DELETE",
-      url: `${process.env.REACT_APP_SERVER_URL}/api/v1/projects/${project._id}`,
+      url: `${process.env.REACT_APP_PROJECT_SERVER}/api/v1/projects/${project._id}`,
       withCredentials: true,
     })
       .then((data) => {
@@ -96,7 +96,7 @@ const ProjectDetail = () => {
       axios({
         method: "GET",
         url: `${
-          process.env.REACT_APP_SERVER_URL
+          process.env.REACT_APP_PROJECT_SERVER
         }/api/v1/projects/${location.pathname.slice(10)}`,
         withCredentials: true,
       }).then((project) => {

@@ -10,7 +10,7 @@ const Nav = () => {
   const logout = () => {
     axios({
       method: "GET",
-      url: `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/logout`,
+      url: `${process.env.REACT_APP_AUTH_SERVER}/api/v1/auth/logout`,
       withCredentials: true,
     }).catch((error) => {});
     window.location.replace("/");

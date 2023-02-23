@@ -55,7 +55,7 @@ const Section1 = ({ userObj, changeUserObj, section, setSection }) => {
       ) {
         const data = await axios({
           method: "POST",
-          url: `${process.env.REACT_APP_SERVER_URL}/api/v1/user/exist-email`,
+          url: `${process.env.REACT_APP_AUTH_SERVER}/api/v1/user/exist-email`,
           data: {
             email: userObj.email,
           },

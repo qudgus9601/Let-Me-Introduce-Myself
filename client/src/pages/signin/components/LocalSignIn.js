@@ -55,7 +55,7 @@ const LocalSignIn = () => {
       } else {
         const data = await axios({
           method: "POST",
-          url: `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/signin`,
+          url: `${process.env.REACT_APP_AUTH_SERVER}/api/v1/auth/signin`,
           data: { ...userDto },
           withCredentials: true,
         });

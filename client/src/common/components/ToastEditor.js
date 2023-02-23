@@ -44,7 +44,7 @@ const ToastEditor = ({ setProject, defaultContent }) => {
               headers: {
                 "Content-Type": "multipart/form-data",
               },
-              url: `${process.env.REACT_APP_SERVER_URL}/api/v1/image/upload/s3`,
+              url: `${process.env.REACT_APP_UPLOAD_SERVER}/api/v1/image/upload/s3`,
               data: imageData,
               withCredentials: true,
             });

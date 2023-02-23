@@ -38,7 +38,7 @@ const ModalContent = ({ project, submit, setProject }) => {
       imageData.append("image", file);
       axios({
         method: "POST",
-        url: `${process.env.REACT_APP_SERVER_URL}/api/v1/image/upload/thumbnail/s3`,
+        url: `${process.env.REACT_APP_UPLOAD_SERVER}/api/v1/image/upload/thumbnail/s3`,
         headers: {
           "Content-Type": "multipart/form-data",
         },

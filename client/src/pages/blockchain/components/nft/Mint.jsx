@@ -43,7 +43,7 @@ export const Mint = () => {
       setProcessing("서버에 요청을 보내는중입니다.");
       const data = await axios({
         method: "POST",
-        url: `${process.env.REACT_APP_BLOCKCHAIN_SERVER_URL}/api/v1/nft/mint`,
+        url: `${process.env.REACT_APP_BLOCKCHAIN_SERVER}/api/v1/nft/mint`,
         data: { ...metadata },
         withCredentials: true,
       });
@@ -97,7 +97,7 @@ export const Mint = () => {
       imageData.append("image", file);
       axios({
         method: "POST",
-        url: `${process.env.REACT_APP_SERVER_URL}/api/v1/image/upload/only/s3`,
+        url: `${process.env.REACT_APP_UPLOAD_SERVER}/api/v1/image/upload/only/s3`,
         headers: {
           "Content-Type": "multipart/form-data",
         },

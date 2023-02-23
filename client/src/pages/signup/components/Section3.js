@@ -36,7 +36,7 @@ const Section3 = ({ userObj, changeUserObj, section, setSection }) => {
     try {
       const data = await axios({
         method: "POST",
-        url: `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/signup`,
+        url: `${process.env.REACT_APP_AUTH_SERVER}/api/v1/auth/signup`,
         data: {
           ...userObj,
         },

@@ -9,7 +9,7 @@ const SignInButton = () => {
       </Link>
 
       <a
-        href={`${process.env.REACT_APP_SERVER_URL}/api/v1/auth/oauth/kakao`}
+        href={`${process.env.REACT_APP_AUTH_SERVER}/api/v1/auth/oauth/kakao`}
         className="signin_body_kakao"
       >
         <img
@@ -23,7 +23,7 @@ const SignInButton = () => {
       </a>
       <a
         className="signin_body_google"
-        href={`${process.env.REACT_APP_SERVER_URL}/api/v1/auth/oauth/google`}
+        href={`${process.env.REACT_APP_AUTH_SERVER}/api/v1/auth/oauth/google`}
       >
         <img
           className="signin_body_google_icon"

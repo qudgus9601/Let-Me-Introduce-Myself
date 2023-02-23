@@ -86,7 +86,7 @@ const ProjectWrite = () => {
     project.teamMate[leaderIdx].isLeader = true;
     axios({
       method: "POST",
-      url: `${process.env.REACT_APP_SERVER_URL}/api/v1/projects/write`,
+      url: `${process.env.REACT_APP_PROJECT_SERVER}/api/v1/projects/write`,
       //eslint-disable-next-line
       data: project,
       withCredentials: true,

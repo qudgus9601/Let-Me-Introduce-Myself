@@ -23,7 +23,7 @@ const ProjectUpdate = () => {
     axios({
       method: "GET",
       url: `${
-        process.env.REACT_APP_SERVER_URL
+        process.env.REACT_APP_PROJECT_SERVER
       }/api/v1/projects/${window.location.pathname.slice(16)}`,
       withCredentials: true,
     }).then((project) => {
@@ -101,7 +101,7 @@ const ProjectUpdate = () => {
     axios({
       method: "PUT",
       url: `${
-        process.env.REACT_APP_SERVER_URL
+        process.env.REACT_APP_PROJECT_SERVER
       }/api/v1/projects/write/${window.location.pathname.slice(16)}`,
       data: project,
       withCredentials: true,

@@ -26,7 +26,7 @@ const Content = () => {
     // 초기값 설정
     axios({
       method: "GET",
-      url: `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/check/accesstoken`,
+      url: `${process.env.REACT_APP_AUTH_SERVER}/api/v1/auth/check/accesstoken`,
       withCredentials: true,
     })
       .then((data) => {

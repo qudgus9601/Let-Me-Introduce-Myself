@@ -13,7 +13,7 @@ export const List = () => {
     let sse;
     try {
       sse = new EventSource(
-        `${process.env.REACT_APP_BLOCKCHAIN_SERVER_URL}/api/v1/nft/list`,
+        `${process.env.REACT_APP_BLOCKCHAIN_SERVER}/api/v1/nft/list`,
         {
           withCredentials: true,
         }
