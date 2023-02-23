@@ -1,12 +1,18 @@
 // import
 const express = require("express");
-const dotenv = require("dotenv");
 const morgan = require("morgan");
 const Router = require("./routes/.");
 const cors = require("cors");
-dotenv.config();
+const { awsConfig } = require("./utils/aws");
+
 // config
 const app = express();
+
+process.env.NODE_ENV === "production"
+  ? require("dotenv").config({ path: ".env.production" })
+  : require("dotenv").config({ path: ".env.development" });
+
+awsConfig();
 
 // middlewares
 app.use(morgan("dev"));

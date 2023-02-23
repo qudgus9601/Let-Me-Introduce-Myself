@@ -1,6 +1,6 @@
 const express = require("express");
 const image = require("../controllers/image.controller.js");
-const uploadToS3 = require("../utils/upload-s3.js");
+// const uploadToS3 = require("../utils/upload-s3.js");
 const localUpload = require("../utils/upload-local.js");
 const router = express.Router();
 
@@ -17,17 +17,17 @@ router.post(
 
 router.get("/:filename", image.getImage);
 
-router.post("/upload/s3", uploadToS3.single("image"), image.uploadImageToS3);
-router.post(
-  "/upload/thumbnail/s3",
-  uploadToS3.single("image"),
-  image.uploadThumbnailImageToS3
-);
+// router.post("/upload/s3", uploadToS3.single("image"), image.uploadImageToS3);
+// router.post(
+//   "/upload/thumbnail/s3",
+//   uploadToS3.single("image"),
+//   image.uploadThumbnailImageToS3
+// );
 
-router.post(
-  "/upload/only/s3",
-  uploadToS3.single("image"),
-  image.onlyUploadToS3
-);
+// router.post(
+//   "/upload/only/s3",
+//   uploadToS3.single("image"),
+//   image.onlyUploadToS3
+// );
 
 module.exports = router;
