@@ -12,8 +12,6 @@ process.env.NODE_ENV === "production"
   ? require("dotenv").config({ path: ".env.production" })
   : require("dotenv").config({ path: ".env.development" });
 
-awsConfig();
-
 // middlewares
 app.use(morgan("dev"));
 app.use(express.json());
@@ -34,4 +32,5 @@ app.get("/", (req, res) => {
 
 app.listen(process.env.SERVER_PORT, () => {
   console.log(`🍀 Upload Server On ${process.env.SERVER_PORT}`);
+  awsConfig();
 });

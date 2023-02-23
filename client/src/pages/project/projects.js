@@ -25,7 +25,7 @@ const Projects = () => {
   const fetchProjects = async () => {
     const projects = await axios({
       method: "GET",
-      url: `${process.env.REACT_APP_SERVER_URL}/api/v1/projects`,
+      url: `${process.env.REACT_APP_PROJECT_SERVER}/api/v1/projects`,
       withCredentials: true,
     });
     setProjectList(projects.data.projectsInfo);
