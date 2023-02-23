@@ -13,6 +13,7 @@ const Nav = () => {
       url: `${process.env.REACT_APP_AUTH_SERVER}/api/v1/auth/logout`,
       withCredentials: true,
     }).catch((error) => {});
+    // Redux 에서 정보를 제거해야한다.
     window.location.replace("/");
   };
   return (

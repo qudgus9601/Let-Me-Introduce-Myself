@@ -1,0 +1,31 @@
+{
+  "config": {
+    "target": "https://localhost:9999",
+    "phases": [
+      {
+        "duration": 50,
+        "arrivalRate": 50,
+        "name": "Warm Up Test"
+      }
+    ],
+    "tls": {
+      "rejectUnauthorized": false
+    }
+  },
+  "scenarios": [
+    {
+      "flow": [
+        {
+          "get": {
+            "url": "/"
+          }
+        },
+        {
+          "get": {
+            "url": "/api/v1/projects"
+          }
+        }
+      ]
+    }
+  ]
+}

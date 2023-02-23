@@ -70,6 +70,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
+.env
 .env.*
 
 # parcel-bundler cache (https://parceljs.org/)
@@ -113,5 +114,3 @@ awsconfig.json
 cert.pem
 key.pem
 ##########################
-
-bin

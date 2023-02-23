@@ -4,10 +4,6 @@ const morgan = require("morgan");
 const Router = require("./routes/.");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const cookieParser = require("cookie-parser");
-const passport = require("passport");
-const passportConfig = require("./utils/passport");
-const session = require("express-session");
 
 // config
 const app = express();
@@ -22,13 +18,10 @@ mongoose
     console.log("🔒 DB Connected On MongoDB Atlas");
   })
   .catch((err) => {});
-app.use(passport.initialize());
-passportConfig();
 
 // middlewares
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(cookieParser());
 app.use(
   cors({
     origin: process.env.CLIENT_URL,
@@ -36,16 +29,6 @@ app.use(
     credentials: true,
   })
 );
-app.use(
-  session({
-    resave: false,
-    saveUninitialized: false,
-    secret: "secret",
-  })
-);
-
-// Warning : Not Use memory store => resolve by save in Redis Store
-app.use(passport.session());
 
 // route
 app.use("/api/v1", Router);
@@ -55,5 +38,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(process.env.SERVER_PORT, () => {
-  console.log(`🍀 Auth Server Open On ${process.env.SERVER_PORT}`);
+  console.log(`🍀 Project Server Open On ${process.env.SERVER_PORT}`);
 });

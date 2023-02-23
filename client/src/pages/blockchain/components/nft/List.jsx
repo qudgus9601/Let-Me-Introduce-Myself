@@ -8,6 +8,7 @@ export const List = () => {
 
   useEffect(() => {
     console.log(list);
+    console.log(process.env.REACT_APP_BLOCKCHAIN_SERVER);
   });
   useEffect(() => {
     let sse;

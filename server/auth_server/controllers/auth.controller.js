@@ -133,7 +133,7 @@ const signInByKakao = async (req, res, next) => {
         secure: false,
         maxAge: 60 * 60 * 24 * 7 * 1000,
       })
-      .redirect("http://localhost:3000/");
+      .redirect(process.env.CLIENT_URL);
   } catch (error) {}
 };
 
@@ -151,7 +151,7 @@ const signInByGoogle = async (req, res, next) => {
         secure: false,
         maxAge: 60 * 60 * 24 * 7 * 1000,
       })
-      .redirect("http://localhost:3000/");
+      .redirect(process.env.CLIENT_URL);
   } catch (error) {}
 };
 

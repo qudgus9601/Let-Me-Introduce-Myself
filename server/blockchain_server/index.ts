@@ -1,17 +1,18 @@
 import express from "express";
-import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import session from "express-session";
-import fs from "fs";
-import https from "https";
+import dotenv from "dotenv";
 
 import router from "./routes/index";
 
 const app = express();
-dotenv.config();
+
+process.env.NODE_ENV === "production"
+  ? dotenv.config({ path: ".env.production" })
+  : dotenv.config({ path: ".env.development" });
 
 mongoose
   .set("strictQuery", false)
@@ -26,7 +27,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.CLIENT_URL,
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
