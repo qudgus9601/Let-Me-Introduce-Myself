@@ -116,8 +116,8 @@ const Stacks = () => {
           MongoDB
         </div>
         <div className="resume_explain">
-          수차례 경험이 있고, Master Slave에 대해 이해하고 있으며 CRUD 를
-          수월하게 작업 할 수 있습니다.
+          학부수업과 3회이상의 프로젝트를 통한 경험이 있고 CRUD, 샤딩, 분산화
+          등의 작업을 할 수 있습니다.
         </div>
 
         {/* DataBase Part */}
@@ -139,7 +139,7 @@ const Stacks = () => {
           MySQL, Postgre
         </div>
         <div className="resume_explain">
-          RDB에 대한 기본적인 지식이 있으며 CRUD 작업이 가능합니다. JOIN 작업이
+          RDB에 대한 지식이 있으며 CRUD 작업이 가능합니다. JOIN 작업이
           가능합니다.
         </div>
         <div className="resume_subtitle">

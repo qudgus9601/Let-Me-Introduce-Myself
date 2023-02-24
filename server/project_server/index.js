@@ -34,7 +34,7 @@ app.use(
 app.use("/api/v1", Router);
 
 app.get("/", (req, res) => {
-  res.send("This is Auth Server 🐝");
+  res.send("This is Project Server 🐝");
 });
 
 app.listen(process.env.SERVER_PORT, () => {

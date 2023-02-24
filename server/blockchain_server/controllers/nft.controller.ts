@@ -1,4 +1,3 @@
-import "../models/nft";
 import pinataSDK from "@pinata/sdk";
 import Web3 from "web3";
 import LMIM from "../contracts/LMIM.json";
