@@ -106,8 +106,9 @@ const getAllNft = async (req: Request, res: Response) => {
       process.env.CONTRACT_LMIM_ADDRESS
     );
 
+    const client_url = String(process.env.CLIENT_URL);
     res
-      .setHeader("Access-Control-Allow-Origin", "http://localhost:3000")
+      .setHeader("Access-Control-Allow-Origin", client_url)
       .setHeader("Access-Controll-Allow-Credentials", "true")
       .setHeader("Content-Type", "text/event-stream")
       .setHeader("Connection", "keep-alive")

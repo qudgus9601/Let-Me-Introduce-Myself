@@ -6,11 +6,9 @@ import dotenv from "dotenv";
 import router from "./routes/index";
 
 const app = express();
-
 process.env.NODE_ENV === "production"
   ? dotenv.config({ path: ".env.production" })
   : dotenv.config({ path: ".env.development" });
-
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(

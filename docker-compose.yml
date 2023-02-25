@@ -35,4 +35,4 @@ services:
     ports:
       - 9983:9983
     container_name: lmim_blockchain_server
-    image: bhyunnie/lmim_blockchain_server:1.0.4
+    image: bhyunnie/lmim_blockchain_server:1.0.5

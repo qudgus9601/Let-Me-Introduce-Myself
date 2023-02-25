@@ -4,6 +4,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "cross-env NODE_ENV=production npx ts-node index.ts",
+    "prestart": "tsc",
     "build": "tsc -p .",
     "start:dev": "cross-env NODE_ENV=development nodemon --watch '**/*.ts' --exec \"ts-node\" index.ts"
   },
