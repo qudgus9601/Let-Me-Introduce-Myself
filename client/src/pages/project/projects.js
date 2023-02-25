@@ -48,7 +48,7 @@ const Projects = () => {
                   <>
                     <div className="projects_action_menu">
                       <span>
-                        {"0" && `Total : ${projectList.length} Projects`}
+                        {"0" && `Total : ${projectList?.length || 0} Projects`}
                       </span>
                       {/* 어드민만 풀어주기 */}
                       <span>
