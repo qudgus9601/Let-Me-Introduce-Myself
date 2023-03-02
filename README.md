@@ -71,14 +71,17 @@ git clone https://github.com/qudgus9601/Let-Me-Introduce-Myself.git
 
 - BE - 서버 분할
 
+### 2023-02-24
+
+- BE - Server 분할
+- Docker - Docker-compose.yml 수정
+
 # 수정 해야 할 사항
 
 ```
 - image multi upload
-- AWS EC2 보안 정책
 - 무중단 배포
 - 배포 자동화
 - TDD
 - Stress Test
-- AWS 요금 최적화
 ```
