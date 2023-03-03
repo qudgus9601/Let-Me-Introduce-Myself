@@ -15,7 +15,7 @@ const Nav = () => {
       url: `${process.env.REACT_APP_AUTH_SERVER}/api/v1/auth/logout`,
       withCredentials: true,
     }).catch((error) => {});
-    dispatch(signout({ isLogin: true }));
+    dispatch(signout());
     window.location.replace("/");
   };
   return (

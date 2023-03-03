@@ -15,7 +15,7 @@ const userSlice = createSlice({
       state.email = action.payload.email;
       state.role = action.payload.role;
       state.username = action.payload.username;
-      state.isLogin = action.payload.isLogin;
+      state.isLogin = true;
       return state;
     },
     logout: (state) => {

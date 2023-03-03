@@ -4,7 +4,7 @@ import SignIn from "../../pages/signin/signIn";
 import SignUp from "../../pages/signup/signUp";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { login } from "../../redux/userSlice";
+import { login, logout } from "../../redux/userSlice";
 import axios from "axios";
 import Projects from "../../pages/project/projects";
 import TestPage from "../../pages/testpage/testPage";
@@ -30,11 +30,14 @@ const Content = () => {
       withCredentials: true,
     })
       .then((data) => {
-        dispatch(login({ isLogin: true, ...data.data.userInfo }));
+        if (data.data?.message === "ok") {
+          dispatch(login({ ...data.data.userInfo }));
+        }
       })
       .catch((error) => {
         if (error.response.data.message === "Invalid Token") {
           // 만료된 토큰 메세지 모달 띄우기
+          dispatch(logout());
           navigator("/signIn");
         } else {
           // 예상치 못한 오류 메세지 모달 띄우기

@@ -209,6 +209,7 @@ const uploadThumbnailImageToS3 = async (req, res, next) => {
 };
 
 const onlyUploadToS3 = async (req, res, next) => {
+  console.log(req.file);
   res.json({
     message: "ok",
     status: 200,

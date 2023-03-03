@@ -62,7 +62,7 @@ const LocalSignIn = () => {
 
         const userInfo = data.data.userInfo;
         if (data.status === 200) {
-          dispatch(login({ ...userInfo, isLogin: true }));
+          dispatch(login({ ...userInfo }));
           navigate("/");
         } else {
         }

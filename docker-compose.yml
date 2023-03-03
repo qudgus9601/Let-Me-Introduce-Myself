@@ -8,7 +8,7 @@ services:
     ports:
       - 9980:9980
     container_name: lmim_auth_server
-    image: bhyunnie/lmim_auth_server:1.0.1
+    image: bhyunnie/lmim_auth_server:1.0.3
 
   project_server:
     build:
@@ -17,7 +17,7 @@ services:
     ports:
       - 9981:9981
     container_name: lmim_project_server
-    image: bhyunnie/lmim_project_server:1.0.1
+    image: bhyunnie/lmim_project_server:1.0.3
 
   upload_server:
     build:
@@ -26,7 +26,7 @@ services:
     ports:
       - 9982:9982
     container_name: lmim_upload_server
-    image: bhyunnie/lmim_upload_server:1.0.0
+    image: bhyunnie/lmim_upload_server:1.0.2
 
   blockchain_server:
     build:
@@ -35,4 +35,4 @@ services:
     ports:
       - 9983:9983
     container_name: lmim_blockchain_server
-    image: bhyunnie/lmim_blockchain_server:1.0.5
+    image: bhyunnie/lmim_blockchain_server:1.0.8

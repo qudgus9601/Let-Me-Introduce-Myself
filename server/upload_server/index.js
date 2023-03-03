@@ -31,6 +31,4 @@ app.get("/", (req, res) => {
   res.send("This is Upload Server 🐝");
 });
 
-app.listen(process.env.SERVER_PORT, () => {
-  awsConfig();
-});
+app.listen(process.env.SERVER_PORT, () => {});

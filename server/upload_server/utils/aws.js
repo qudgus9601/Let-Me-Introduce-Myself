@@ -10,7 +10,7 @@ module.exports = {
       region: process.env.AWS_S3_REGION,
     });
 
-    AWS.config.getCredentials((err) => {
+    AWS.config.getCredentials((err, data) => {
       if (err) console.log(err);
     });
   }),
