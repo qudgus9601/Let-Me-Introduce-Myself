@@ -21,7 +21,7 @@ export const Mint = () => {
 
   useEffect(() => {});
 
-  const failed = () => {
+  const failed = (error) => {
     setProcessing("민팅중에 문제가 발생했습니다.");
     setTimeout(() => {
       setIsLoading(false);
@@ -47,32 +47,38 @@ export const Mint = () => {
         withCredentials: true,
       });
 
+      const currentGas = await web3.eth.getGasPrice();
+      const gas = currentGas;
+
       if (data.data.status === 200) {
         try {
           setProcessing("서명 요청중");
-          const mintData = await lmim.methods
+          lmim.methods
             .mint(sender, data.data.data.metadataURI)
             .send({
               from: sender,
-              gasPrice: "1000000000",
-              gas: 1000000,
-            });
-
-          if (!!mintData.blockHash) {
-            setProcessing("민팅 완료");
-            setTimeout(() => {
+              gasPrice: gas,
+              gas: Math.round(Number(gas) / 10000).toString(),
+            })
+            .then(() => {
+              setProcessing("민팅 완료");
+              setTimeout(() => {
+                setIsLoading(false);
+                navigator("/blockchain/nft/list");
+              }, 200);
+            })
+            .catch((err) => {
               setIsLoading(false);
-              navigator("/blockchain/nft/list");
-            }, 200);
-          }
+            });
+          setProcessing("민팅 중");
         } catch (error) {
-          failed();
+          failed(error);
         }
       } else {
         failed();
       }
     } catch (error) {
-      failed();
+      failed(error);
     }
   };
 

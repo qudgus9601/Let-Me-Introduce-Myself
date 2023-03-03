@@ -51,7 +51,7 @@ export const List = () => {
                 <div className="bc_list_card_title">
                   {e.name.length > 12
                     ? `${e.name.substring(0, 12)}...`
-                    : e.name.length}
+                    : e.name}
                 </div>
                 <div className="bc_list_card_description">{e.description}</div>
               </div>

@@ -26,7 +26,7 @@ services:
     ports:
       - 9982:9982
     container_name: lmim_upload_server
-    image: bhyunnie/lmim_upload_server:1.0.2
+    image: bhyunnie/lmim_upload_server:1.0.4
 
   blockchain_server:
     build:
