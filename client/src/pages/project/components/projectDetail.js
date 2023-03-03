@@ -64,9 +64,7 @@ const ProjectDetail = () => {
       withCredentials: true,
     })
       .then((data) => {})
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => {});
   };
 
   /*
@@ -81,9 +79,7 @@ const ProjectDetail = () => {
       .then((data) => {
         window.location.replace("/projects");
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => {});
   };
 
   // useEffect

@@ -18,9 +18,7 @@ process.env.NODE_ENV === "production"
 
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => {
-    console.log("🔒 DB Connected On MongoDB Atlas");
-  })
+  .then(() => {})
   .catch((err) => {});
 app.use(passport.initialize());
 passportConfig();
@@ -54,6 +52,4 @@ app.get("/", (req, res) => {
   res.send("This is Auth Server 🐝");
 });
 
-app.listen(process.env.SERVER_PORT, () => {
-  console.log(`🍀 Auth Server Open On ${process.env.SERVER_PORT}`);
-});
+app.listen(process.env.SERVER_PORT, () => {});

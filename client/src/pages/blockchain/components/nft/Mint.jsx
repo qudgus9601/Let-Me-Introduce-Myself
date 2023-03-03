@@ -24,7 +24,6 @@ export const Mint = () => {
   const failed = () => {
     setProcessing("민팅중에 문제가 발생했습니다.");
     setTimeout(() => {
-      console.log("1초 뒤");
       setIsLoading(false);
       setProcessing("");
     }, 1000);
@@ -60,7 +59,6 @@ export const Mint = () => {
             });
 
           if (!!mintData.blockHash) {
-            console.log(mintData);
             setProcessing("민팅 완료");
             setTimeout(() => {
               setIsLoading(false);

@@ -25,6 +25,4 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "👋 This Is Blockchain Server" });
 });
 
-app.listen(process.env.SERVER_PORT, () => {
-  console.log("📚 Blockchain Server Open In " + process.env.SERVER_PORT);
-});
+app.listen(process.env.SERVER_PORT, () => {});

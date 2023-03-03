@@ -6,10 +6,7 @@ export const List = () => {
   const [list, setList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    console.log(list);
-    console.log(process.env.REACT_APP_BLOCKCHAIN_SERVER);
-  });
+  useEffect(() => {});
   useEffect(() => {
     let sse;
     try {
@@ -36,9 +33,7 @@ export const List = () => {
       sse.onerror = async (event) => {
         // if (!event?.error?.message.includes("No activity")) sse.close();
       };
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
 
     return () => sse.close();
     // eslint-disable-next-line

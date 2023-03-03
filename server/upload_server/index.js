@@ -15,6 +15,7 @@ process.env.NODE_ENV === "production"
 // middlewares
 app.use(morgan("dev"));
 app.use(express.json());
+
 app.use(
   cors({
     origin: process.env.CLIENT_URL,
@@ -31,6 +32,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(process.env.SERVER_PORT, () => {
-  console.log(`🍀 Upload Server On ${process.env.SERVER_PORT}`);
   awsConfig();
 });

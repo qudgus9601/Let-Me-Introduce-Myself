@@ -50,9 +50,7 @@ const ToastEditor = ({ setProject, defaultContent }) => {
             });
 
             callback(imageURI.data.fileURL, "image");
-          } catch (error) {
-            console.log(error);
-          }
+          } catch (error) {}
         },
       }}
     />

@@ -39,7 +39,6 @@ const uploadImageToLocal = (req, res, next) => {
 const uploadResizedImageToLocal = (req, res) => {
   try {
     const file = req.file;
-    console.log(file);
     sharp(file.path)
       .metadata()
       .then(({ width, height }) => {
@@ -210,7 +209,6 @@ const uploadThumbnailImageToS3 = async (req, res, next) => {
 };
 
 const onlyUploadToS3 = async (req, res, next) => {
-  console.log(req.file.location);
   res.json({
     message: "ok",
     status: 200,

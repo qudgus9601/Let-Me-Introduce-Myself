@@ -72,7 +72,6 @@ const passportConfig = () => {
             return done(null, newUser.toObject());
           }
         } catch (error) {
-          console.log("error");
           console.log(error);
         }
       }

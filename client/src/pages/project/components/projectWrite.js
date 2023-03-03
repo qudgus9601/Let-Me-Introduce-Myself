@@ -94,9 +94,7 @@ const ProjectWrite = () => {
       .then(() => {
         navigate("/projects");
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => {});
   };
 
   return (

@@ -14,9 +14,7 @@ process.env.NODE_ENV === "production"
 
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => {
-    console.log("🔒 DB Connected On MongoDB Atlas");
-  })
+  .then(() => {})
   .catch((err) => {});
 
 // middlewares
@@ -37,6 +35,4 @@ app.get("/", (req, res) => {
   res.send("This is Project Server 🐝");
 });
 
-app.listen(process.env.SERVER_PORT, () => {
-  console.log(`🍀 Project Server Open On ${process.env.SERVER_PORT}`);
-});
+app.listen(process.env.SERVER_PORT, () => {});

@@ -12,7 +12,6 @@ module.exports = {
 
     AWS.config.getCredentials((err) => {
       if (err) console.log(err);
-      console.log(`📚 Connect With AWS S3`);
     });
   }),
   AWS: AWS,

@@ -3,17 +3,19 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import "./styles/nav.css";
+import { logout as signout } from "../../redux/userSlice";
+import { useDispatch } from "react-redux";
 
 const Nav = () => {
   const user = useSelector((state) => state.user);
-
+  const dispatch = useDispatch();
   const logout = () => {
     axios({
       method: "GET",
       url: `${process.env.REACT_APP_AUTH_SERVER}/api/v1/auth/logout`,
       withCredentials: true,
     }).catch((error) => {});
-    // Redux 에서 정보를 제거해야한다.
+    dispatch(signout({ isLogin: true }));
     window.location.replace("/");
   };
   return (

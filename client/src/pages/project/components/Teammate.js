@@ -2,7 +2,6 @@ import "./styles/teammate.css";
 import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
 
 const Teammate = ({ mate, idx }) => {
-  console.log(mate);
   return (
     <div className="teammate">
       <header className="teammate_header">
