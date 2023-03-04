@@ -27,6 +27,25 @@ git clone https://github.com/qudgus9601/Let-Me-Introduce-Myself.git
 
 ```
 
+### 💻 구현화면
+
+|메인화면|프로젝트 내역|
+|---|---|
+|![main-page](https://user-images.githubusercontent.com/68590947/222918132-6f1a7773-5945-4aff-ba15-70c9d896d782.gif)|![project](https://user-images.githubusercontent.com/68590947/222918139-a314dec6-ba73-41d9-b5de-bc30b96ffdef.gif)|
+
+|로그인|회원가입|
+|---|---|
+|![signin](https://user-images.githubusercontent.com/68590947/222921574-8deb531d-0d35-4252-9a2a-65f3c509f910.gif)|화면수정중|
+
+|이력서보기|이력서 프린팅|
+|---|---|
+|![resume-view](https://user-images.githubusercontent.com/68590947/222921642-fbd0b94c-aa5a-4385-be91-efbba7c3c709.gif)|![resume-pdf](https://user-images.githubusercontent.com/68590947/222921649-f65f4d57-3b66-42c8-84cc-8b3cb94a92f1.gif)|
+
+|NFT List|NFT Mint|
+|---|---|
+|![blockchain-nft-list](https://user-images.githubusercontent.com/68590947/222921599-10063390-004f-43fd-8fea-fcb4884f5658.gif)|![blockchain-mint](https://user-images.githubusercontent.com/68590947/222921602-33e18100-8e93-4599-8b4e-79f1c7094dc1.gif)|
+
+
 # 수정사항
 
 ### 2023-02-11
@@ -75,6 +94,20 @@ git clone https://github.com/qudgus9601/Let-Me-Introduce-Myself.git
 
 - BE - Server 분할
 - Docker - Docker-compose.yml 수정
+
+### 2023-02-28
+
+- FE - Logout 안되던 버그 수정
+- Deploy - Docker Image 수정 ( normal -> alpine )
+- Common - console 전부 제거
+- BE - S3 연동시 코드 순서에 따라 오류가 발생되던 오류 수정
+
+### 2023-03-01
+
+- FE - NFT Mint 시 들어가는 Gasprice를 가져와서 조정하도록 수정
+
+### 2023-03-05 (현재)
+- BE - 카카오로그인, 구글로그인 수정 중
 
 # 수정 해야 할 사항
 
