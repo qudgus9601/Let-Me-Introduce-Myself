@@ -1,36 +1,57 @@
-## 😎 Let-Me-Introduce-Myself
+![image](https://user-images.githubusercontent.com/68590947/222979930-50f84650-4810-4ed1-8d39-bcdd85f3b24b.png)
 
-이 프로젝트는 저 자신이 경험해본 기술들을 기록하기 위해 만들어진 프로젝트이고
-또, 타인에게 보여드리기 위한 프로젝트입니다.
 
-## 배포된 주소
-https://behoney.info
+### 🔗 배포 링크 https://behoney.info
+
 
 ## 📚 목차
++ [프로젝트](#프로젝트)
++ [아키텍쳐](#아키텍쳐)
+  * AWS 구조
+  * FE - BE 구조
++ [구현화면](#구현화면)
+  * 메인화면
+  * 프로젝트 내역
+  * 로그인
+  * 회원가입
+  * 이력서 보기
+  * 이력서 프린팅
+  * NFT 목록
+  * NFT 민팅
+  * 댓글
+  * DID 발급
+  * DAO 구성
+  * Generative Art
+  
++ [수정사항](#수정사항)
++ [적용예정](#적용예정)
 
-1. 환경설정 ( GET STARTED )
-2. 프로젝트 소개 ( ABOUT )
-3. 시연 ( DEMONSTRATION )
+# 프로젝트
+## 🚀 프로젝트 개요
+프로젝트를 여러번 진행해봤지만 BE 파트를 맡아서 진행해본 경험이 거의 없어서 해본 경험을 최대한 담아서 자기소개 및 포트폴리오 사이트를 만들고자 하였습니다.
 
-## 🍀 GET STARTED
+## 📃 프로젝트 요약
+* 회원가입
+* 로그인
+* 글작성
+* 이력서 보기
+* 이력서 프린팅 및 저장
+* NFT 민팅
 
-### 🖨️ Clone this project
+## 🌊 플로우차트
 
-```
-git clone https://github.com/qudgus9601/Let-Me-Introduce-Myself.git
-```
+# 아키텍쳐
+## 🗃 AWS 구조
 
-### Server Port List
+![image](https://user-images.githubusercontent.com/68590947/222976284-03f72514-1fcb-4b43-a481-58dbbee27fd3.png)
 
-```
-9980 : Auth Server
-9981 : Project Server
-9982 : Upload Server
-9983 : BlockChain Server
+## 🐳 FE - BE 구조
 
-```
+![image](https://user-images.githubusercontent.com/68590947/222979135-d8f82a0e-c4ec-441e-87bb-62e9d31b3f46.png)
 
-### 💻 구현화면
+
+
+# 구현화면
 
 |메인화면|프로젝트 내역|
 |---|---|
@@ -44,7 +65,7 @@ git clone https://github.com/qudgus9601/Let-Me-Introduce-Myself.git
 |---|---|
 |![resume-view](https://user-images.githubusercontent.com/68590947/222921642-fbd0b94c-aa5a-4385-be91-efbba7c3c709.gif)|![resume-pdf](https://user-images.githubusercontent.com/68590947/222921649-f65f4d57-3b66-42c8-84cc-8b3cb94a92f1.gif)|
 
-|NFT List|NFT Mint|
+|NFT 목록|NFT Mint|
 |---|---|
 |![blockchain-nft-list](https://user-images.githubusercontent.com/68590947/222921599-10063390-004f-43fd-8fea-fcb4884f5658.gif)|![blockchain-mint](https://user-images.githubusercontent.com/68590947/222921602-33e18100-8e93-4599-8b4e-79f1c7094dc1.gif)|
 
@@ -112,12 +133,15 @@ git clone https://github.com/qudgus9601/Let-Me-Introduce-Myself.git
 ### 2023-03-05 (현재)
 - BE - 카카오로그인, 구글로그인 수정 중
 
-# 수정 해야 할 사항
+# 적용예정
 
 ```
-- image multi upload
+- 이미지 다중 업로드
 - 무중단 배포
 - 배포 자동화
-- TDD
-- Stress Test
+- 테스트 코드
+- 부하 테스트
+- DID 발급
+- DAO 환경적용
+- Generative Art
 ```
