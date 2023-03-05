@@ -5,11 +5,14 @@
 
 
 ## 📚 목차
-+ [프로젝트](#프로젝트)
-+ [아키텍쳐](#아키텍쳐)
++ [🎞 프로젝트](#프로젝트)
++ [🏢 아키텍쳐](#아키텍쳐)
   * AWS 구조
   * FE - BE 구조
-+ [구현화면](#구현화면)
++ [📚 스택](#스택)
+  * 언어
+  * 도구
++ [💻 구현화면](#구현화면)
   * 메인화면
   * 프로젝트 내역
   * 로그인
@@ -18,13 +21,12 @@
   * 이력서 프린팅
   * NFT 목록
   * NFT 민팅
-  * 댓글
-  * DID 발급
-  * DAO 구성
-  * Generative Art
-  
-+ [수정사항](#수정사항)
-+ [적용예정](#적용예정)
+  * 댓글 ( 미구현 )
+  * DID 발급 ( 미구현 )
+  * DAO 구성 ( 미구현 )
+  * Generative Art ( 미구현 )
++ [🛠 수정사항](#수정사항)
++ [👀 적용예정](#적용예정)
 
 # 프로젝트
 ## 🚀 프로젝트 개요
@@ -49,6 +51,18 @@
 
 ![image](https://user-images.githubusercontent.com/68590947/222979135-d8f82a0e-c4ec-441e-87bb-62e9d31b3f46.png)
 
+# 스택
+## 📃 언어
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=JavaScript&logoColor=black"><img src="https://img.shields.io/badge/Solidity-363636?style=for-the-badge&logo=Solidity&logoColor=black">
+
+## 🛠 도구
+* IDE : <img src="https://img.shields.io/badge/VisualStudioCode-007ACC?style=for-the-badge&logo=VisualStudioCode&logoColor=black">
+* BE : <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=black"><img src="https://img.shields.io/badge/Express.js-black?style=for-the-badge&logo=Express&logoColor=white"><img src="https://img.shields.io/badge/Passport-34E27A?style=for-the-badge&logo=Passport&logoColor=black"><img src="https://img.shields.io/badge/Kakao-FFCD00?style=for-the-badge&logo=Kakao&logoColor=black"><img src="https://img.shields.io/badge/Google-4285F4?style=for-the-badge&logo=Google&logoColor=black"><img src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JsonWebTokens&logoColor=white"><img src="https://img.shields.io/badge/Sharp-99CC00?style=for-the-badge&logo=Sharp&logoColor=black"><img src="https://img.shields.io/badge/Dotenv-ECD53F?style=for-the-badge&logo=.ENV&logoColor=black">
+* FE : <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"><img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=Redux&logoColor=black">
+* SC : <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=black"><img src="https://img.shields.io/badge/HardHat-F7DF1E?style=for-the-badge&logo=RedHat&logoColor=black">
+* DEPLOY : <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=Amazon AWS&logoColor=white"><img src="https://img.shields.io/badge/AWS S3-569A31?style=for-the-badge&logo=AmazonS3&logoColor=black"><img src="https://img.shields.io/badge/AWS EC2-FF9900?style=for-the-badge&logo=AmazonEC2&logoColor=black"><img src="https://img.shields.io/badge/AWS CloudFront-FF4F8B?style=for-the-badge&logo=AmazonCloudWatch&logoColor=black"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=Docker&logoColor=black">
+* DB : <img src="https://img.shields.io/badge/IPFS-65C2CB?style=for-the-badge&logo=IPFS&logoColor=black"><img src="https://img.shields.io/badge/MongoDB-339933?style=for-the-badge&logo=MongoDB&logoColor=black">
+* VCS : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=black">
 
 
 # 구현화면
