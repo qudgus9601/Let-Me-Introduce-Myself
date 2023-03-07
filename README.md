@@ -62,7 +62,7 @@
 * SC : <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=black"><img src="https://img.shields.io/badge/HardHat-F7DF1E?style=for-the-badge&logo=RedHat&logoColor=black">
 * DEPLOY : <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=Amazon AWS&logoColor=white"><img src="https://img.shields.io/badge/AWS S3-569A31?style=for-the-badge&logo=AmazonS3&logoColor=black"><img src="https://img.shields.io/badge/AWS EC2-FF9900?style=for-the-badge&logo=AmazonEC2&logoColor=black"><img src="https://img.shields.io/badge/AWS CloudFront-FF4F8B?style=for-the-badge&logo=AmazonCloudWatch&logoColor=black"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=Docker&logoColor=black">
 * DB : <img src="https://img.shields.io/badge/IPFS-65C2CB?style=for-the-badge&logo=IPFS&logoColor=black"><img src="https://img.shields.io/badge/MongoDB-339933?style=for-the-badge&logo=MongoDB&logoColor=black">
-* VCS : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=black">
+* SVN : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=black">
 
 
 # 구현화면
