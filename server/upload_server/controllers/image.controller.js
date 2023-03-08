@@ -1,7 +1,7 @@
 const multer = require("multer");
 const fs = require("fs");
 const sharp = require("sharp");
-const AWS = require("../utils/aws");
+const { AWS } = require("../utils/aws");
 require("dotenv").config();
 
 /**
@@ -170,7 +170,7 @@ const uploadImageToS3 = async (req, res, next) => {
  */
 const uploadThumbnailImageToS3 = async (req, res, next) => {
   console.log(req.file);
-  const s3 = new AWS.AWS.S3();
+  const s3 = new AWS.S3();
   const file = await s3
     .getObject({
       Bucket: process.env.AWS_S3_BUCKET,
