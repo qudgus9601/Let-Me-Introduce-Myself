@@ -13,7 +13,7 @@
   width: 100vw;
   height: 100vh;
   z-index: -10;
-  scale: 1.1;
+  scale: 2;
   position: absolute;
   filter: blur(30px);
   left: 0;

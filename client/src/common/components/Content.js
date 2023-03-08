@@ -89,6 +89,7 @@ const Content = () => {
           <Route path="/blockchain/*" element={<Blockchain />} />
         </Routes>
       </div>
+      <div className="margin_bottom"></div>
     </div>
   );
 };

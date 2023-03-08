@@ -22,7 +22,6 @@ const Projects = () => {
       </a>
       <div className="resume_explain">
         <ul>
-          <li>{`프로젝트 설계, 이미지 제너레이팅 (midjourney)`}</li>
           <li>{`NodeJs Auth, Project, Blockchain 서버 구현`}</li>
           <li>{`AWS EC2 배포, S3 배포, Docker Image 빌드`}</li>
           <li>{`React ui/ux 컴포넌트 작성`}</li>

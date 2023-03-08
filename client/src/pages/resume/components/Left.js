@@ -26,7 +26,7 @@ const Left = () => {
         <header className="resume_left_contact_header">Certificate</header>
         <ul>
           <li> - 정보처리기사(필기) [21.03]</li>
-          <li> - SQLD [20.06]</li>
+          <li> - DAsP [20.06]</li>
           <li> - 네트워크 관리사 2급 [19.06]</li>
           <li> - 워드프로세서 1급 [19.05]</li>
           <li> - 정보처리기능사 [17.04]</li>

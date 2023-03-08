@@ -1,14 +1,16 @@
 .resume_left {
-  background-color: #abd9ff;
+  background-color: white;
   width: 100%;
   height: calc(1680px - 6mm);
   box-sizing: border-box;
+  color: #666666;
 }
 
 .resume_left_name {
   font-size: 30px;
   font-weight: 700;
   text-align: center;
+  color: black;
 }
 
 .resume_profile_image {
@@ -63,4 +65,5 @@
   font-weight: 700;
   text-align: center;
   margin: 0 0 20px 0;
+  color: black;
 }

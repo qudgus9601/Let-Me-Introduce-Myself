@@ -1,6 +1,8 @@
 .resume_right {
   background-color: white;
   height: calc(1680px - 6mm);
+  color: #666666;
+  border-left: 1px solid rgba(101, 101, 101, 0.7);
 }
 
 .resume_right_container {
@@ -16,9 +18,9 @@
   font-weight: 900;
   display: flex;
   align-items: center;
-  background-color: #82aae3;
-  padding: 0 0 0 10px;
+  background-color: white;
   box-sizing: border-box;
+  color: black;
 }
 
 .resume_subtitle {

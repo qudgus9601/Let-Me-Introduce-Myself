@@ -12,7 +12,6 @@ const Home = () => {
         <Main />
         <SelfIntroduce />
         <Project />
-        <div className="margin_bottom"></div>
       </div>
     </div>
   );

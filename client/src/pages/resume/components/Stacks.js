@@ -67,7 +67,8 @@ const Stacks = () => {
           NestJS
         </div>
         <div className="resume_explain">
-          NestJS를 통한 프로젝트, 클론코딩을 경험했습니다.
+          NestJS를 통한 프로젝트 1회 및 클론코딩을 통한 프로젝트 1회 경험이
+          있습니다.
         </div>
         {/* AWS Part */}
         <div className="resume_subtitle">
@@ -79,11 +80,18 @@ const Stacks = () => {
           AWS
         </div>
         <div className="resume_explain">
-          AWS의 S3, EC2, Route53, ACM 을 사용해봤습니다.
+          AWS의 S3, EC2, Route53, ACM, CloudFront 등을 사용해서 배포
+          경험이있습니다.
         </div>
-        <div className="resume_explain">
-          Docker의 이미지를 통해서 EC2에 실제 서비스를 배포 할 수 있습니다.
-        </div>
+
+        <a
+          className="resume_explain underline"
+          href="https://behoney.info"
+          target={"_blank"}
+          rel="noreferrer"
+        >
+          🔗 https://behoney.info
+        </a>
 
         {/* Docker Part */}
         <div className="resume_subtitle">
@@ -142,6 +150,10 @@ const Stacks = () => {
           RDB에 대한 지식이 있으며 CRUD 작업이 가능합니다. JOIN 작업이
           가능합니다.
         </div>
+        <div className="resume_explain">
+          데이터아키텍처 준전문가(DASP) 자격증을 보유하고있습니다. (자격번호
+          DAsP-519000022)
+        </div>
         <div className="resume_subtitle">
           <img
             src={
@@ -170,22 +182,6 @@ const Stacks = () => {
         </div>
         <div className="resume_explain">
           React를 3개 이상의 프로젝트에서 다뤄보아 FE와의 소통이 원활하게
-          가능합니다.
-        </div>
-
-        {/* GraphQL Part */}
-        <div className="resume_subtitle">
-          <img
-            src={
-              "https://lmim.s3.ap-northeast-2.amazonaws.com/static/graphql.ico"
-            }
-            alt=""
-            className="resume_icon back-white"
-          />
-          Graphql
-        </div>
-        <div className="resume_explain">
-          클론코딩을 통해 GQL에 대한 경험을 해보아서 FE와 소통이 원활하게
           가능합니다.
         </div>
       </section>

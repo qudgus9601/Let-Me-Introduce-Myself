@@ -169,7 +169,8 @@ const uploadImageToS3 = async (req, res, next) => {
  * 썸네일 이미지를 S3에 업로드 합니다.
  */
 const uploadThumbnailImageToS3 = async (req, res, next) => {
-  const s3 = new AWS.S3();
+  console.log(req.file);
+  const s3 = new AWS.AWS.S3();
   const file = await s3
     .getObject({
       Bucket: process.env.AWS_S3_BUCKET,
