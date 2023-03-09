@@ -1,41 +1,55 @@
 import { useEffect, useState } from "react";
 import { Loader } from "../../../../common/components/Loader";
 import "./styles/list.css";
+import Web3 from "web3";
+import LMIM from "../../../../contracts/LMIM.json";
 
 export const List = () => {
   const [list, setList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {});
   useEffect(() => {
-    let sse;
-    try {
-      sse = new EventSource(
-        `${process.env.REACT_APP_BLOCKCHAIN_SERVER}/api/v1/nft/list`,
-        {
-          withCredentials: true,
-        }
+    const set = async () => {
+      const web3 = new Web3(window.ethereum);
+      const lmim = new web3.eth.Contract(
+        LMIM.abi,
+        process.env.REACT_APP_CONTRACT_LMIM_ADDRESS
       );
+      const length = await lmim.methods.totalSupply().call();
+      return length;
+    };
+    set().then((data) => {
+      let sse;
+      try {
+        sse = new EventSource(
+          `${process.env.REACT_APP_BLOCKCHAIN_SERVER}/api/v1/nft/list`,
+          {
+            withCredentials: true,
+          }
+        );
 
-      sse.onopen = () => {};
+        sse.onopen = async () => {};
 
-      sse.onmessage = async (event) => {
-        const res = await event?.data;
-        const resJSON = JSON.parse(res);
-        list.push(resJSON);
-        setList([...list]);
+        sse.onmessage = async (event) => {
+          // eslint-disable-next-line
+          if (list?.length == data) {
+            sse.close();
+          }
+          const res = await event?.data;
+          const resJSON = JSON.parse(res);
+          list.push(resJSON);
+          setList([...list]);
 
-        if (isLoading) {
-          setIsLoading(false);
-        }
-      };
+          if (isLoading) {
+            setIsLoading(false);
+          }
+        };
 
-      sse.onerror = async (event) => {
-        // if (!event?.error?.message.includes("No activity")) sse.close();
-      };
-    } catch (error) {}
+        sse.onerror = async (event) => {};
+      } catch (error) {}
 
-    return () => sse.close();
+      return () => sse.close();
+    });
     // eslint-disable-next-line
   }, []);
   return (
